@@ -73,7 +73,7 @@ var app = (function() {
       console.log(result);
       var data = [];
       data[result] = {"code": readCode(), "timestamp": Date.now()};
-      myFirebaseRef.set(data);
+      myFirebaseRef.push(data);
     },
 
     load: function() {

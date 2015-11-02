@@ -4,8 +4,8 @@ var app = (function() {
   var code = localStorage.getItem('myCode');
 
   var exercises = [];
-  exercises["start"] = 'print "Welcome to study with Python';
-  exercises["print"] = 'print "Welcome to study with Python\n'+
+  exercises["start"] = 'print "Welcome to study with Python"';
+  exercises["print"] = 'print "Welcome to study with Python"\n'+
                        'print "Add your comment here and print"';
   exercises["default"] = 'import turtle\n'+
             't = turtle.Turtle()\n'+

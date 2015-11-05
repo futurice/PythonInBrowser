@@ -47,7 +47,7 @@ var app = (function() {
   }
 
   return {
-    runit: function() {
+    run: function() {
        var prog = readCode();
        var mypre = document.getElementById("output");
        var width = document.getElementById("mycanvas").offsetWidth;
@@ -121,8 +121,8 @@ setInterval(function(){
       app.saveLocally();
     },500);
 
-function runit() {
-  return app.runit();
+function run() {
+  return app.run();
 }
 
 function load() {

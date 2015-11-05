@@ -49,12 +49,22 @@ var app = (function() {
   return {
     runit: function() {
        var prog = readCode();
-       console.log("prog:" + prog);
        var mypre = document.getElementById("output");
+       var width = document.getElementById("mycanvas").offsetWidth;
+       var height = document.getElementById("mycanvas").offsetHeight;
        mypre.innerHTML = '';
        Sk.pre = "output";
        Sk.configure({output:outf, read:builtinRead});
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
+       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
+       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
+       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;
+       Sk.TurtleGraphics.defaults = {
+                canvasID: "mycanvas",
+                animate: false,
+                degrees: true,
+                width: 600,
+                height: 600
+            };
        var myPromise = Sk.misceval.asyncToPromise(function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });
@@ -70,21 +80,24 @@ var app = (function() {
 
     save: function() {
       var result = window.prompt("What's your name?");
-      console.log(result);
-      var data = [];
-      data[result] = {"code": readCode(), "timestamp": Date.now()};
-      myFirebaseRef.push(data);
+      var data = {"code": readCode(), "timestamp": Date.now()};
+      myFirebaseRef.once('value', function(dataSnapshot) {
+        if(dataSnapshot && dataSnapshot.hasChild(result)) {
+          myFirebaseRef.child(result).update(data);
+        } else {
+          myFirebaseRef.child(result).set(data);
+        }
+      });
     },
 
     load: function() {
       var result = window.prompt("What's your name?");
-      myFirebaseRef.child(result).on("value", function(snapshot) {
-        var code = snapshot.val().code;
-        if(code) {
-          setCode(code);
-        } else {
-          setErrorMessage("Load failed, try again.");
-        }
+      myFirebaseRef.child(result).once('value', function(dataSnapshot) {
+        if(dataSnapshot.val() && dataSnapshot.val().code) {
+            setCode(dataSnapshot.val().code);
+          } else {
+            setErrorMessage("Load failed, try again.");
+          }
       });
     },
     saveLocally: function() {
@@ -98,8 +111,8 @@ var app = (function() {
 })();
 
 $(document).ready(function() {
-  $('li').click(function(event) {
-    var id = $(this).attr('id');
+  $("li").click(function(event) {
+    var id = $(this).attr("id");
     app.openExercise(id);
   });
 });

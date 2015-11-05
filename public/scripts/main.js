@@ -1,20 +1,15 @@
 var app = (function() {
   var myFirebaseRef = new Firebase("");
   var editor = document.getElementById("editor");
-  var code = localStorage.getItem('myCode');
-
+  var examples = ["default", "start", "print"];
   var exercises = [];
-  exercises["start"] = 'print "Welcome to study with Python"';
-  exercises["print"] = 'print "Welcome to study with Python"\n'+
-                       'print "Add your comment here and print"';
-  exercises["default"] = 'import turtle\n'+
-            't = turtle.Turtle()\n'+
-            't.forward(100)\n'+
-            'print "Hello World"\n'+
-            'print ("Hello")\n';
+  var code = localStorage.getItem("myCode");
+  setExamples();
+
   if(!code) {
     code = exercises["default"];
   }
+
   var myCodeMirror = CodeMirror(editor, {
     value: code,
     mode:  "python",
@@ -22,6 +17,28 @@ var app = (function() {
     lineNumbers: true,
     lineWrapping: true
   });
+
+  $(document).ready(function() {
+    $("li").click(function(event) {
+      var id = $(this).attr("id");
+      setCode(exercises[id]);
+    });
+  });
+
+  setInterval(function(){
+    saveLocally();
+  },500);
+
+  function setExamples() {
+    _.each(examples, function(example) {
+      var path = "examples/" + example + ".py";
+      $.get(path, function(data) {
+        if(data) {
+          exercises[example] = data;
+        }
+      });
+    });
+  }
 
   function outf(text) {
     var mypre = document.getElementById("output");
@@ -46,13 +63,17 @@ var app = (function() {
     outf("\n" + message);
   }
 
+  function saveLocally() {
+    localStorage.setItem("myCode", readCode());
+  }
+
   return {
     run: function() {
        var prog = readCode();
        var mypre = document.getElementById("output");
        var width = document.getElementById("mycanvas").offsetWidth;
        var height = document.getElementById("mycanvas").offsetHeight;
-       mypre.innerHTML = '';
+       mypre.innerHTML = "";
        Sk.pre = "output";
        Sk.configure({output:outf, read:builtinRead});
        (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
@@ -69,7 +90,7 @@ var app = (function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });
        myPromise.then(function(mod) {
-           console.log('success');
+           console.log("success");
            setErrorMessage("");
        },
            function(err) {
@@ -81,7 +102,7 @@ var app = (function() {
     save: function() {
       var result = window.prompt("What's your name?");
       var data = {"code": readCode(), "timestamp": Date.now()};
-      myFirebaseRef.once('value', function(dataSnapshot) {
+      myFirebaseRef.once("value", function(dataSnapshot) {
         if(dataSnapshot && dataSnapshot.hasChild(result)) {
           myFirebaseRef.child(result).update(data);
         } else {
@@ -92,34 +113,16 @@ var app = (function() {
 
     load: function() {
       var result = window.prompt("What's your name?");
-      myFirebaseRef.child(result).once('value', function(dataSnapshot) {
+      myFirebaseRef.child(result).once("value", function(dataSnapshot) {
         if(dataSnapshot.val() && dataSnapshot.val().code) {
             setCode(dataSnapshot.val().code);
           } else {
             setErrorMessage("Load failed, try again.");
           }
       });
-    },
-    saveLocally: function() {
-      localStorage.setItem('myCode', readCode());
-    },
-    openExercise: function(id) {
-      var code = exercises[id];
-      setCode(code);
     }
   };
 })();
-
-$(document).ready(function() {
-  $("li").click(function(event) {
-    var id = $(this).attr("id");
-    app.openExercise(id);
-  });
-});
-
-setInterval(function(){
-      app.saveLocally();
-    },500);
 
 function run() {
   return app.run();

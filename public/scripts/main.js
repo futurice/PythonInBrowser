@@ -1,5 +1,5 @@
 var app = (function() {
-  var myFirebaseRef = new Firebase("");
+  var myFirebaseRef = initializeFirebase("");
   var editor = document.getElementById("editor");
   var examples = ["default", "start", "print"];
   var exercises = [];
@@ -28,6 +28,15 @@ var app = (function() {
   setInterval(function(){
     saveLocally();
   },500);
+
+  function initializeFirebase(firebaseUrl) {
+    try {
+      return new Firebase(firebaseUrl);
+    } catch (err) {
+      console.error('Failed to initialize Firebase: ' + err);
+      return undefined;
+    }
+  };
 
   function setExamples() {
     _.each(examples, function(example) {
@@ -100,6 +109,11 @@ var app = (function() {
     },
 
     save: function() {
+      if (!myFirebaseRef) {
+        setErrorMessage('Firebase not configured');
+        return;
+      }
+
       var result = window.prompt("What's your name?");
       var data = {"code": readCode(), "timestamp": Date.now()};
       myFirebaseRef.once("value", function(dataSnapshot) {
@@ -112,6 +126,11 @@ var app = (function() {
     },
 
     load: function() {
+      if (!myFirebaseRef) {
+        setErrorMessage('Firebase not configured');
+        return;
+      }
+
       var result = window.prompt("What's your name?");
       myFirebaseRef.child(result).once("value", function(dataSnapshot) {
         if(dataSnapshot.val() && dataSnapshot.val().code) {

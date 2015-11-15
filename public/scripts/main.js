@@ -7,7 +7,7 @@ var app = (function() {
   setExamples();
 
   if(!code) {
-    code = exercises["default"];
+    code = exercises["default"] || "";
   }
 
   var myCodeMirror = CodeMirror(editor, {

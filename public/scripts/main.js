@@ -95,6 +95,17 @@ var app = (function() {
                 width: 600,
                 height: 600
             };
+       Sk.matter = {
+         target: "mycanvas",
+         width: 600,
+         height: 600
+       };
+       Sk.externalLibraries = {
+         matter: {
+           path: 'modules/matter/__init__.js',
+           dependencies: ['modules/matter/matter-0.8.0.min.js']
+         }
+       };
        var myPromise = Sk.misceval.asyncToPromise(function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });

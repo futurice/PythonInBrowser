@@ -1,8 +1,0 @@
-# Exercise: Let's check your name
-
-# Write your name here like this
-# name = "Tuomas"
-
-# In here we can see, what your name is
-# Write down like this
-# print("Your name is: " + name)

@@ -1,33 +1,78 @@
 var app = (function() {
-  var myFirebaseRef = initializeFirebase("");
+  var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
-  var examples = ["default", "start", "print"];
+  var examples = ["default", "exa1", "start", "print", "bracketing", "square", "variable", "wall"];
   var exercises = [];
   var code = localStorage.getItem("myCode");
-  setExamples();
+  var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
+  var myCodeMirror;
 
-  if(!code) {
-    code = exercises["default"] ? exercises["default"] : "#empty editor";
+  initExamples();
+  initVariables(user, code);
+  initCodeMirror();
+  initClickHandlers();
+  initLocalSave();
+
+  /*
+   * Initializing functions
+   */
+
+  function initExamples() {
+    _.each(examples, function(example) {
+      var path = "examples/" + example + ".py";
+      $.ajax({url: path,
+        async: false,
+        success: function(data) {
+          if(data) {
+            exercises[example] = data;
+          }
+        }
+      });
+    });
   }
 
-  var myCodeMirror = CodeMirror(editor, {
-    value: code,
-    mode:  "python",
-    theme: "monokai",
-    lineNumbers: true,
-    lineWrapping: true
-  });
+  function initVariables(user, code) {
+    if(user) {
+      $(".name-edit").html(user);
+    }
 
-  $(document).ready(function() {
-    $("li").click(function(event) {
+    if(!code) {
+      code = exercises["default"] ? exercises["default"] : "# Welcome to PythonInBrowser";
+    }
+  }
+
+  function initCodeMirror() {
+    myCodeMirror = CodeMirror(editor, {
+      value: code,
+      mode:  "python",
+      theme: "monokai",
+      lineNumbers: true,
+      lineWrapping: true,
+      tabSize: 2,
+      autofocus: true
+    });
+  }
+
+  function initClickHandlers() {
+    $(".default-exercises > a > li").on('click', function(event) {
       var id = $(this).attr("id");
       setCode(exercises[id]);
     });
-  });
 
-  setInterval(function(){
-    saveLocally();
-  },500);
+    $(".own-exercises").on("click", "a>li>pre", function(event) {
+      getCode($(this).parent("li").attr("id"), $(this).parent("li").data("parent"));
+    });
+  }
+
+  function initLocalSave() {
+    setInterval(function(){
+      saveLocally();
+    },500);
+  }
+
+  /*
+   * Helper functions
+   */
 
   function initializeFirebase(firebaseUrl) {
     try {
@@ -36,17 +81,6 @@ var app = (function() {
       console.error('Failed to initialize Firebase: ' + err);
       return undefined;
     }
-  };
-
-  function setExamples() {
-    _.each(examples, function(example) {
-      var path = "examples/" + example + ".py";
-      $.get(path, function(data) {
-        if(data) {
-          exercises[example] = data;
-        }
-      });
-    });
   }
 
   function outf(text) {
@@ -68,6 +102,19 @@ var app = (function() {
     myCodeMirror.doc.setValue(code);
   }
 
+  function getCode(id, parent) {
+    var myFirebaseRef = initializeFirebase(firebaseBaseUrl + parent + "/" + id + "/");
+    if (!myFirebaseRef) {
+        setErrorMessage('Firebase not configured');
+        return;
+    }
+    return myFirebaseRef.ref().once("value", function(snapshot) {
+      if(snapshot && snapshot.val() && snapshot.val().code) {
+        setCode(snapshot.val().code);
+      }
+    });
+  }
+
   function setErrorMessage(message) {
     outf("\n" + message);
   }
@@ -76,80 +123,92 @@ var app = (function() {
     localStorage.setItem("myCode", readCode());
   }
 
+  function saveNameLocally(name) {
+    localStorage.setItem("pythonInBrowserUser", name);
+  }
+
+  /*
+   * Public functions
+   */
+
   return {
     run: function() {
-       var prog = readCode();
-       var mypre = document.getElementById("output");
-       var width = document.getElementById("mycanvas").offsetWidth;
-       var height = document.getElementById("mycanvas").offsetHeight;
-       mypre.innerHTML = "";
-       Sk.pre = "output";
-       Sk.configure({output:outf, read:builtinRead});
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;
-       Sk.TurtleGraphics.defaults = {
-                canvasID: "mycanvas",
-                animate: false,
-                degrees: true,
-                width: 600,
-                height: 600
-            };
-       Sk.matter = {
-         target: "mycanvas",
-         width: 600,
-         height: 600
-       };
-       Sk.externalLibraries = {
-         matter: {
-           path: 'modules/matter/__init__.js',
-           dependencies: ['modules/matter/matter-0.8.0.min.js']
-         }
-       };
+      var prog = readCode();
+      var mypre = document.getElementById("output");
+      var width = document.getElementById("mycanvas").offsetWidth;
+      var height = document.getElementById("mycanvas").offsetHeight;
+      mypre.innerHTML = "";
+      Sk.pre = "output";
+      Sk.configure({output:outf, read:builtinRead});
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;
+      Sk.TurtleGraphics.defaults = {
+        canvasID: "mycanvas",
+        animate: false,
+        degrees: true,
+        width: 600,
+        height: 600
+      };
+      Sk.matter = {
+        target: "mycanvas",
+        width: 600,
+        height: 600
+      };
+
+      Sk.externalLibraries = {
+        matter: {
+          path: 'modules/matter/__init__.js',
+          dependencies: ['modules/matter/matter-0.8.0.min.js']
+        }
+      };
+
        var myPromise = Sk.misceval.asyncToPromise(function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });
        myPromise.then(function(mod) {
-           console.log("success");
-           setErrorMessage("");
+          setErrorMessage("");
        },
-           function(err) {
-            console.log(err.toString());
-            setErrorMessage(err.toString());
+          function(err) {
+          setErrorMessage(err.toString());
        });
     },
 
     save: function() {
+      var result = $(".name-edit").html();
+      var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
       if (!myFirebaseRef) {
         setErrorMessage('Firebase not configured');
         return;
       }
-
-      var result = window.prompt("What's your name?");
       var data = {"code": readCode(), "timestamp": Date.now()};
-      myFirebaseRef.once("value", function(dataSnapshot) {
-        if(dataSnapshot && dataSnapshot.hasChild(result)) {
-          myFirebaseRef.child(result).update(data);
-        } else {
-          myFirebaseRef.child(result).set(data);
+      var newRef = myFirebaseRef.push(data, function(response) {
+        if(!response) {
+          $(".saved").show().fadeOut(800);
         }
       });
     },
 
     load: function() {
-      if (!myFirebaseRef) {
-        setErrorMessage('Firebase not configured');
-        return;
-      }
-
-      var result = window.prompt("What's your name?");
-      myFirebaseRef.child(result).once("value", function(dataSnapshot) {
-        if(dataSnapshot.val() && dataSnapshot.val().code) {
-            setCode(dataSnapshot.val().code);
+      var result = $(".name-edit").html();
+      saveNameLocally(result);
+      if(result && result.length > 1) {
+        var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
+        if (!myFirebaseRef) {
+          setErrorMessage('Firebase not configured');
+          return;
+        }
+        myFirebaseRef.ref().once("value", function(snapshot) {
+          if(snapshot.val()) {
+            _.each(snapshot.val(), function(snippet, key) {
+              var date = moment(snippet.timestamp).format("DD.MM.YYYY HH:mm:ss");
+              $(".own-exercises").append("<a href='#close'><li id=" +  key + " data-parent=" + result + "><div class='date'>" + date + "</div><pre>" + snippet.code + "</pre></li></a>");
+            });
           } else {
-            setErrorMessage("Load failed, try again.");
+            $(".empty-exercises").show().fadeOut(1000);
           }
-      });
+        });
+      }
     }
   };
 })();

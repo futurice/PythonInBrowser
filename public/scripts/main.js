@@ -74,6 +74,15 @@ var app = (function() {
    * Helper functions
    */
 
+  function initializeFirebase(firebaseUrl) {
+    try {
+      return initializeFirebase(firebaseUrl);
+    } catch (err) {
+      console.error('Failed to initialize Firebase: ' + err);
+      return undefined;
+    }
+  };
+
   function outf(text) {
     var mypre = document.getElementById("output");
     mypre.innerHTML = mypre.innerHTML + text;
@@ -94,7 +103,11 @@ var app = (function() {
   }
 
   function getCode(id, parent) {
-    var myFirebaseRef = new Firebase(firebaseBaseUrl + parent + "/" + id + "/");
+    var myFirebaseRef = initializeFirebase(firebaseBaseUrl + parent + "/" + id + "/");
+    if (!myFirebaseRef) {
+        setErrorMessage('Firebase not configured');
+        return;
+    }
     return myFirebaseRef.ref().once("value", function(snapshot) {
       if(snapshot && snapshot.val() && snapshot.val().code) {
         setCode(snapshot.val().code);
@@ -120,23 +133,36 @@ var app = (function() {
 
   return {
     run: function() {
-       var prog = readCode();
-       var mypre = document.getElementById("output");
-       var width = document.getElementById("mycanvas").offsetWidth;
-       var height = document.getElementById("mycanvas").offsetHeight;
-       mypre.innerHTML = "";
-       Sk.pre = "output";
-       Sk.configure({output:outf, read:builtinRead});
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
-       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;
-       Sk.TurtleGraphics.defaults = {
-                canvasID: "mycanvas",
-                animate: false,
-                degrees: true,
-                width: 600,
-                height: 600
-            };
+      var prog = readCode();
+      var mypre = document.getElementById("output");
+      var width = document.getElementById("mycanvas").offsetWidth;
+      var height = document.getElementById("mycanvas").offsetHeight;
+      mypre.innerHTML = "";
+      Sk.pre = "output";
+      Sk.configure({output:outf, read:builtinRead});
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
+      (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;
+      Sk.TurtleGraphics.defaults = {
+        canvasID: "mycanvas",
+        animate: false,
+        degrees: true,
+        width: 600,
+        height: 600
+      };
+      Sk.matter = {
+        target: "mycanvas",
+        width: 600,
+        height: 600
+      };
+
+      Sk.externalLibraries = {
+        matter: {
+          path: 'modules/matter/__init__.js',
+          dependencies: ['modules/matter/matter-0.8.0.min.js']
+        }
+      };
+
        var myPromise = Sk.misceval.asyncToPromise(function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });
@@ -150,7 +176,11 @@ var app = (function() {
 
     save: function() {
       var result = $(".name-edit").html();
-      var myFirebaseRef = new Firebase(firebaseBaseUrl + result + "/");
+      var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
+      if (!myFirebaseRef) {
+        setErrorMessage('Firebase not configured');
+        return;
+      }
       var data = {"code": readCode(), "timestamp": Date.now()};
       var newRef = myFirebaseRef.push(data, function(response) {
         if(!response) {
@@ -163,7 +193,11 @@ var app = (function() {
       var result = $(".name-edit").html();
       saveNameLocally(result);
       if(result && result.length > 1) {
-        var myFirebaseRef = new Firebase(firebaseBaseUrl + result + "/");
+        var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
+        if (!myFirebaseRef) {
+          setErrorMessage('Firebase not configured');
+          return;
+        }
         myFirebaseRef.ref().once("value", function(snapshot) {
           if(snapshot.val()) {
             _.each(snapshot.val(), function(snippet, key) {

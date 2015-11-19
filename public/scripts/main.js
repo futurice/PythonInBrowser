@@ -76,12 +76,12 @@ var app = (function() {
 
   function initializeFirebase(firebaseUrl) {
     try {
-      return initializeFirebase(firebaseUrl);
+      return new Firebase(firebaseUrl);
     } catch (err) {
       console.error('Failed to initialize Firebase: ' + err);
       return undefined;
     }
-  };
+  }
 
   function outf(text) {
     var mypre = document.getElementById("output");

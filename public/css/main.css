@@ -1,14 +1,25 @@
 body {
     background: url("../img/shattered.png");
     background-repeat: repeat;
-
+    font-family: 'Source Code Pro', ;
 }
 
 h1 {
     clear: both;
-    font-family: 'Source Code Pro', ;
     font-size: 2em;
     margin: 0.2em;
+}
+
+.saved {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 0.7em;
+    display: none;
+}
+
+.empty-exercises {
+    display: none;
 }
 
 .container {
@@ -56,10 +67,21 @@ button {
     border: none;
 }
 
+button:hover {
+    background-color: #00d9ff;
+}
+
 .button {
     width: 80px;
     float: left;
     margin: 0.2em 0.8em;
+}
+
+.load-button {
+    width: 90px;
+    height: 20px;
+    background-color: #DBDEDE;
+    vertical-align: middle;
 }
 
 .run-button {
@@ -79,7 +101,7 @@ button {
     border-top-width: 1px;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .console {
@@ -95,13 +117,11 @@ button {
 
 .footer {
     height: 5vh;
-    font-family: 'Source Code Pro', ;
     font-size: 1.2em;
 }
 
 .modal {
     position: fixed;
-    font-family: 'Source Code Pro', ;
     top: 0;
     right: 0;
     bottom: 0;
@@ -143,4 +163,45 @@ button {
 
 .close:hover {
     background: #00d9ff;
+}
+
+.exercise-container {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.exercise-container a {
+    text-decoration: none;
+}
+
+.exercise-container ul {
+    padding: 0;
+}
+
+.exercise-container ul li {
+    list-style: none;
+}
+
+.exercise-container .date {
+    font-size: 0.6em;
+    float: right;
+}
+
+.exercise-container pre {
+    background-color: #DBDEDE;
+    color: black;
+    padding: 5px;
+    max-height: 50px;
+    overflow: auto;
+    clear: both;
+}
+
+.name {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.name-edit {
+    background-color: #DBDEDE;
+    width: 200px;
 }

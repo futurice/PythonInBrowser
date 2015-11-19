@@ -1,44 +1,78 @@
 var app = (function() {
-  var myFirebaseRef = new Firebase("");
+  var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
   var examples = ["default", "start", "print"];
   var exercises = [];
   var code = localStorage.getItem("myCode");
-  setExamples();
+  var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
+  var myCodeMirror;
 
-  if(!code) {
-    code = exercises["default"];
-  }
+  initExamples();
+  initVariables(user, code);
+  initCodeMirror();
+  initClickHandlers();
+  initLocalSave();
 
-  var myCodeMirror = CodeMirror(editor, {
-    value: code,
-    mode:  "python",
-    theme: "monokai",
-    lineNumbers: true,
-    lineWrapping: true
-  });
+  /*
+   * Initializing functions
+   */
 
-  $(document).ready(function() {
-    $("li").click(function(event) {
-      var id = $(this).attr("id");
-      setCode(exercises[id]);
-    });
-  });
-
-  setInterval(function(){
-    saveLocally();
-  },500);
-
-  function setExamples() {
+  function initExamples() {
     _.each(examples, function(example) {
       var path = "examples/" + example + ".py";
-      $.get(path, function(data) {
-        if(data) {
-          exercises[example] = data;
+      $.ajax({url: path,
+        async: false,
+        success: function(data) {
+          if(data) {
+            exercises[example] = data;
+          }
         }
       });
     });
   }
+
+  function initVariables(user, code) {
+    if(user) {
+      $(".name-edit").html(user);
+    }
+
+    if(!code) {
+      code = exercises["default"] ? exercises["default"] : "# Welcome to PythonInBrowser";
+    }
+  }
+
+  function initCodeMirror() {
+    myCodeMirror = CodeMirror(editor, {
+      value: code,
+      mode:  "python",
+      theme: "monokai",
+      lineNumbers: true,
+      lineWrapping: true,
+      tabSize: 2,
+      autofocus: true
+    });
+  }
+
+  function initClickHandlers() {
+    $(".default-exercises > a > li").on('click', function(event) {
+      var id = $(this).attr("id");
+      setCode(exercises[id]);
+    });
+
+    $(".own-exercises").on("click", "a>li>pre", function(event) {
+      getCode($(this).parent("li").attr("id"), $(this).parent("li").data("parent"));
+    });
+  }
+
+  function initLocalSave() {
+    setInterval(function(){
+      saveLocally();
+    },500);
+  }
+
+  /*
+   * Helper functions
+   */
 
   function outf(text) {
     var mypre = document.getElementById("output");
@@ -59,6 +93,15 @@ var app = (function() {
     myCodeMirror.doc.setValue(code);
   }
 
+  function getCode(id, parent) {
+    var myFirebaseRef = new Firebase(firebaseBaseUrl + parent + "/" + id + "/");
+    return myFirebaseRef.ref().once("value", function(snapshot) {
+      if(snapshot && snapshot.val() && snapshot.val().code) {
+        setCode(snapshot.val().code);
+      }
+    });
+  }
+
   function setErrorMessage(message) {
     outf("\n" + message);
   }
@@ -66,6 +109,14 @@ var app = (function() {
   function saveLocally() {
     localStorage.setItem("myCode", readCode());
   }
+
+  function saveNameLocally(name) {
+    localStorage.setItem("pythonInBrowserUser", name);
+  }
+
+  /*
+   * Public functions
+   */
 
   return {
     run: function() {
@@ -90,36 +141,40 @@ var app = (function() {
            return Sk.importMainWithBody("<stdin>", false, prog, true);
        });
        myPromise.then(function(mod) {
-           console.log("success");
-           setErrorMessage("");
+          setErrorMessage("");
        },
-           function(err) {
-            console.log(err.toString());
-            setErrorMessage(err.toString());
+          function(err) {
+          setErrorMessage(err.toString());
        });
     },
 
     save: function() {
-      var result = window.prompt("What's your name?");
+      var result = $(".name-edit").html();
+      var myFirebaseRef = new Firebase(firebaseBaseUrl + result + "/");
       var data = {"code": readCode(), "timestamp": Date.now()};
-      myFirebaseRef.once("value", function(dataSnapshot) {
-        if(dataSnapshot && dataSnapshot.hasChild(result)) {
-          myFirebaseRef.child(result).update(data);
-        } else {
-          myFirebaseRef.child(result).set(data);
+      var newRef = myFirebaseRef.push(data, function(response) {
+        if(!response) {
+          $(".saved").show().fadeOut(800);
         }
       });
     },
 
     load: function() {
-      var result = window.prompt("What's your name?");
-      myFirebaseRef.child(result).once("value", function(dataSnapshot) {
-        if(dataSnapshot.val() && dataSnapshot.val().code) {
-            setCode(dataSnapshot.val().code);
+      var result = $(".name-edit").html();
+      saveNameLocally(result);
+      if(result && result.length > 1) {
+        var myFirebaseRef = new Firebase(firebaseBaseUrl + result + "/");
+        myFirebaseRef.ref().once("value", function(snapshot) {
+          if(snapshot.val()) {
+            _.each(snapshot.val(), function(snippet, key) {
+              var date = moment(snippet.timestamp).format("DD.MM.YYYY HH:mm:ss");
+              $(".own-exercises").append("<a href='#close'><li id=" +  key + " data-parent=" + result + "><div class='date'>" + date + "</div><pre>" + snippet.code + "</pre></li></a>");
+            });
           } else {
-            setErrorMessage("Load failed, try again.");
+            $(".empty-exercises").show().fadeOut(1000);
           }
-      });
+        });
+      }
     }
   };
 })();

@@ -87,7 +87,7 @@ button:hover {
 .run-button {
     position: absolute;
     top: 7px;
-    right: 10px;
+    right: 20px;
     z-index: 6;
 }
 

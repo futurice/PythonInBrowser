@@ -1,10 +1,10 @@
 # start.py
 # Welcome to learn Python
-# This is editor
 # Press 'Run'-button and see what happens
 
 print "Hello world"
 
+##### INFO #####
 # All the text in the editor that comes after '#' are comments.
 # When the code in the editor runs (when you click the 'Run' button)
 # all the lines which are marked as comments with '#' are ignored.
@@ -19,5 +19,7 @@ print "Hello world"
 # and the output is shown in either canvas or console,
 # or both, depending on the code.
 
+
+##### EXERCISE #####
 # Just to make you feel more comfortable with the environment, press 'Run' once again.
 # Now you can move on the next exercise.

@@ -1,6 +1,7 @@
 # bracketing.py
 import turtle
 
+##### INFO #####
 # Here we define a prepare functions that we use to prepare our exercise.
 def prepare():
   wall = turtle.Turtle()
@@ -15,7 +16,7 @@ def prepare():
 # We learn these things later so don't worry if you don't understand everything
 prepare()
 
-# Exercise:
+##### EXERCISE #####
 # How long can the turtle travel until it hits the wall?
 # Modify the angle. It controls how much the turtle turns.
 

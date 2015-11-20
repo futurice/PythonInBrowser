@@ -1,4 +1,6 @@
 # turtle.py
+
+##### INFO #####
 # Meet the turtle! We define it here. In order to use it, we have to import it.
 # We learn more about this later.
 import turtle
@@ -12,5 +14,6 @@ t.forward(100)
 t.left(90)
 t.forward(50)
 
+##### EXERCISE #####
 # Click 'run' and see what happens.
 # After that try it yourself. Move turtle around the canvas moving forward and turning

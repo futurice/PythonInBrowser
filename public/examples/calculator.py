@@ -1,19 +1,19 @@
 # calculator.py
 # Let's use code as our calculator
 
+##### EXERCISE #####
 # 1. So our code is trying to be really clever.
-# Because we gave it integer it thinks we want integer back.
+# On the previous exercise we gave numbers as integers and our code thought we wanted integer back.
 # Let's try again, print the result of 1.0/2.0
 
 
 # 2. Now make your own equation and print the result of it
 
 
-# 3. Use these  characters and try to understand what they do
-
+# 3. Take '#' away and run your code. Try to understand it does.
 # print 3.0 ** 2.0
 
-
+# 4. Take '#' away and run your code. Try to understand it does.
 # print 3.0 % 2.0
 
-# If you don't figure it out try changing the numbers
+# TIP! If you don't figure exercises 3 and 4 out try changing the numbers and think again

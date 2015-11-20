@@ -3,6 +3,7 @@
 
 print "Welcome to study with Python"
 
+##### EXERCISE #####
 # 1. Write on line 6 code that prints your name to the console
 
 

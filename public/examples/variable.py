@@ -1,7 +1,8 @@
 # variable.py
 
-# Exercise: Let's check if the computer can remember your name.
-# This achieved by using a variable
+##### INFO #####
+# Goal: Let's check if the computer can remember your name.
+# This is achieved by using a variable
 
 # Write your name like this, but replace "Tuomas" with your own name.
 name = "Tuomas"
@@ -17,6 +18,7 @@ name = "Tuomas"
 # Your name will be printed in the console if you write down like this
 print "Your name is: " + name
 
+##### EXERCISE #####
 # Click 'Run' on the upper right corner.
 # See, the computer now remembers your name. It's been saved in a variable called 'name'.
 

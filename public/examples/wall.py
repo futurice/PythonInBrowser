@@ -1,7 +1,8 @@
 # wall.py
 import turtle
 
-# Exercise, fix turtle to find a hole in the wall
+##### INFO #####
+# Goal: fix turtle to find a hole in the wall
 
 # here we create a wall to the middle of the screen
 wall = turtle.Turtle()
@@ -35,7 +36,7 @@ joe.forward(100)
 joe.right(90)
 joe.forward(50)
 
-
+##### EXERCISE #####
 # what do you need to add to have Joe walk to the red dot?
 # Don't touch the wall!
 

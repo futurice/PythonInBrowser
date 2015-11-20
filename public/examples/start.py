@@ -12,10 +12,12 @@ print "Hello world"
 
 # There are 3 significant areas in this coding environment: editor, canvas and console.
 # Editor (this window) is where you write all the code.
-# Canvas (white space on the right) is used for showing the graphical output.
+# Canvas (white space on the right) is used for showing graphical output.
 # Console (grey area on the right) is used for showing text output.
 
-# Every time you press 'Run' the code is processed and the outputs are shown in either canvas or console, or both.
+# Every time you press 'Run' the code is processed
+# and the output is shown in either canvas or console,
+# or both, depending on the code.
 
 # Just to make you feel more comfortable with the environment, press 'Run' once again.
 # Now you can move on the next exercise.

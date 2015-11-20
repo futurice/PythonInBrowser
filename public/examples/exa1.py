@@ -2,4 +2,4 @@
 # This is editor
 # Press 'Run'-button and see what happens
 
-print ("Hello world")
+print "Hello world"

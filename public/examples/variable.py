@@ -23,4 +23,4 @@ print "Your name is: " + name
 # Click 'Run' again on the upper right corner and check what is printed on the console.
 
 # Congratulations! You've just saved data in a variable and also changed its value.
-# Variable is a very essential concept in programming.
+# Variable is a very essential concept in programming. You'll learn a lot more about during the course.

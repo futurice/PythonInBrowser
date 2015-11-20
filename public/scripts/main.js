@@ -1,7 +1,7 @@
 var app = (function() {
   var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
-  var examples = ["default", "start", "print", "calculator", "bracketing", "square", "variable", "wall"];
+  var examples = ["default", "start", "print", "calculator", "bracketing", "square", "variable", "wall", "free"];
   var exercises = [];
   var code = localStorage.getItem("myCode");
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
@@ -112,6 +112,7 @@ var app = (function() {
   }
 
   function setCode(code) {
+    $("#mycanvas").empty();
     myCodeMirror.doc.setValue(code);
   }
 

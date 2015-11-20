@@ -146,6 +146,7 @@ var app = (function() {
 
   return {
     run: function() {
+      $("#mycanvas").empty();
       var prog = readCode();
       var mypre = document.getElementById("output");
       var width = document.getElementById("mycanvas").offsetWidth;

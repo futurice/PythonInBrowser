@@ -112,6 +112,7 @@ var app = (function() {
   }
 
   function setCode(code) {
+    $("#mycanvas").empty();
     myCodeMirror.doc.setValue(code);
   }
 

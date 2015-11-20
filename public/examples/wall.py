@@ -1,4 +1,4 @@
-#wall.py
+# wall.py
 import turtle
 
 # Exercise, fix turtle to find a hole in the wall

@@ -7,17 +7,20 @@ var app = (function() {
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
   var myCodeMirror;
 
-  initExamples();
-  initVariables(user, code);
-  initCodeMirror();
-  initClickHandlers();
-  initLocalSave();
+  initExamples(initUI);
 
   /*
    * Initializing functions
    */
 
-  function initExamples() {
+  function initExamples(callback) {
+    var index = examples.length;
+
+    function callbackCheck() {
+      if(index === 0) {
+        callback();
+      }
+    }
     _.each(examples, function(example) {
       var path = "examples/" + example + ".py";
       $.ajax({url: path,
@@ -26,12 +29,25 @@ var app = (function() {
           if(data) {
             exercises[example] = data;
           }
+          index--;
+          callbackCheck();
+        },
+        error: function(err) {
+          console.log("reading example failed with key:" + example);
+          index--;
+          callbackCheck();
         }
       });
     });
   }
 
-  function initVariables(user, code) {
+  function initUI() {
+    initCodeMirror();
+    initClickHandlers();
+    initLocalSave();
+  }
+
+  function initCodeMirror() {
     if(user) {
       $(".name-edit").html(user);
     }
@@ -39,9 +55,6 @@ var app = (function() {
     if(!code) {
       code = exercises["default"] ? exercises["default"] : "# Welcome to PythonInBrowser";
     }
-  }
-
-  function initCodeMirror() {
     myCodeMirror = CodeMirror(editor, {
       value: code,
       mode:  "python",

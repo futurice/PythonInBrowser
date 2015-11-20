@@ -1,6 +1,7 @@
 # bracketing.py
 import turtle
 
+
 def prepare():
   wall = turtle.Turtle()
   wall.penup()
@@ -13,7 +14,7 @@ def prepare():
 
 prepare()
 
-# How long the turtle can travel until it hits the wall?
+# How long can the turtle travel until it hits the wall?
 
 # Modify the angle. It controls how much the turtle turns.
 angle = 180

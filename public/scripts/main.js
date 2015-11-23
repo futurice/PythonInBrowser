@@ -175,6 +175,9 @@ var app = (function() {
         matter: {
           path: 'modules/matter/__init__.js',
           dependencies: ['modules/matter/matter-0.8.0.min.js']
+        },
+        codeclub: {
+          path: 'modules/codeclub/codeclub.py'
         }
       };
 

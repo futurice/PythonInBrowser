@@ -2,25 +2,22 @@
 import turtle
 
 ##### INFO #####
-# Here we define a prepare functions that we use to prepare our exercise.
-def prepare():
-  wall = turtle.Turtle()
-  wall.penup()
-  wall.speed(0)
-  wall.goto(0, -500)
-  wall.left(90)
-  wall.pendown()
-  wall.forward(1000)
-
-# Here we actually call the function so that what it has inside will actually happen
-# We learn these things later so don't worry if you don't understand everything
-prepare()
+# Initialization:
+wall = turtle.Turtle()
+wall.penup()
+wall.speed(0)
+wall.goto(0, -500)
+wall.left(90)
+wall.pendown()
+wall.forward(1000)
 
 ##### EXERCISE #####
 # How long can the turtle travel until it hits the wall?
 # Modify the angle. It controls how much the turtle turns.
+# Test different values for the angle and try to find the
+# exact value when the turtle hits the wall.
 
-angle = 180
+angle = 180.0
 
 t = turtle.Turtle()
 t.forward(70)

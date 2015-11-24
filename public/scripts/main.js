@@ -178,6 +178,9 @@ var app = (function() {
         },
         codeclub: {
           path: 'modules/codeclub/codeclub.py'
+        },
+        coordinates: {
+          path: 'modules/basic/basic.py'
         }
       };
 

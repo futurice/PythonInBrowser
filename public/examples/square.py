@@ -1,4 +1,7 @@
+##### FILE #####
 # square.py
+# Let's draw a square on the canvas
+
 import turtle
 
 ##### INFO #####
@@ -20,6 +23,7 @@ t.forward(50)
 ##### EXERCISE #####
 # What do you need to add to have the turtle walk a square
 # and return where he started?
+# TIP: you can always hit 'Run' to check what you're about to draw.
 
 # add code here:
 
@@ -31,7 +35,6 @@ t.forward(50)
 
 
 
-# additional exercise, what would you need to add to have the
+##### additional exercise #####
+# how would you need to change the commands to have the
 # turtle draw a diamond (square with tip towards the top) instead?
-
-

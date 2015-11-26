@@ -1,8 +1,11 @@
+##### FILE #####
 # bracketing.py
 import turtle
 
 ##### INFO #####
-# Initialization:
+# Here we draw a wall in the middle of the screen.
+# You can again look at the code but don't worry
+# if you don't understand it thoroughly yet.
 wall = turtle.Turtle()
 wall.penup()
 wall.speed(0)

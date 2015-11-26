@@ -1,9 +1,9 @@
+##### FILE #####
 # variable.py
+# Goal: Let's check if the computer can remember your name.
+# This is achieved by using a variable.
 
 ##### INFO #####
-# Goal: Let's check if the computer can remember your name.
-# This is achieved by using a variable
-
 # Write your name like this, but replace "Tuomas" with your own name.
 name = "Tuomas"
 
@@ -20,7 +20,8 @@ print "Your name is: " + name
 
 ##### EXERCISE #####
 # Click 'Run' on the upper right corner.
-# See, the computer now remembers your name. It's been saved in a variable called 'name'.
+# See, the computer now remembers your name.
+# It's been saved in a variable called 'name'.
 
 # Let's change the contents of 'name'.
 # Write another name on line 7, after 'name' and '=',
@@ -29,4 +30,5 @@ print "Your name is: " + name
 # Click 'Run' again and check what is printed on the console.
 
 # Congratulations! You've just saved data in a variable and also changed its value.
-# Variable is a very essential concept in programming. You'll learn a lot more about it during the course.
+# Variable is a very essential concept in programming.
+# You'll learn a lot more about it during the course.

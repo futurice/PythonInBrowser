@@ -1,19 +1,23 @@
+##### FILE #####
 # print.py
-# Now we know how to print!
+# Now we know how to print. Let's practice a bit more.
 
-print "Welcome to study with Python"
+print "Welcome to study with Python..."
 
 ##### EXERCISE #####
-# 1. Write on line 6 code that prints your name to the console
+# 1. Write on the next line a piece of code that prints your name to the console
 
 
-# 2. If you want to print scandic letters you have to add u in front of the text, like this.
-# Take the '#' away and click run
+# 2. If you want to print scandic letters you have to add u in front of the text.
+# Take the '#' away from the line below, and click run.
+# Make sure you don't leave any white space in the beginning of the line.
 # print u"äö"
 
-# 3. We can also print other things than text
-# Remove '#' from the beginning of the beginning of next line and try running the code
+# 3. We can also print other things than text.
+# Remove '#' from the beginning of the beginning of next lines
+# and try running the code
 # print 1 + 1
+# print 100 + 50
 
 # 4. Make more calculations. Print the result to the console and let the computer do the calculation.
 # Whenever printing content to console remember to start the line with 'print'

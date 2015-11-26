@@ -1,10 +1,14 @@
+##### FILE #####
 # wall.py
+# Goal: fix turtle to find a hole in the wall
+
+# We need to remember to import a turtle every time we want to use it.
 import turtle
 
 ##### INFO #####
-# Goal: fix turtle to find a hole in the wall
-
-# here we create a wall to the middle of the screen
+# Here we create a wall to the middle of the screen
+# You can look at the code
+# but don't worry if it looks too complicated at this point.
 wall = turtle.Turtle()
 wall.hideturtle()
 wall.speed("fastest")
@@ -25,8 +29,6 @@ wall.setx(200)
 # create a red dot
 wall.dot(20, "red")
 
-
-
 # here we create new turtle, with name Joe
 joe = turtle.Turtle()
 
@@ -37,7 +39,8 @@ joe.right(90)
 joe.forward(50)
 
 ##### EXERCISE #####
-# what do you need to add to have Joe walk to the red dot?
+# Hit 'Run' and see where Joe is about to go.
+# What do you need to add to have Joe walk to the red dot?
 # Don't touch the wall!
 
 # add code here:

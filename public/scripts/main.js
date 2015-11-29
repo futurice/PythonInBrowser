@@ -1,7 +1,7 @@
 var app = (function() {
   var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
-  var examples = ["default", "start", "print", "calculator", "bracketing", "square", "variable", "wall", "free", "turtle"];
+  var examples = ["default", "session1/start", "session1/print", "session1/calculator", "session1/bracketing", "session1/square", "session1/variable", "session1/wall", "session1/free", "session1/turtle"];
   var exercises = [];
   var code = localStorage.getItem("myCode");
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;

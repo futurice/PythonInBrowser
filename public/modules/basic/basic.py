@@ -1,6 +1,7 @@
 import turtle
 
 t = turtle.Turtle()
+t.color("#545454")
 
 def drawAxis(minW, minH):
   t.goto(minW, minH)
@@ -24,6 +25,7 @@ def drawTicksY(min):
     t.forward(5)
     t.penup()
 
+
 def drawXnumbers(minValue):
   t.penup()
   t.goto(minValue, 0)
@@ -34,6 +36,7 @@ def drawXnumbers(minValue):
     else:
       t.goto(minValue + 50 * x, 10)
     t.write(minValue + 50 * x)
+
 
 def drawYnumbers(minValue):
   t.penup()
@@ -47,6 +50,35 @@ def drawYnumbers(minValue):
     else:
       t.goto(10, minValue + 50 * x)
     t.write(minValue + 50 * x)
+
+
+def drawDots():
+  joe = turtle.Turtle()
+  size = 4
+  joe.penup()
+  joe.color("blue")
+  joe.goto(0, 50)
+  joe.dot(size)
+  joe.goto(0, 100)
+  joe.dot(size)
+  joe.goto(100, 0)
+  joe.dot(size)
+  joe.goto(100, 150)
+  joe.dot(size)
+  joe.goto(50, 75)
+  joe.dot(size)
+  joe.goto(-150, 20)
+  joe.dot(size)
+  joe.goto(-250, 35)
+  joe.dot(size)
+  joe.goto(-200, 50)
+  joe.dot(size)
+  joe.goto(-250, 75)
+  joe.dot(size)
+  joe.goto(-200, 125)
+  joe.dot(size)
+  joe.penup()
+  joe.goto(600, 600)
 
 
 def prepareCoordinates():

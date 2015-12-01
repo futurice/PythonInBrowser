@@ -198,6 +198,16 @@ button:hover {
     clear: both;
 }
 
+.session-header {
+    font-weight: bold;
+}
+.session-header:hover {
+    color: #00d9ff;
+    cursor: pointer;
+}
+.session-exercises {
+    display: none;
+}
 .name {
     display: inline-block;
     vertical-align: middle;
@@ -206,4 +216,8 @@ button:hover {
 .name-edit {
     background-color: #DBDEDE;
     width: 200px;
+}
+
+.not-ready {
+    display: none;
 }

@@ -1,0 +1,22 @@
+{
+    "examples": [
+        {"key": "start", "session": "session1"},
+        {"key": "print", "session": "session1"},
+        {"key": "calculator", "session": "session1"},
+        {"key": "bracketing", "session": "session1"},
+        {"key": "square", "session": "session1"},
+        {"key": "variable", "session": "session1"},
+        {"key": "wall", "session": "session1"},
+        {"key": "free", "session": "session1"},
+        {"key": "turtle", "session": "session1"},
+        {"key": "start2", "session": "session2"},
+        {"key": "arrowhouse", "session": "session2"},
+        {"key": "coordinates", "session": "session2"},
+        {"key": "dots", "session": "session2"},
+        {"key": "lines", "session": "session2"},
+        {"key": "indentation", "session": "session2"},
+        {"key": "obstacles", "session": "session2"},
+        {"key": "iterator", "session": "session2"},
+        {"key": "flower", "session": "session2"}
+    ]
+}

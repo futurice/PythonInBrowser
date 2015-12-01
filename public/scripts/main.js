@@ -1,33 +1,51 @@
 var app = (function() {
   var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
-  var examples = ["default", "session1/start", "session1/print", "session1/calculator", "session1/bracketing", "session1/square", "session1/variable", "session1/wall", "session1/free", "session1/turtle"];
+  var defaultText = "# Welcome to learn Python";
   var exercises = [];
   var code = localStorage.getItem("myCode");
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
   var myCodeMirror;
 
-  initExamples(initUI);
+  initApp();
 
   /*
    * Initializing functions
    */
 
-  function initExamples(callback) {
-    var index = examples.length;
+  function initApp() {
+    $.ajax({url: "examples/examples.json",
+        dataType: "json",
+        async: true,
+        success: function(data) {
+          if(data && data.examples) {
+            initExamples(data.examples);
+          } else {
+            console.log("reading example.json failed");
+          }
+        },
+        error: function(err) {
+          console.log("reading example.json failed");
+        }
+    });
+    initUI();
+  }
 
+  function initExamples(examples) {
+    var index = examples.length;
     function callbackCheck() {
       if(index === 0) {
-        callback();
+        $(".exercise-container").removeClass("not-ready");
+        $(".no-content").hide();
       }
     }
     _.each(examples, function(example) {
-      var path = "examples/" + example + ".py";
+      var path = "examples/" + example.session + "/" + example.key + ".py";
       $.ajax({url: path,
         async: false,
         success: function(data) {
           if(data) {
-            exercises[example] = data;
+            exercises[example.key] = data;
           }
           index--;
           callbackCheck();
@@ -53,7 +71,7 @@ var app = (function() {
     }
 
     if(!code) {
-      code = exercises["default"] ? exercises["default"] : "# Welcome to PythonInBrowser";
+      code = defaultText;
     }
     myCodeMirror = CodeMirror(editor, {
       value: code,
@@ -67,13 +85,19 @@ var app = (function() {
   }
 
   function initClickHandlers() {
-    $(".default-exercises > a > li").on('click', function(event) {
+    $(".session-exercises > a > li").on('click', function(event) {
       var id = $(this).attr("id");
       setCode(exercises[id]);
     });
 
     $(".own-exercises").on("click", "a>li>pre", function(event) {
       getCode($(this).parent("li").attr("id"), $(this).parent("li").data("parent"));
+    });
+
+    $(".session-header").on("click", function(event) {
+        var id = $(this).data("key");
+        $(".session-exercises").hide();
+        $("#" + id).show();
     });
   }
 

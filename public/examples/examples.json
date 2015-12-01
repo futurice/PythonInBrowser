@@ -17,6 +17,7 @@
         {"key": "indentation", "session": "session2"},
         {"key": "obstacles", "session": "session2"},
         {"key": "iterator", "session": "session2"},
-        {"key": "flower", "session": "session2"}
+        {"key": "flower", "session": "session2"},
+        {"key": "free2", "session": "session2"}
     ]
 }

@@ -49,7 +49,8 @@
 # To achieve that we must import the turtle and assign it to a variable.
 
 # <------ import turtle here ------->
-# <------ assign turtle here to a variable called 'jane' ------>
+# like this: import turtle
+# <------ assign turtle here to a variable called 'jane', remember? ------>
 
 # Draw a simple line with the turtle that moves followingly:
 #

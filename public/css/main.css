@@ -216,6 +216,7 @@ button:hover {
 .name-edit {
     background-color: #DBDEDE;
     width: 200px;
+    height: 20px;
 }
 
 .not-ready {

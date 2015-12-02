@@ -245,6 +245,7 @@ var app = (function() {
         }
         myFirebaseRef.ref().once("value", function(snapshot) {
           if(snapshot.val()) {
+            $(".own-exercises").empty();
             _.each(snapshot.val(), function(snippet, key) {
               var date = moment(snippet.timestamp).format("DD.MM.YYYY HH:mm:ss");
               $(".own-exercises").append("<a href='#close'><li id=" +  key + " data-parent=" + result + "><div class='date'>" + date + "</div><pre>" + snippet.code + "</pre></li></a>");

@@ -21,11 +21,11 @@ var app = (function() {
           if(data && data.examples) {
             initExamples(data.examples);
           } else {
-            console.log("reading example.json failed");
+            console.error("reading example.json failed");
           }
         },
         error: function(err) {
-          console.log("reading example.json failed");
+          console.error("reading example.json failed");
         }
     });
     initUI();
@@ -51,7 +51,7 @@ var app = (function() {
           callbackCheck();
         },
         error: function(err) {
-          console.log("reading example failed with key:" + example);
+          console.error("reading example failed with key:" + example);
           index--;
           callbackCheck();
         }
@@ -67,7 +67,7 @@ var app = (function() {
 
   function initCodeMirror() {
     if(user) {
-      $(".name-edit").html(user);
+      $(".name-edit").empty().text(user);
     }
 
     if(!code) {
@@ -163,6 +163,7 @@ var app = (function() {
 
   function saveNameLocally(name) {
     localStorage.setItem("pythonInBrowserUser", name);
+    $(".name-edit").empty().text(name);
   }
 
   /*
@@ -220,7 +221,8 @@ var app = (function() {
     },
 
     save: function() {
-      var result = $(".name-edit").html();
+      var result = $(".name-edit-save").text();
+      saveNameLocally(result);
       var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
       if (!myFirebaseRef) {
         setErrorMessage('Firebase not configured');
@@ -235,7 +237,7 @@ var app = (function() {
     },
 
     load: function() {
-      var result = $(".name-edit").html();
+      var result = $(".name-edit-load").text();
       saveNameLocally(result);
       $(".own-exercises").empty();
       if(result && result.length > 1) {

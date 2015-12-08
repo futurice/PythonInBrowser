@@ -19,7 +19,8 @@ var app = (function() {
         async: true,
         success: function(data) {
           if(data && data.examples) {
-            initExamples(data.examples);
+            initExamples(data.examples, "examples", "exercise-container");
+            initExamples(data.modules, "modules", "module-container");
           } else {
             console.error("reading example.json failed");
           }
@@ -31,16 +32,16 @@ var app = (function() {
     initUI();
   }
 
-  function initExamples(examples) {
+  function initExamples(examples, folder, className) {
     var index = examples.length;
     function callbackCheck() {
       if(index === 0) {
-        $(".exercise-container").removeClass("not-ready");
+        $("."+ className).removeClass("not-ready");
         $(".no-content").hide();
       }
     }
     _.each(examples, function(example) {
-      var path = "examples/" + example.session + "/" + example.key + ".py";
+      var path = folder + "/" + example.session + "/" + example.key + ".py";
       $.ajax({url: path,
         async: false,
         success: function(data) {

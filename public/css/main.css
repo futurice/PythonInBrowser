@@ -167,21 +167,22 @@ button:hover {
     background: #00d9ff;
 }
 
-.exercise-container {
+.exercise-container, .module-container {
     max-height: 300px;
     overflow: auto;
 }
 
-.exercise-container a {
+.exercise-container a, .module-container a {
     text-decoration: none;
 }
 
-.exercise-container ul {
+.exercise-container ul, .module-container ul {
     padding: 0;
 }
 
-.exercise-container ul li {
+.exercise-container ul li, .module-container ul li {
     list-style: none;
+    margin-left: 20px;
 }
 
 .exercise-container .date {

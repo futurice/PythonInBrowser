@@ -7,9 +7,9 @@ t = turtle.Turtle()
 
 ##### INFO #####
 
-# Here we have a function that defines triangle
+# Here we have a function that draws a triangle.
 # It takes one variable 'side'.
-# 'Side' defines the length of the side in triangle
+# 'Side' defines the length of the side in the triangle.
 # Read the code, explain to your friend what is happening in each line
 
 def triangle(side):

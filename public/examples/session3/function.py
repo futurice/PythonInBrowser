@@ -2,6 +2,9 @@
 # function.py
 # Let's learn to write functions
 
+import turtle
+t = turtle.Turtle()
+
 ##### INFO #####
 # Sometimes one wants to repeat some commands multiple times, maybe
 # with minor modifications. It is possible to avoid writing the same
@@ -12,26 +15,25 @@
 # multiplying the radius of the circle by itself and by the number pi.
 #
 # Pi is a mathematical constant. It's approximate value is below:
-import turtle
-t = turtle.Turtle()
+
 pi = 3.14159265359
 
-# We can compute the area of a circle with radius of 5 as follows:
+# We can compute the area of a circle with radius of 15 as follows:
 
-area5 = pi * 5 * 5
-t.circle(5)
-print 'Area of circle with radius 2 is ' + str(area5)
+area15 = pi * 15 * 15
+t.circle(15)
+print 'Area of circle with radius 15 is ' + str(area15)
 
-# Area of a bit larger circle that has radius 3 is:
+# Area of a bit larger circle that has radius 22 is:
 
-area8 = pi * 8 * 8
-t.circle(8)
-print 'Area of circle with radius 3 is ' + str(area8)
+area22 = pi * 22 * 22
+t.circle(22)
+print 'Area of circle with radius 22 is ' + str(area22)
 
 ##### EXERCISES #####
 
 ##### EXERCISE 1 #####
-# What is the area of a circle that has radius of 10?
+# What is the area of a circle that has radius of 30?
 
 
 ##### EXERCISE 2 #####
@@ -46,26 +48,25 @@ def circle_area(radius):
 # function consists of only one indented line, but it is possible to
 # create functions with more lines).
 #
-# The circle_area function takes one parameter called radius. We need
-# to specify a value for the parameter by writing the value in
-# parenthesis after the function name like this: circle_area(2). In
-# this example, the radius variable in the function will be 2 when the
-# function is executed.
+# The circle_area function, which we just defined above, takes one
+# parameter called radius. We need to specify a value for the
+# parameter by writing the value in parenthesis after the function
+# name like this: circle_area(15). In this example, the radius
+# variable in the function will be 15 when the function is executed.
 #
-# We can use the function to compute the area of circle with radius 2
+# We can use the function to compute the area of circle with radius 15
 # (again):
 
-area2_with_function = circle_area(2)
-t.circle(2)
-print 'Area of circle with radius 2 computed by a function is ' + str(area2_with_function)
+area15_with_function = circle_area(15)
+print 'Area of circle with radius 15 computed by a function is ' + str(area15_with_function)
 
 # 1. Check that the value you got here is the same as the first value
 # we computed in this exercise. They should be the same because they
-# both are the area of a circle with radius 2.
+# both are the area of a circle with radius 15.
 
-# 2. Compute the area of circle with radius 3 using the function.
+# 2. Compute the area of circle with radius 22 using the function.
 
-# 3. Compute the area of circle with radius 10 using the function.
+# 3. Compute the area of circle with radius 30 using the function.
 
 ##### ADDITIONAL EXERCISE #####
 # Let's try a different function. This function counts the number of

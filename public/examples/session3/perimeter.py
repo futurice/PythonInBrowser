@@ -8,8 +8,8 @@ import turtle
 # Perimeter is the distance the turtle travels when it draws a closed
 # polygon.
 
-# A helper function that moves the turtle to the location (x, y) but
-# does not draw a line.
+# Below is a helper function that moves the turtle to the location
+# (x, y) but does not draw a line.
 def move_turtle_to(t, x, y):
   t.penup()
   t.goto(x, y)
@@ -18,8 +18,9 @@ def move_turtle_to(t, x, y):
 
 # A function that draws a square and returns its perimeter.
 #
-# Parameter t is a turtle.
-# Parameter side is a number that tells how long a side of the square is.
+# The parameter 't' is a turtle.
+# The parameter 'side' is a number that tells how long a side of the
+# square is.
 def square(t, side):
   distance = 0
   for i in range(4):
@@ -42,8 +43,8 @@ print "Square's perimeter: " + str(square_perimeter)
 
 ##### EXERCISE 1 #####
 # Complete the following function so that it draws a star. Each side
-# of should be equally long, and the parameter side should determine
-# the length of a side.
+# of should be equally long, the parameter 'side' determines the
+# length of a side.
 #
 # The return value of the function should be the perimeter.
 

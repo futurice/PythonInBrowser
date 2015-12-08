@@ -1,10 +1,10 @@
 ##### FILE #####
 # start3.py
-# Let's go through what we learnt last week
+# Let's go through what we learned last week.
 # If something is unclear, don't hesitate to ask for help!
 
 ##### INFO #####
-# In last session we learned these function:
+# In the last session, we learned these functions:
 # Goto, pendown, penup, color
 # We also learned how to write a For -loop
 

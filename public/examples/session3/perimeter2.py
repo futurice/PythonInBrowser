@@ -42,7 +42,7 @@ def polygon(n):
   # Compute the side length of the polygon
   step = 2 * r * sin(pi/n)
 
-  # Draw the polygon and record the it's perimeter
+  # Draw the polygon and record its perimeter
   distance = 0
   for i in range(n):
     distance = distance + step
@@ -51,16 +51,18 @@ def polygon(n):
     
   return distance
 
-# If we continue to increase the number of polygon's sides towards
-# infinity, the polygon can be thought to trace the circle exactly
-# eventually. The total distance along the infinite-sided polygon
-# (that is, the true circumference of the circle) will be the value
-# computed on the next line. (Proving this requires some rather
-# advanced mathematical tools.)
+# If the number of polygon's sides is increased towards infinity, the
+# polygon can be thought to trace the circle exactly eventually. The
+# total distance along the infinite-sided polygon (that is, the true
+# circumference of the circle) will be the value computed on the next
+# line. (Proving this requires some rather advanced mathematical
+# tools.)
 
 true_circumference = 2 * pi * r
 
 ##### EXERCISES #####
+# polygon(3) draws a triangle. Press run and see what happens!
+#
 # Try increasing the number of of polygon's sides (the number in the
 # parenthesis) and observe how the polygon matches the circle better
 # and better.
@@ -73,7 +75,7 @@ print "Difference: " + str(true_circumference - distance)
 
 # How many sides the polygon must at least have so that the difference
 # to the correct circumference (see the last print command) is less
-# than 1 % of the true circumference?
+# than 1 % of the circle's true circumference?
 
 # How many sides are required so that you don't see any difference
 # between the polygon and the circle on the screen?

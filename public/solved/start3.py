@@ -40,6 +40,26 @@ def leaf(x):
 # Note! You don't want to see anything else on your canvas than what is drawn in the leaf function.
 # So take care to add penup and pendown when needed.
 
+t.penup()
+t.goto(-200, 200)
+t.color("pink")
+t.pendown()
+for i in range(0, 6):
+  leaf(102)
+
+t.penup()
+t.goto(-50, 30)
+t.color("blue")
+t.pendown()
+for i in range(0, 6):
+  leaf(102)
+
+t.penup()
+t.goto(100, -100)
+t.color("green")
+t.pendown()
+for i in range(0, 6):
+  leaf(102)
 
 # 4.
 # After drawing all these steps take a look at your code.

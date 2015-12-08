@@ -12,18 +12,21 @@
 # multiplying the radius of the circle by itself and by the number pi.
 #
 # Pi is a mathematical constant. It's approximate value is below:
-
+import turtle
+t = turtle.Turtle()
 pi = 3.14159265359
 
-# We can compute the area of a circle with radius of 2 as follows:
+# We can compute the area of a circle with radius of 5 as follows:
 
-area2 = pi * 2 * 2
-print 'Area of circle with radius 2 is ' + str(area2)
+area5 = pi * 5 * 5
+t.circle(5)
+print 'Area of circle with radius 2 is ' + str(area5)
 
 # Area of a bit larger circle that has radius 3 is:
 
-area3 = pi * 3 * 3
-print 'Area of circle with radius 3 is ' + str(area3)
+area8 = pi * 8 * 8
+t.circle(8)
+print 'Area of circle with radius 3 is ' + str(area8)
 
 ##### EXERCISES #####
 
@@ -53,6 +56,7 @@ def circle_area(radius):
 # (again):
 
 area2_with_function = circle_area(2)
+t.circle(2)
 print 'Area of circle with radius 2 computed by a function is ' + str(area2_with_function)
 
 # 1. Check that the value you got here is the same as the first value

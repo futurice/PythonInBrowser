@@ -21,6 +21,7 @@
         {"key": "free2", "session": "session2"},
         {"key": "start3", "session": "session3"},
         {"key": "function", "session": "session3"},
-        {"key": "free3", "session": "session3"}
+        {"key": "free3", "session": "session3"},
+        {"key": "polygon", "session": "session3"}
     ]
 }

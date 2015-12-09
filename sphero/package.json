@@ -1,0 +1,13 @@
+{
+  "name": "sphero",
+  "version": "0.0.0",
+  "description": "sphero turtle",
+  "main": "sphero.js",
+  "dependencies": {
+    "cylon": "^1.2.0",
+    "lodash": "^3.10.1",
+    "cylon-sphero": "^0.23.0"
+  },
+  "devDependencies": {},
+  "scripts": {}
+}

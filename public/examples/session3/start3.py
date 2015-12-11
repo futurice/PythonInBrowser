@@ -13,7 +13,7 @@ t = turtle.Turtle()
 
 def leaf(x):
   if x == 0:
-    t.forward(0)
+    return
   else:
     t.forward(x/10.0)
     t.right(10)

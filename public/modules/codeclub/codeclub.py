@@ -27,11 +27,11 @@ def leftTurnHard(angle, t):
 def fd(lenght, t):
     t.forward(lenght * scale)
 
-def drawCircleArena():
-    t = turtle.Turtle()
+
+def drawCircleArena(t):
     t.penup()
-    t.goto(0, -200)
     t.speed(0)
+    t.goto(0, -200)
     t.pendown()
     t.circle(200)
     t.penup()
@@ -42,11 +42,15 @@ def drawCircleArena():
     t.color("red")
     t.forward(100)
     t.penup()
-    t.goto(600, 600)
+
+    t.color("black")
+    t.setheading(0)
+    t.goto(0, -250)
+    t.speed(6)
+    t.pendown()
 
 
-def drawArena():
-    t = turtle.Turtle()
+def drawArena(t):
     t.penup()
     t.speed(0)
     t.goto(-50, 0)
@@ -86,7 +90,11 @@ def drawArena():
     t.color("red")
     fd(110, t)
     t.penup()
-    t.goto(600, 600)
+    t.color("black")
+    t.setheading(0)
+    t.goto(-50, -95)
+    t.speed(6)
+    t.pendown()
 
 
 def drawArena2(t, scale=1.0):

@@ -1,32 +1,28 @@
 import turtle
 scale = 0.6
 def rt(angle, t, factor):
-    for i in range(0, angle):
-        t.forward(factor * scale)
-        t.right(1)
+    t.circle(-scale*factor, angle)
 
 def lt(angle, t, factor):
-    for i in range(0, angle):
-        t.forward(factor * scale)
-        t.left(1)
+    t.circle(scale*factor, angle)
 
 def rightTurn(angle, t):
-    rt(angle, t, 2)
+    rt(angle, t, 120)
 
 def leftTurn(angle, t):
-    lt(angle, t, 2)
+    lt(angle, t, 120)
 
 def rightTurnEasy(angle, t):
-    rt(angle, t, 4)
+    rt(angle, t, 240)
 
 def leftTurnEasy(angle, t):
-    lt(angle, t, 4)
+    lt(angle, t, 240)
 
 def rightTurnHard(angle, t):
-    rt(angle, t, 1)
+    rt(angle, t, 60)
 
 def leftTurnHard(angle, t):
-    lt(angle, t, 1)
+    lt(angle, t, 60)
 
 def fd(lenght, t):
     t.forward(lenght * scale)
@@ -52,9 +48,9 @@ def drawCircleArena():
 def drawArena():
     t = turtle.Turtle()
     t.penup()
+    t.speed(0)
     t.goto(-50, 0)
     t.right(90)
-    t.speed(0)
     t.penup()
     fd(100, t)
     t.left(90)
@@ -69,7 +65,7 @@ def drawArena():
     leftTurn(45, t)
     fd(200, t)
     leftTurn(180, t)
-    fd(270, t)
+    fd(283, t)
     t.penup()
     t.right(90)
     fd(110, t)

@@ -26,6 +26,8 @@ def snowflakeBranch(t, lenght):
 # The size of the snowflake is random value between 10-30
 # The position of snowflake is (x, y) where x and y vary from -300 to 300
 def letThereBeSnow(max):
+  screen = turtle.Screen()
+  screen.bgcolor("#deeff5")
   turt = turtle.Turtle()
   turt.color("lightblue")
   turt.speed("fastest")

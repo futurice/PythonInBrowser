@@ -2,7 +2,10 @@
 # arena.py
 
 import codeclub
-codeclub.drawArena()
+import turtle
+
+t = turtle.Turtle()
+codeclub.drawArena(t)
 
 ##### EXERCISE #####
 # Can you solve the track with Turtle?

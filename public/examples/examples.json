@@ -26,10 +26,12 @@
         {"key": "random", "session": "session3"},
         {"key": "free3", "session": "session3"},
         {"key": "polygon", "session": "session3"},
-        {"key": "arena", "session": "session4"}
+        {"key": "arena", "session": "session4"},
+        {"key": "snow", "session": "extra"}
     ],
     "modules": [
         {"key": "basic", "session": "basic" },
-        {"key": "codeclub", "session": "codeclub" }
+        {"key": "codeclub", "session": "codeclub" },
+        {"key": "winter", "session": "winter" }
     ]
 }

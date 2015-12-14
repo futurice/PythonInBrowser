@@ -208,6 +208,9 @@ var app = (function() {
         },
         coordinates: {
           path: 'modules/basic/basic.py'
+        },
+        winter: {
+          path: 'modules/winter/winter.py'
         }
       };
 

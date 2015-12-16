@@ -5,7 +5,6 @@ import codeclub
 import turtle
 
 t = turtle.Turtle()
-codeclub.drawFirstArena(t)
 
 ##### EXERCISE #####
 # 1.

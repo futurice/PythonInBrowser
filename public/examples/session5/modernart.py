@@ -3,6 +3,18 @@
 import turtle
 import random
 
+##### EXERCISES #####
+
+##### EXERCISE 1 #####
+# You job in this exercise is to understand and read the code.
+# First take a look at all functions. Read them through.
+# Try to understand - don't worry if you don't get everything.
+#
+# After a while you notice that 'initializeModernArt' is the only function that is called outside other functions.
+# Start from there, read what happens and where does the code go next.
+# You can also run the program at the same time if it helps you reading it.
+# Also if you feel like it, you add things to the code, for example yupu could print something in functions so that you know where you are going.
+
 t = turtle.Turtle()
 
 boundX = 180.0

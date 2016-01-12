@@ -3,11 +3,6 @@
 import turtle
 t = turtle.Turtle()
 
-##### INFO #####
-# Remember functions?
-#
-
-
 ##### EXERCISES #####
 
 ##### EXERCISE 1 #####
@@ -16,7 +11,7 @@ t = turtle.Turtle()
 # Explain to yourself or to your friend what does calling a function mean
 
 def hello(name):
-    print "Hi " +  name + "!"
+  print "Hi " +  name + "!"
 
 def triangle(side):
   for i in range(0, 3):
@@ -27,22 +22,23 @@ def triangle(side):
 # Fill a function called multiply.
 # You can test if your function works by calling function testMultiply.
 
-def multiply():
-    #fill this part
-    # you might want to return something in the end of your function
+def multiply(x, y):
+  #fill this part
+  # you might want to return something in the end of your function and not 0
+  return 0
 
 def testMultiply():
-    value1 = multiply(5, 6)
-    if value1 == 30:
-        print "function works, 5 * 6 = 30"
-    else:
-        print "Ups! Something wrong with function."
+  value1 = multiply(5, 6)
+  if value1 == 30:
+    print u"function works, 5 * 6 = 30"
+  else:
+    print "Ups! Something wrong with function."
 
-    value2 = multiply(385, 525)
-    if value2 == 202125:
-        print "function works, 385 * 525 = 202 125"
-    else:
-        print "Ups! Something wrong with function."
+  value2 = multiply(385, 525)
+  if value2 == 202125:
+    print u"function works, 385 * 525 = 202 125"
+  else:
+    print "Ups! Something wrong with function."
 
 ##### EXERCISE 3 #####
 # Write your own function.

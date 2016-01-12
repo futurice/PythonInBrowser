@@ -30,6 +30,7 @@
         {"key": "snow", "session": "extra"},
         {"key": "start5", "session": "session5"},
         {"key": "movingrandomly", "session": "session5"},
+        {"key": "differentdrawing", "session": "session5"},
         {"key": "modernart", "session": "session5"}
     ],
     "modules": [

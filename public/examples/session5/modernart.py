@@ -17,8 +17,8 @@ import random
 
 t = turtle.Turtle()
 
-boundX = 180.0
-boundY = -180.0
+boundMax = 180.0
+boundMin = -180.0
 
 # This function draws two squares as a frame to our modern art painting
 # In the end, it calls the function 'doMove' for the first time.
@@ -51,7 +51,9 @@ def collision():
   y = t.ycor() #  y coordinate of our turtle
 
   # Check if we are more that 15 away from inner border
-  if ((x > boundX) & (x - boundX > 15)) | ((x < boundY) & (boundY - x > 15)) | ((y > boundX) & (y - boundX > 15)) | ((y < boundY) & (boundY - y > 15)):
+  xOverBounds = (x - boundMax > 15) | (boundMin - x > 15)
+  yOverBounds = (y - boundMax > 15) | (boundMin - y > 15)
+  if xOverBounds | yOverBounds:
     # if we are we call 'majorCollision' function
     majorCollision()
   else:
@@ -79,7 +81,9 @@ def doMove():
   x = t.xcor()
   y = t.ycor()
   # Let's check if we are inside boundaries
-  if (x <= boundX) & (x >= boundY) & (y <= boundX) & (y >= boundY):
+  xInBounds = (x <= boundMax) & (x >= boundMin)
+  yInBounds = (y <= boundMax) & (y >= boundMin)
+  if xInBounds & yInBounds:
     t.color("green")
     t.forward(10)
     doMove()

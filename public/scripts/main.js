@@ -189,8 +189,8 @@ var app = (function() {
         canvasID: "mycanvas",
         animate: false,
         degrees: true,
-        width: 600,
-        height: 600
+        width: 0,
+        height: 0
       };
       Sk.matter = {
         target: "mycanvas",

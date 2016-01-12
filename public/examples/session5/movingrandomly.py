@@ -41,3 +41,7 @@ def doMove():
 # This is the first function call of 'doMove'
 doMove()
 
+##### EXERCISE 4 #####
+# Did your Turtle dissappear?
+# How could we prevent that?
+# Let's look into this next.

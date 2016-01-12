@@ -34,7 +34,7 @@ def doMove():
   x = t.xcor()
   y = t.ycor()
   # This if clause checks if we are inside the window
-  if (x < maxWidth) & (x > minWidth) & (y < maxHeight) & (y > minHeight):
+  if (x < maxWidth) and (x > minWidth) and (y < maxHeight) and (y > minHeight):
     # If the turtle is inside the window, it moves 10 pixels forward...
     t.forward(10)
     # ...and calls again this same function

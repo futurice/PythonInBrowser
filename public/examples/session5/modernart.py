@@ -51,9 +51,9 @@ def collision():
   y = t.ycor() #  y coordinate of our turtle
 
   # Check if we are more that 15 away from inner border
-  xOverBounds = (x - boundMax > 15) | (boundMin - x > 15)
-  yOverBounds = (y - boundMax > 15) | (boundMin - y > 15)
-  if xOverBounds | yOverBounds:
+  xOverBounds = (x - boundMax > 15) or (boundMin - x > 15)
+  yOverBounds = (y - boundMax > 15) or (boundMin - y > 15)
+  if xOverBounds or yOverBounds:
     # if we are we call 'majorCollision' function
     majorCollision()
   else:
@@ -81,9 +81,9 @@ def doMove():
   x = t.xcor()
   y = t.ycor()
   # Let's check if we are inside boundaries
-  xInBounds = (x <= boundMax) & (x >= boundMin)
-  yInBounds = (y <= boundMax) & (y >= boundMin)
-  if xInBounds & yInBounds:
+  xInBounds = (x <= boundMax) and (x >= boundMin)
+  yInBounds = (y <= boundMax) and (y >= boundMin)
+  if xInBounds and yInBounds:
     t.color("green")
     t.forward(10)
     doMove()

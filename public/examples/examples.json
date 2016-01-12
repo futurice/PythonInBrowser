@@ -27,7 +27,9 @@
         {"key": "free3", "session": "session3"},
         {"key": "polygon", "session": "session3"},
         {"key": "arena", "session": "session4"},
-        {"key": "snow", "session": "extra"}
+        {"key": "snow", "session": "extra"},
+        {"key": "start5", "session": "session5"},
+        {"key": "modernart", "session": "session5"}
     ],
     "modules": [
         {"key": "basic", "session": "basic" },

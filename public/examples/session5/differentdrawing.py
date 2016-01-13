@@ -11,7 +11,7 @@ import random
 # So far we've given given exact orders
 # for the turtle to draw lines or curves.
 # This means the drawing is done without any conditions.
-# Let's do a little excersice and practice drawing within specified area.
+# Let's do a little excercise and practice drawing within specified area.
 
 # Here we define a turtle and its speed
 t = turtle.Turtle()

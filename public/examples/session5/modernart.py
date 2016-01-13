@@ -23,6 +23,7 @@ boundMin = -180.0
 # This function draws two squares as a frame to our modern art painting
 # In the end, it calls the function 'doMove' for the first time.
 def initializeModernArt():
+  t.speed(0)
   t.penup()
   t.goto(-220, -220)
   t.pendown()
@@ -36,6 +37,7 @@ def initializeModernArt():
   t.right(35)
   t.pendown()
   t.color("green")
+  t.speed(6)
   doMove()
 
 # This function draws a square

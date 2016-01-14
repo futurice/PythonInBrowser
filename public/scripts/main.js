@@ -6,6 +6,7 @@ var app = (function() {
   var code = localStorage.getItem("myCode");
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
   var myCodeMirror;
+  var errorMarker;
 
   initApp();
 
@@ -154,6 +155,20 @@ var app = (function() {
     });
   }
 
+  function setErrorHighlight(lineno) {
+    errorMarker = myCodeMirror.doc.markText(
+      {line: lineno-1, ch: 0},
+      {line: lineno-1, ch: 99999},
+      {className: "cm-error", inclusiveLeft: false, inclusiveRight: false});
+  }
+
+  function clearErrorHighlight() {
+    if (errorMarker) {
+      errorMarker.clear();
+      errorMarker = undefined;
+    };
+  }
+
   function setErrorMessage(message) {
     outf("\n" + message);
   }
@@ -175,6 +190,7 @@ var app = (function() {
     run: function() {
       $("#mycanvas").empty();
       $("#output").empty();
+      clearErrorHighlight();
       var prog = readCode();
       var mypre = document.getElementById("output");
       var width = document.getElementById("mycanvas").offsetWidth;
@@ -220,8 +236,12 @@ var app = (function() {
        myPromise.then(function(mod) {
           setErrorMessage("");
        },
-          function(err) {
-          setErrorMessage(err.toString());
+       function(err) {
+         setErrorMessage(err.toString());
+         var tb = err.traceback[0];
+         if (tb) {
+           setErrorHighlight(tb.lineno);
+         }
        });
     },
 

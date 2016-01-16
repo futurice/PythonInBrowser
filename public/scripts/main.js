@@ -167,7 +167,12 @@ var app = (function() {
     errorMarker = myCodeMirror.doc.markText(
       {line: lineno-1, ch: 0},
       {line: lineno-1, ch: 99999},
-      {className: "cm-error", inclusiveLeft: false, inclusiveRight: false});
+      {
+        className: "cm-error",
+        clearOnEnter: true,
+        inclusiveLeft: false,
+        inclusiveRight: false
+      });
   }
 
   function clearErrorHighlight() {

@@ -68,6 +68,13 @@ var app = (function() {
   }
 
   function initCodeMirror() {
+    var extraKeys = {
+      Tab: function(cm) {
+        if (cm.somethingSelected()) cm.indentSelection("add");
+        else CodeMirror.commands.insertSoftTab(cm);
+      }
+    }
+
     if(user) {
       $(".name-edit").empty().text(user);
     }
@@ -82,6 +89,7 @@ var app = (function() {
       lineNumbers: true,
       lineWrapping: true,
       tabSize: 2,
+      extraKeys: extraKeys,
       autofocus: true
     });
   }

@@ -150,6 +150,10 @@ print "The turtle reached the finish line!"
 #
 # When you press 'Run' again, new obstacles will be generted at random
 # locations.
+#
+# To see how many steps our Turtle has to take let's make a counter for that.
+# So you'll need a variable 'counter', every time MoveOnStep is called add one
+# to the counter and print it's value.
 
 ##### EXERCISE 2 #####
 

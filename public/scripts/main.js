@@ -130,9 +130,10 @@ var app = (function() {
     }
   }
 
-  function outf(text) {
+  function outputfunction(text) {
     var mypre = document.getElementById("output");
     mypre.innerHTML = mypre.innerHTML + text;
+    $("#output").scrollTop($("#output").prop('scrollHeight'));
   }
 
   function builtinRead(x) {
@@ -183,7 +184,7 @@ var app = (function() {
   }
 
   function setErrorMessage(message) {
-    outf("\n" + message);
+    outputfunction("\n" + message);
   }
 
   function saveLocally() {
@@ -210,7 +211,7 @@ var app = (function() {
       var height = document.getElementById("mycanvas").offsetHeight;
       mypre.innerHTML = "";
       Sk.pre = "output";
-      Sk.configure({output:outf, read:builtinRead});
+      Sk.configure({output:outputfunction, read:builtinRead});
       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas";
       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).width = width;
       (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).height = height;

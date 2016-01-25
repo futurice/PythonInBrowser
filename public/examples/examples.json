@@ -33,7 +33,9 @@
         {"key": "differentdrawing", "session": "session5"},
         {"key": "modernart", "session": "session5"},
         {"key": "randomwalk", "session": "session5"},
-        {"key": "escape", "session": "session6"}
+        {"key": "escape", "session": "session6"},
+        {"key": "hexahedron", "session": "session7"},
+        {"key": "magic", "session": "session7"}
     ],
     "modules": [
         {"key": "basic", "session": "basic" },

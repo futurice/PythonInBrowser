@@ -1,5 +1,4 @@
 node_modules/*
 npm-debug.log
-env.js
 firebase.json
 .DS_STORE

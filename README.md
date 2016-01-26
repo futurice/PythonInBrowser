@@ -65,6 +65,7 @@ If you want to add learning material please edit [material.json](https://github.
 * Clone this repo or take a fork
 * Install MongoDB
 * Start MongoDB
+* Create env.js file, copy content from env-default.js and add path to your local mongodb
 * In root of repo ```npm install```
 * Start application with ```nodemon```
 

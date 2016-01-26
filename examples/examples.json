@@ -1,0 +1,96 @@
+{
+  "examples": [
+    {
+      "session": "Session 1",
+      "key": "session1",
+      "type": "exercise",
+      "exercises": [
+        {"key": "start", "filename": "start.py", "description": "Start here"},
+        {"key": "print", "filename": "print.py", "description": "Learn to print"},
+        {"key": "calculator", "filename": "calculator.py", "description": "Code as calculator"},
+        {"key": "variable", "filename": "bracketing.py", "description": "What is variable?"},
+        {"key": "turtle", "filename": "square.py", "description": "Meet the Turtle!"},
+        {"key": "square", "filename": "variable.py", "description": "Let's draw a square"},
+        {"key": "wall", "filename": "wall.py", "description": "Can you beat the wall?"},
+        {"key": "bracketing", "filename": "free.py", "description": "Python syntax"},
+        {"key": "free", "filename": "turtle.py", "description": "Do it yourself!"}
+      ]
+    },
+    {
+      "session": "Session 2",
+      "key": "session2",
+      "type": "exercise",
+      "exercises": [
+        {"key": "start2", "filename": "start2.py", "description": "Recap of session 1"},
+        {"key": "indentation", "filename": "arrowhouse.py", "description": "Indentation"},
+        {"key": "coordinates", "filename": "coordinates.py", "description": "Coordinates"},
+        {"key": "dots", "filename": "dots.py", "description": "Connect the dots"},
+        {"key": "lines", "filename": "lines.py", "description": "Draw a line"},
+        {"key": "obstacles", "filename": "indentation.py", "description": "Find a route"},
+        {"key": "arrowhouse", "filename": "obstacles.py", "description": "Draw a house"},
+        {"key": "iterator", "filename": "iterator.py", "description": "Iteration"},
+        {"key": "flower", "filename": "flower.py", "description": "Draw a flower"},
+        {"key": "free2", "filename": "free2.py", "description": "Do it yourself!"}
+      ]
+    },
+    {
+      "session": "Session 3",
+      "key": "session3",
+      "type": "exercise",
+      "exercises": [
+        {"key": "start3", "filename": "start3.py", "description": "Recap of session 2"},
+        {"key": "function", "filename": "function.py", "description": "Function"},
+        {"key": "polygon", "filename": "perimeter.py", "description": "Polygon"},
+        {"key": "perimeter1", "filename": "perimeter2.py", "description": "Perimeter"},
+        {"key": "perimeter2", "filename": "random.py", "description": "Circumference of a circle"},
+        {"key": "random", "filename": "free3.py", "description": "Random"},
+        {"key": "free3", "filename": "polygon.py", "description": "Do it yourself!"}
+      ]
+    },
+    {
+      "session": "Session 4",
+      "key": "session4",
+      "type": "exercise",
+      "exercises": [
+        {"key": "arena", "filename": "arena.py", "description": "Drive the track!"}
+      ]
+    },
+    {
+      "session": "Session 5",
+      "key": "session5",
+      "type": "exercise",
+      "exercises": [
+        {"key": "start5", "filename": "start5.py", "description": "Recap of functions"},
+        {"key": "movingrandomly", "filename": "movingrandomly.py", "description": "Move randomly"},
+        {"key": "differentdrawing", "filename": "differentdrawing.py", "description": "Learn to draw within given boundaries"},
+        {"key": "modernart", "filename": "modernart.py", "description": "Modern art"},
+        {"key": "randomwalk", "filename": "randomwalk.py", "description": "Random walk"}
+      ]
+    },
+    {
+      "session": "Session 6",
+      "key": "session6",
+      "type": "exercise",
+      "exercises": [
+        {"key": "escape", "filename": "escape.py", "description": "Reach the finnish line"}
+      ]
+    },
+    {
+      "session": "Session 7",
+      "key": "session7",
+      "type": "exercise",
+      "exercises": [
+        {"key": "hexahedron", "filename": "hexahedron.py", "description": "3D drawing"},
+        {"key": "magic", "filename": "magic.py", "description": "Magic drawing"}
+      ]
+    },
+    {
+      "session": "Extra",
+      "key": "extra",
+      "type": "exercise",
+      "exercises": [
+        {"key": "snow", "filename": "snow.py", "description": "Snowflakes"}
+      ]
+    }
+  ]
+}

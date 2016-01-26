@@ -14,28 +14,28 @@ def linearlySpaced(a, b, interval):
   return xs
 
 # Generate random obstacles for the turtle.
-# The obstacles are horizontal rectangles. 
+# The obstacles are horizontal rectangles.
 # n is the number of obstacles to generate.
-# The obstacles are generated inside the area defined by the 
+# The obstacles are generated inside the area defined by the
 # parameters left, right, top and bottom.
 def generateObstacles(n, left, right, top, bottom):
   height = 20
   minWidth = 0.1*(right - left)
   maxWidth = 0.8*(right - left)
-  
+
   alternatives = linearlySpaced(bottom, top, 2*height)
   random.shuffle(alternatives)
   alternatives = sorted(alternatives[:n])
-  
+
   obstacles = []
   for y in alternatives:
     x1 = random.randint(left - maxWidth + minWidth, right - minWidth)
     x = max(x1, left)
     width = random.randint(minWidth, maxWidth)
     width = min(width, right - x)
-    
+
     obstacles.append((x, y, width, height))
-    
+
   return obstacles
 
 # Generate rectangles on the left, right and bottom sides of the area.
@@ -83,13 +83,13 @@ def drawFinishLine(x1, x2, y):
   t.goto(x1, y)
   t.pendown()
   t.goto(x2, y)
-    
+
 # Returns True if the coordinate (x, y) is inside a rectangle.
 def isInsideRectangle(x, y, rectangle):
   return (x >= rectangle[0] and x < rectangle[0] + rectangle[2] and
       y >= rectangle[1] and y < rectangle[1] + rectangle[3])
 
-# Returns True if (x, y) is inside any of the rectangles in the 
+# Returns True if (x, y) is inside any of the rectangles in the
 # provided list.
 def isInsideAnyRectangle(x, y, rectangleList):
   for rectangle in rectangleList:
@@ -103,12 +103,12 @@ def isInsideAnyRectangle(x, y, rectangleList):
 def moveOneStep(t, obstacles):
   x = t.xcor()
   y = t.ycor()
-    
+
   if isInsideAnyRectangle(x, y, obstacles):
     t.right(180)
   else:
     t.right(random.randint(-30, 30))
-    
+
   t.forward(10)
 
 # Create and draw obstacles at random locations by calling the helper
@@ -117,7 +117,7 @@ left = -250
 right = 250
 top = 300
 bottom = -300
-obstacles = (outerBounds(left, right, top, bottom) + 
+obstacles = (outerBounds(left, right, top, bottom) +
              generateObstacles(4, left, right, top, bottom + 60))
 drawRectangles(obstacles)
 drawFinishLine(left, right, top)

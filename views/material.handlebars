@@ -1,0 +1,58 @@
+<body class="main-page">
+    <header id="topnav">
+    <a href="http://www.futurice.com">
+      <img src="/static/images/futurice-favicon.png" style="max-height: 100%;" alt="Futurice logo">
+    </a>
+  </header>
+  <section class="first no-image">
+      <div class="hero-container">
+        <div class="header-container">
+          <img src="/static/images/chilicorn_vector.png" />
+          <div class="chilicorn">Chilicorn Code Club</div>
+          <div>Learning material</div>
+        </div>
+        <p class="hero-text last">Here you can find some additional learning material related to our exercises. Go a head and have a look!</p>
+      </div>
+  </section>
+  <section>
+    <h2>Contents</h2>
+    <div class="contents-container">
+      <ul class="outher-list">
+        {{#each material}}
+          <li>
+            <a href="#{{id}}">{{title}}</a>
+            {{#each content}}
+              <span class="{{#if @first}}first-span{{/if}}">{{#if subtitle}}{{subtitle}}{{#if @last}}.{{else}},{{/if}}{{/if}}</span>
+            {{/each}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  {{#each material}}
+  <section>
+    <a name="{{id}}"></a>
+    {{#if title}}
+    <h2>{{title}}</h2>
+    {{/if}}
+    {{#each content}}
+      {{#if subtitle}}
+      <a name="{{id}}"></a>
+      <h3>{{subtitle}}</h3>
+      {{/if}}
+      {{#if text}}
+      <p class="info-text">{{text}}</p>
+      {{/if}}
+      {{#if code}}
+      <pre>
+        <code>{{code}}</code>
+      </pre>
+      {{/if}}
+    {{/each}}
+  </section>
+  {{/each}}
+  <footer>
+    <p class="footer-text">This work is licensed under <a rel="license" href="https://opensource.org/licenses/MIT">the MIT License (MIT)</a>.</p>
+    <p class="footer-text">Contact: <a href="mailto:spice@futurice.com">spice@futurice.com</a></p>
+  </footer>
+</body>

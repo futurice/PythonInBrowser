@@ -1,19 +1,30 @@
-body {
-    background: url("../img/shattered.png");
-    background-repeat: repeat;
-    font-family: "Source Code Pro";
+.codeclub {
+    background: #f3f3f3;
+    font-family:'Open Sans',sans-serif;
+    margin: 8px;
 }
 
-h1 {
+.top-nav-logo {
+    background-color: transparent;
+    position: fixed;
+    z-index: 3;
+    top: 18px;
+    right: 25px;
+    height: 30px;
+}
+
+.title {
     clear: both;
-    font-size: 2em;
+    color: black;
+    font-weight: normal;
+    font-size: 1.4em;
     margin: 0.2em;
 }
 
-.saved {
+.saved, .failed {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 95px;
+    right: 30px;
     font-size: 0.7em;
     display: none;
 }
@@ -24,6 +35,14 @@ h1 {
 
 .container {
     clear: both;
+}
+
+.info-element {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: white;
+    padding: 5%;
 }
 
 .left-container {
@@ -68,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #00d9ff;
+    background-color: #fd8f34;
 }
 
 .button {
@@ -104,11 +123,12 @@ button:hover {
     overflow: auto;
     font-size: 150%;
     white-space: pre-wrap;
+    background-color: #a8a9a6;
+    color: black;
 }
 
 .console {
     height: 20%;
-    background-color: #a8a9a6;
 }
 
 #mycanvas {
@@ -118,8 +138,10 @@ button:hover {
 }
 
 .footer {
-    height: 5vh;
-    font-size: 1.2em;
+    display: inline-block;
+    height: 2vh;
+    font-size: 1.0em;
+    padding: 0.5em;
 }
 
 .modal {
@@ -164,7 +186,7 @@ button:hover {
 }
 
 .close:hover {
-    background: #00d9ff;
+    background: #fd8f34;
 }
 
 .exercise-container, .module-container {
@@ -185,6 +207,10 @@ button:hover {
     margin-left: 20px;
 }
 
+.exercise-container ul li:hover, .module-container ul li:hover {
+    color: #fd8f34;
+}
+
 .exercise-container .date {
     font-size: 0.6em;
     float: right;
@@ -203,7 +229,7 @@ button:hover {
     font-weight: bold;
 }
 .session-header:hover {
-    color: #00d9ff;
+    color: #fd8f34;
     cursor: pointer;
 }
 .session-exercises {
@@ -218,8 +244,4 @@ button:hover {
     background-color: #DBDEDE;
     width: 200px;
     height: 20px;
-}
-
-.not-ready {
-    display: none;
 }

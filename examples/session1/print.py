@@ -34,3 +34,13 @@ print "Welcome to study with Python..."
 
 
 # d) Try printing the result of 1/2. What do you notice? We'll fix this in next exercise.
+
+# 5. One more exception in printing
+# Try to print a combination of string and number. It's
+# a) First try this:
+# print  "You are number " 1
+
+# b) Then try this:
+# print  "You are number " + str(1)
+
+# What did you notice?

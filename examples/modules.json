@@ -1,0 +1,14 @@
+{
+  "modules": [
+    {
+      "session": "Used modules",
+      "key": "modules",
+      "type": "module",
+      "modules": [
+        {"key": "basic", "filename": "basic.py", "description": "Coordinates"},
+        {"key": "codeclub", "filename": "codeclub.py",  "description": "Tracks" },
+        {"key": "winter", "filename": "winter.py",  "description": "Winter" }
+      ]
+    }
+  ]
+}

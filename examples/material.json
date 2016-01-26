@@ -1,0 +1,187 @@
+{
+  "material": [
+    {
+      "title": "Introduction",
+      "id": "id0",
+      "content": [
+        {
+          "text": "Welcome to learn basics of programming with Chilicorn Code Club! Programming is giving orders to computer in a language the computer can understand. So learning programming is learning a new language. Doing our exercises you learn basic concepts of programming in Python language. Like every language also programming languages have their very own grammar. And with this we start our journey. This is not trying to be complete guide to Python but it teaches you the very basics of it. Before we start few words about our environment."
+        }, {
+          "subtitle": "Exercises",
+          "id": "id01",
+          "text": "By clicking the execises button you can choose what exercise to do. All exercises are categorized under sessions. It's good idea to do these exercises in the order they appear in the exercises menu. So when you are ready just save your work and choose next exercise from the menu.",
+          "code": ""
+        }, {
+          "subtitle": "Editor",
+          "id": "id02",
+          "text": "The black section on the left of your screen in the main view is our editor. There we write our code. To actually run the code please press 'Run'-button in the right of the editor. Things written after # are comments. Comments are just plain text and for your information but the computer doesn't run code that is marked with #. You can also distinguish comments from the grey color. Our code is colored bit differently.",
+          "code": ""
+        }, {
+          "subtitle": "Canvas",
+          "id": "id03",
+          "text": "The white section on the right of the main view is called canvas. That's were we see our drawings. The only way to draw there is with code. You'll get the hang of it when we introduce the Turtle to you.",
+          "code": ""
+        }, {
+          "subtitle": "Console",
+          "id": "id04",
+          "text": "The smaller grey box on the bottom of the right side of main view is the console. That's were we see text output. In the very first exercises we learn to use this.",
+          "code": ""
+        }, {
+          "subtitle": "Save & Load",
+          "id": "id05",
+          "text": "You can also Save your work and Load it afterwards. It's good idea to save your work after every exercise so you can come back to what you learned alredy. But please note that we don't have login in the system. That means that others may use the same nick to save the exercises as you are. How ever no one can override your work. There just might be more exercises when you load them. So to avoid this, try to come up with really unique nick.",
+          "code": ""
+        }
+      ]
+    }, {
+      "title": "Session 1",
+      "id": "id1",
+      "content": [
+        {
+          "subtitle": "",
+          "text": "In this session you learn what these concepts mean: print, string, variable, turtle",
+          "code": ""
+        }, {
+          "subtitle": "Print",
+          "id": "id11",
+          "text": "Printing is a nice and easy way to start your journey as a programmer. Printing is basicly very easy. How ever there are few things to consider. These work nice and easy:",
+          "code": "\nprint \"Hello world!\" \nprint 1+1"
+        }, {
+          "subtitle": "",
+          "id": "id12",
+          "text": "With unicode characters and combining numbers and strings you have to be careful. These also work nicely:",
+          "code": "\nprint u\"Hyvää Päivää\" \nprint  \"You are number \" + str(1)"
+        }, {
+          "subtitle": "String",
+          "id": "id13",
+          "text": "Quite ofter we want to for example print some text or otherwise use actual words somewhere in our output. How ever we have to make difference with the code and the text we want to use. This is why we have Strings. You can form a string with quotation marks. For example when you want to print word print you have to make so distinction with those two. So the first print is command for the computer and the second print is the actual content we want to print. They just happen to be the same.",
+          "code": "\nprint \"print\""
+        }, {
+          "subtitle": "",
+          "id": "id14",
+          "text": "Also see two examples below. What is the output in these? What is the difference?",
+          "code": "\nprint 1+1 \nprint \"1+1\""
+        }, {
+          "subtitle": "Variable",
+          "id": "id15",
+          "text": "Variable is way to give name to some content. It helps us so that we don't always have to write everything again and again. That's not the only reason. Sometimes it's also useful to give things a name so you can use them. But let's see an example. There I have a really long sentence and I want to use it in my code.",
+          "code": "\nmySentence = \"This is my sentence and it's really long and long and long and I don't want to write it over and over again when I need it\" \nprint mySentence \nprint \"Example: \" + mySentence \""
+        }, {
+          "subtitle": "Turtle",
+          "id": "id16",
+          "text": "We use Turtle Graphics-library in our exercises. It means that we draw things with our code to make it more easy to see what our code actually does. You can give commands like 'forward', 'right', 'left' to your turtle and see it move on the screen.",
+          "code": ""
+        }
+      ]
+    }, {
+      "title": "Session 2",
+      "id": "id2",
+      "content": [
+        {
+          "subtitle": "",
+          "text": "In this session you learn these things: python syntax and about indentations, equation of line, iteration, sequence/collection.",
+          "code": ""
+        },
+        {
+          "subtitle": "Syntax",
+          "id":"id21",
+          "text": "Syntax is kind of the same thing as grammar. Languages have rules related to the arrangement of words and such. It's the same with programming languages. You need to know few basics to write the language. Natural language which isn't grammatically right can be understandable. The same goes with programming languages. The Computer trying to execute the code, doesn't understand it if it's not obeying the syntax.",
+          "code": ""
+        },
+        {
+          "subtitle": "Indentation",
+          "id":"id22",
+          "text": "In natural language you separe sentences with dot and paragraphs with line break. Also in programming languages we need to somehow tell the computer how to separate code blocks that belong together. In Python we do this with indenting lines. In some other languages this is done with brackets. The absence of brackets makes python easily readable.",
+          "code": ""
+        }, {
+          "text": "These print commands are equal so they can stay on the same indentation level.",
+          "code": "\nprint \"First print\"\nprint \"Second print\""
+        },
+        {
+          "text": "Here we have a block of code that draws a square with turtle graphics. Note the indentation.",
+          "code": "\nfor i in range(0, 4):\n  t.forward(100)\n  t.right(90)"
+        },
+        {
+          "text": "What do you think will happen in this one? Which lines are part of the loop?",
+          "code": "\nfor i in range(0, 4):\n  t.forward(100)\n  t.right(90)\n\nt.left(45)\nt.forward(71)\nt.right(90)\nt.forward(71)"
+        },
+        {
+          "subtitle": "Lists",
+          "id":"id23",
+          "text": "Sometimes you might have a group of values that you want to keep together - like in sequence or collection. We call them lists. Creating a list is quite easy. You can do it much in the same way as with any variable. You only need to put all your values inside square brackets and separate them with comma. Let's say you have list of your friends names. We can write it like this:",
+          "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]"
+        },
+        {
+          "text": "If you want to get the lenght of a list, you can do it like this:",
+          "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]\nlen(friends)"
+        },
+        {
+          "text": "If you want to use items of a list you can do it with the index of element. For example to get Robert you can do it like this. Note that indexes start from 0.",
+          "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]\nfriends[1]"
+        },
+        {
+          "text": "Now if you get new friends you can add them to your list like this.",
+          "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]\n\n# One new friend \nfriends.append(\"Evelyn\")\n\n# List of new friends\nnewFriends = [\"Sarah\", \"James\"]\nfriends = friends + newFriends"
+        },
+        {
+          "subtitle": "Looping",
+          "id":"id24",
+          "text": "Programming is giving commands to computer. Sometimes we want to give the same (or almost the same) command to computer. We could of course write the same command again and again, but for example if the amount we have to do it is huge we might not want to repeat it as such. So that's why we have loops. Here is an example of for loop. It prints the numbers from 0 to 5. Please note the range that is from 0 to 6.",
+          "code": "\nfor i in range(0, 6):\n  print i"
+        },
+        {
+          "text": "Ranges are not the only things we can loop through. We can also loop through collections.",
+          "code": "\ncolors = [\"red\", \"blue\", \"green\", \"yellow\"]\n\nfor color in colors:\n  print color"
+        },
+        {
+          "subtitle": "While loop",
+          "text": "There is also another way to use loops. It's called while loop. It means that we keep doing something until our condition is not true anymore. This you don't have to understand right away. Here is one example for you. It prints Hello for 5 times.",
+          "code": "\nx = 0\n\nwhile x < 5:\n  print \"Hello\"\n  x = x + 1"
+        }
+      ]
+    }, {
+      "title": "Session 3",
+      "id": "id3",
+      "content": [
+        {
+          "text": "In this session you learn these things: function, return statement, randomization."
+        },
+        {
+          "subtitle": "Function",
+          "id":"id31",
+          "text": "You might remember already that by using loops we tried to avoid writing same thing over and over again. But it happens that loops are not always enough for this matter. We might want to repeat some - even quite complex - part of our code again but note directly after calling it the first time. Functions are a way to give name to some block of code and then use it when ever we want to."
+        },
+        {
+          "text": "Here is one example of function. This function is not a really clever one since we can print Hello quite easily anyways. But you can see how we define function in Python.",
+          "code": "\ndef printHello():\n  print \"Hello\""
+        },
+        {
+          "text": "If you put the above code to editor and press run you notice that nothing happens. It's because we haven't called it yet. What we did was just the definition of function called printHello. Below you can see code where we both define the function and call it.",
+          "code": "\ndef printHello():\n  print \"Hello\"\n\nprintHello()"
+        },
+        {
+          "text": "To make our function a bit more clever we could give it a parameter. Try to figure out what happens with this function.",
+          "code": "\ndef printHello(name):\n  print \"Hello \" + name\n\nprintHello(\"Sarah\")\nprintHello(\"Robert\")"
+        },
+        {
+          "text": "We can still modify our function a bit. Instead of printing Hello + some name we could return it. That means that our function would actually give something back when it's done. This is sometimes really usefull because you might want to do something else than just print the value you get.",
+          "code": "\ndef printHello(name):\n  return \"Hello \" + name\n\nreturnValue = printHello(\"Sarah\")\nprint returnValue # This will actually print Hello Sarah"
+        },
+        {
+          "subtitle": "Random",
+          "id":"id32",
+          "text": "With randomization we can have nice effects especially when drawing something. Python has this ready made library for this that we can only use. So it's quite easy to get random numbers from some range or random elements of a set. Here are some examples. If you try it, please run it several times and see the random in action.",
+          "code": "\n# Let's import the random library\nimport random\n\n# This will print random integer between 1 and 10\nprint random.randint(1, 10)\n\n# This will print random element of list items\nitems = [1, 10, 100, 1000]\nprint random.choice(items)"
+        }
+      ]
+    }, {
+      "title": "Sessions 4 - 6",
+      "id": "id4",
+      "content": [
+        {
+          "text": "In these sessions you learn more about these basic concepts and you learn to combine them and build your own functions and use them. How ever if every now and then you can look back to these basic concepts to check how we defined them."
+        }
+      ]
+    }
+  ]
+}

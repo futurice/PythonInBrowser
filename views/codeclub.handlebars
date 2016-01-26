@@ -1,0 +1,95 @@
+  <body class="codeclub">
+    <header class="title">
+      <h1 class="title">Chilicorn Code Club</h1>
+      <a href="http://www.futurice.com">
+        <img class="top-nav-logo" src="/static/images/futurice-favicon.png" alt="Futurice logo">
+      </a>
+      <div class="saved">Saved</div>
+      <div class="failed">Save failed, try again.</div>
+      <div class="button-container">
+        <form>
+          <a href="#modalSave"><button class="button" type="button">Save</button></a>
+        </form>
+        <form>
+          <a href="#modalLoad"><button class="button" type="button">Load</button></a>
+        </form>
+        <form>
+          <a href="#modalExercise"><button class="button" type="button">Exercises</button></a>
+        </form>
+        <a href="/material" target="_blank"><button class="button" type="button">Material</button></a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="left-container">
+        <form>
+          <button class="run-button" type="button" onclick="run()">Run</button>
+        </form>
+        <div id="editor"></div>
+      </div>
+      <div class="right-container">
+        <div id="mycanvas"></div>
+        <div class="console">
+          <pre id="output"></pre>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">See <a href="https://docs.python.org/2/library/turtle.html#turtle-methods">Turtle methods</a> for more commands. Fork us on <a href="https://github.com/futurice/PythonInBrowser">Github</a>. This project is based on <a href="https://codemirror.net">CodeMirror</a> and <a href="http://www.skulpt.org/">Skulpt</a> and it's developed under <a href="http://spiceprogram.org/">Spice program</a> at <a href="http://futurice.com/">Futurice</a>. What is this <a href="/">about</a>?
+    </footer>
+    <div id="modalExercise" class="modal">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Exercises</h2>
+        <div class="exercise-container">
+          {{#each exercises.examples}}
+          <div class="session-header" data-key="{{key}}">{{session}}</div>
+          <ul id="{{key}}" class="session-exercises">
+            {{#each exercises}}
+            <a href="#close"><li id="{{this.key}}" data-type="{{../type}}" data-session="{{../key}}">Exercise {{math @index}}: {{description}}</li></a>
+            {{/each}}
+          </ul>
+          {{/each}}
+        </div>
+        <h2>Modules</h2>
+        <div class="module-container">
+          {{#each modules.modules}}
+          <div class="session-header" data-key="{{key}}">{{session}}</div>
+          <ul id="{{key}}" class="session-exercises">
+            {{#each modules}}
+            <a href="#close"><li id="{{key}}"  data-type="{{../type}}" data-session="{{../key}}">{{description}}</li></a>
+            {{/each}}
+          </ul>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <div id="modalLoad" class="modal">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Your saved exercises</h2>
+        <div>
+          <div class="name">Name:</div>
+          <div class="name name-edit name-edit-load" contentEditable="true"></div>
+          <button class="load-button" type="button" onclick="load()">Get Exercises</button>
+        </div>
+        <div class="exercise-container">
+          <ul class="own-exercises">
+          </ul>
+        </div>
+        <div class="empty-exercises">No exercises.</div>
+      </div>
+    </div>
+
+    <div id="modalSave" class="modal">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Save your exercises:</h2>
+        <div>
+          <div class="name">Name:</div>
+          <div class="name name-edit name-edit-save" contentEditable="true"></div>
+          <a href="#close"><button class="load-button" type="button" onclick="save()">Save</button></a>
+        </div>
+      </div>
+    </div>
+    <script src="/static/javascripts/main.js" type="text/javascript"></script>
+  </body>

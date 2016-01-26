@@ -1,8 +1,6 @@
 var app = (function() {
-  var firebaseBaseUrl = "";
   var editor = document.getElementById("editor");
   var defaultText = "# Welcome to learn Python";
-  var exercises = [];
   var code = localStorage.getItem("myCode");
   var user = localStorage.getItem("pythonInBrowserUser") ? localStorage.getItem("pythonInBrowserUser") : null;
   var myCodeMirror;
@@ -15,53 +13,6 @@ var app = (function() {
    */
 
   function initApp() {
-    $.ajax({url: "examples/examples.json",
-        dataType: "json",
-        async: true,
-        success: function(data) {
-          if(data && data.examples) {
-            initExamples(data.examples, "examples", "exercise-container");
-            initExamples(data.modules, "modules", "module-container");
-          } else {
-            console.error("reading example.json failed");
-          }
-        },
-        error: function(err) {
-          console.error("reading example.json failed");
-        }
-    });
-    initUI();
-  }
-
-  function initExamples(examples, folder, className) {
-    var index = examples.length;
-    function callbackCheck() {
-      if(index === 0) {
-        $("."+ className).removeClass("not-ready");
-        $(".no-content").hide();
-      }
-    }
-    _.each(examples, function(example) {
-      var path = folder + "/" + example.session + "/" + example.key + ".py";
-      $.ajax({url: path,
-        async: false,
-        success: function(data) {
-          if(data) {
-            exercises[example.key] = data;
-          }
-          index--;
-          callbackCheck();
-        },
-        error: function(err) {
-          console.error("reading example failed with key:" + example);
-          index--;
-          callbackCheck();
-        }
-      });
-    });
-  }
-
-  function initUI() {
     initCodeMirror();
     initClickHandlers();
     initLocalSave();
@@ -96,8 +47,10 @@ var app = (function() {
 
   function initClickHandlers() {
     $(".session-exercises > a > li").on('click', function(event) {
+      var type = $(this).data("type");
       var id = $(this).attr("id");
-      setCode(exercises[id]);
+      var session = $(this).data("session");
+      loadCode(type, session, id);
     });
 
     $(".own-exercises").on("click", "a>li>pre", function(event) {
@@ -120,16 +73,6 @@ var app = (function() {
   /*
    * Helper functions
    */
-
-  function initializeFirebase(firebaseUrl) {
-    try {
-      return new Firebase(firebaseUrl);
-    } catch (err) {
-      console.error('Failed to initialize Firebase: ' + err);
-      return undefined;
-    }
-  }
-
   function outputfunction(text) {
     var mypre = document.getElementById("output");
     mypre.innerHTML = mypre.innerHTML + text;
@@ -152,14 +95,21 @@ var app = (function() {
   }
 
   function getCode(id, parent) {
-    var myFirebaseRef = initializeFirebase(firebaseBaseUrl + parent + "/" + id + "/");
-    if (!myFirebaseRef) {
-        setErrorMessage('Firebase not configured');
-        return;
-    }
-    return myFirebaseRef.ref().once("value", function(snapshot) {
-      if(snapshot && snapshot.val() && snapshot.val().code) {
-        setCode(snapshot.val().code);
+    $.get("/api/getSavedForName/" + parent + "/" + id, function(res) {
+      if(res && res.data) {
+        setCode(res.data.code);
+      } else {
+        console.log("this failed");
+      }
+    });
+  }
+
+  function loadCode(type, session, id) {
+    $.get("/exercises/" + type + "/" + session + "/" + id, function(data) {
+      if(data && data.code) {
+        setCode(data.code);
+      } else {
+        console.error("loading code failed for " + session + " ," + id);
       }
     });
   }
@@ -230,17 +180,17 @@ var app = (function() {
 
       Sk.externalLibraries = {
         matter: {
-          path: 'modules/matter/__init__.js',
+          path: '../modules/__init__.js',
           dependencies: ['modules/matter/matter-0.8.0.min.js']
         },
         codeclub: {
-          path: 'modules/codeclub/codeclub.py'
+          path: '../modules/codeclub.py'
         },
         coordinates: {
-          path: 'modules/basic/basic.py'
+          path: '../modules/basic.py'
         },
         winter: {
-          path: 'modules/winter/winter.py'
+          path: '../modules/winter.py'
         }
       };
 
@@ -262,15 +212,16 @@ var app = (function() {
     save: function() {
       var result = $(".name-edit-save").text();
       saveNameLocally(result);
-      var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
-      if (!myFirebaseRef) {
-        setErrorMessage('Firebase not configured');
-        return;
-      }
-      var data = {"code": readCode(), "timestamp": Date.now()};
-      var newRef = myFirebaseRef.push(data, function(response) {
-        if(!response) {
+      var data = {"name": result, "code": readCode(), "timestamp": Date.now()};
+      $.ajax({
+        type: "POST",
+        url: "/api/save",
+        data: data,
+        success: function(msg){
           $(".saved").show().fadeOut(800);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          $(".failed").show().fadeOut(1000);
         }
       });
     },
@@ -279,17 +230,16 @@ var app = (function() {
       var result = $(".name-edit-load").text();
       saveNameLocally(result);
       $(".own-exercises").empty();
+      var options = {
+        weekday: "long", year: "numeric", month: "short",
+        day: "numeric", hour: "2-digit", minute: "2-digit"
+      };
       if(result && result.length > 1) {
-        var myFirebaseRef = initializeFirebase(firebaseBaseUrl + result + "/");
-        if (!myFirebaseRef) {
-          setErrorMessage('Firebase not configured');
-          return;
-        }
-        myFirebaseRef.ref().once("value", function(snapshot) {
-          if(snapshot.val()) {
-            _.each(snapshot.val(), function(snippet, key) {
-              var date = moment(snippet.timestamp).format("DD.MM.YYYY HH:mm:ss");
-              $(".own-exercises").append("<a href='#close'><li id=" +  key + " data-parent=" + result + "><div class='date'>" + date + "</div><pre>" + snippet.code + "</pre></li></a>");
+        $.get("/api/getSaved/" + result, function(res) {
+          if(res && res.data) {
+            _.each(res.data, function(item) {
+              var date = new Date(parseInt(item.timestamp, 10)).toLocaleDateString("en-us", options);
+              $(".own-exercises").append("<a href='#close'><li id=" +  item.timestamp + " data-parent=" + result + "><div class='date'>" + date + "</div><pre>" + item.code + "</pre></li></a>");
             });
           } else {
             $(".empty-exercises").show().fadeOut(1000);

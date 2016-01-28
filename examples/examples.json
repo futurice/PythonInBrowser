@@ -81,6 +81,7 @@
       "type": "exercise",
       "exercises": [
         {"key": "hexahedron", "filename": "hexahedron.py", "description": "3D drawing"},
+        {"key": "isometric", "filename": "isometric.py", "description": "3D cubes"},
         {"key": "magic", "filename": "magic.py", "description": "Magic drawing"}
       ]
     },
@@ -89,7 +90,8 @@
       "key": "extra",
       "type": "exercise",
       "exercises": [
-        {"key": "snow", "filename": "snow.py", "description": "Snowflakes"}
+        {"key": "snow", "filename": "snow.py", "description": "Snowflakes"},
+        {"key": "minigame", "filename": "minigame.py", "description": "Minigame"}
       ]
     }
   ]

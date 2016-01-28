@@ -62,6 +62,7 @@ var app = (function() {
         $(".session-exercises").hide();
         $("#" + id).show();
     });
+    $(".name-edit").keypress(function(e){ return e.which != 13; }); //enter disabled in contenteditable
   }
 
   function initLocalSave() {

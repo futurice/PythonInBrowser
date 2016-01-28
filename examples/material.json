@@ -9,7 +9,7 @@
         }, {
           "subtitle": "Exercises",
           "id": "id01",
-          "text": "By clicking the execises button you can choose what exercise to do. All exercises are categorized under sessions. It's good idea to do these exercises in the order they appear in the exercises menu. So when you are ready just save your work and choose next exercise from the menu.",
+          "text": "By clicking the exercises button you can choose what exercise to do. All exercises are categorized under sessions. It's good idea to do these exercises in the order they appear in the exercises menu. So when you are ready just save your work and choose next exercise from the menu.",
           "code": ""
         }, {
           "subtitle": "Editor",
@@ -29,7 +29,7 @@
         }, {
           "subtitle": "Save & Load",
           "id": "id05",
-          "text": "You can also Save your work and Load it afterwards. It's good idea to save your work after every exercise so you can come back to what you learned alredy. But please note that we don't have login in the system. That means that others may use the same nick to save the exercises as you are. How ever no one can override your work. There just might be more exercises when you load them. So to avoid this, try to come up with really unique nick.",
+          "text": "You can also Save your work and Load it afterwards. It's good idea to save your work after every exercise so you can come back to what you learned already. But please note that we don't have login in the system. That means that others may use the same nick to save the exercises as you are. How ever no one can override your work. There just might be more exercises when you load them. So to avoid this, try to come up with really unique nick.",
           "code": ""
         }
       ]
@@ -44,7 +44,7 @@
         }, {
           "subtitle": "Print",
           "id": "id11",
-          "text": "Printing is a nice and easy way to start your journey as a programmer. Printing is basicly very easy. How ever there are few things to consider. These work nice and easy:",
+          "text": "Printing is a nice and easy way to start your journey as a programmer. Printing is basically very easy. How ever there are few things to consider. These work nice and easy:",
           "code": "\nprint \"Hello world!\" \nprint 1+1"
         }, {
           "subtitle": "",
@@ -54,7 +54,7 @@
         }, {
           "subtitle": "String",
           "id": "id13",
-          "text": "Quite ofter we want to for example print some text or otherwise use actual words somewhere in our output. How ever we have to make difference with the code and the text we want to use. This is why we have Strings. You can form a string with quotation marks. For example when you want to print word print you have to make so distinction with those two. So the first print is command for the computer and the second print is the actual content we want to print. They just happen to be the same.",
+          "text": "Quite often we want to for example print some text or otherwise use actual words somewhere in our output. How ever we have to make difference with the code and the text we want to use. This is why we have Strings. You can form a string with quotation marks. For example when you want to print word print you have to make so distinction with those two. So the first print is command for the computer and the second print is the actual content we want to print. They just happen to be the same.",
           "code": "\nprint \"print\""
         }, {
           "subtitle": "",
@@ -69,7 +69,7 @@
         }, {
           "subtitle": "Turtle",
           "id": "id16",
-          "text": "We use Turtle Graphics-library in our exercises. It means that we draw things with our code to make it more easy to see what our code actually does. You can give commands like 'forward', 'right', 'left' to your turtle and see it move on the screen.",
+          "text": "We use Turtle Graphics-library in our exercises. It means that we draw things with our code to make it easier to see what our code actually does. You can give commands like 'forward', 'right', 'left' to your turtle and see it move on the screen.",
           "code": ""
         }
       ]
@@ -85,13 +85,13 @@
         {
           "subtitle": "Syntax",
           "id":"id21",
-          "text": "Syntax is kind of the same thing as grammar. Languages have rules related to the arrangement of words and such. It's the same with programming languages. You need to know few basics to write the language. Natural language which isn't grammatically right can be understandable. The same goes with programming languages. The Computer trying to execute the code, doesn't understand it if it's not obeying the syntax.",
+          "text": "Syntax is kind of the same thing as grammar. Languages have rules related to the arrangement of words and such. It's the same with programming languages. You need to know few basics to write the language. Natural language that isn't grammatically right can be incomprehensible. The same goes with programming languages. The Computer trying to execute the code, doesn't understand it if it's not obeying the syntax.",
           "code": ""
         },
         {
           "subtitle": "Indentation",
           "id":"id22",
-          "text": "In natural language you separe sentences with dot and paragraphs with line break. Also in programming languages we need to somehow tell the computer how to separate code blocks that belong together. In Python we do this with indenting lines. In some other languages this is done with brackets. The absence of brackets makes python easily readable.",
+          "text": "In natural language you separate sentences with dot and paragraphs with line break. Also in programming languages we need to somehow tell the computer how to separate code blocks that belong together. In Python we do this with indenting lines. In some other languages this is done with brackets. The absence of brackets makes python easily readable.",
           "code": ""
         }, {
           "text": "These print commands are equal so they can stay on the same indentation level.",
@@ -112,7 +112,7 @@
           "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]"
         },
         {
-          "text": "If you want to get the lenght of a list, you can do it like this:",
+          "text": "If you want to get the length of a list, you can do it like this:",
           "code": "\nfriends = [\"Anna\", \"Robert\", \"Guido\", \"Martha\"]\nlen(friends)"
         },
         {
@@ -149,7 +149,7 @@
         {
           "subtitle": "Function",
           "id":"id31",
-          "text": "You might remember already that by using loops we tried to avoid writing same thing over and over again. But it happens that loops are not always enough for this matter. We might want to repeat some - even quite complex - part of our code again but note directly after calling it the first time. Functions are a way to give name to some block of code and then use it when ever we want to."
+          "text": "You might remember already that by using loops we tried to avoid writing same thing over and over again. But it happens that loops are not always enough for this matter. We might want to repeat some - even quite complex - part of our code again but note directly after calling it the first time. Functions are a way to give name to some block of code and then use it whenever we want to."
         },
         {
           "text": "Here is one example of function. This function is not a really clever one since we can print Hello quite easily anyways. But you can see how we define function in Python.",
@@ -170,7 +170,7 @@
         {
           "subtitle": "Random",
           "id":"id32",
-          "text": "With randomization we can have nice effects especially when drawing something. Python has this ready made library for this that we can only use. So it's quite easy to get random numbers from some range or random elements of a set. Here are some examples. If you try it, please run it several times and see the random in action.",
+          "text": "With randomization we can have nice effects especially when drawing something. Python has this ready-made library for this that we can only use. So it's quite easy to get random numbers from some range or random elements of a set. Here are some examples. If you try it, please run it several times and see the random in action.",
           "code": "\n# Let's import the random library\nimport random\n\n# This will print random integer between 1 and 10\nprint random.randint(1, 10)\n\n# This will print random element of list items\nitems = [1, 10, 100, 1000]\nprint random.choice(items)"
         }
       ]

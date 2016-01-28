@@ -97,6 +97,7 @@ section:nth-child(odd) {
 
 .no-image {
     min-height: 45vh;
+    padding: 6vh 0 6vh 0;
 }
 
 .main-image {

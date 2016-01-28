@@ -36,7 +36,8 @@
         {"key": "escape", "session": "session6"},
         {"key": "hexahedron", "session": "session7"},
         {"key": "isometric", "session": "session7"},
-        {"key": "magic", "session": "session7"}
+        {"key": "magic", "session": "session7"},
+        {"key": "minigame", "session": "extra"}
     ],
     "modules": [
         {"key": "basic", "session": "basic" },

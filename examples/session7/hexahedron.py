@@ -2,7 +2,7 @@ import turtle
 t = turtle.Turtle()
 
 
-##### EXERCISE #####
+##### EXERCISE 1 #####
 # Fill the functions so that you can draw 3D hexahedron.
 #
 # The picture on this page shows an example of the shape you should
@@ -35,5 +35,12 @@ t.penup()
 t.goto(0, -200)
 t.pendown()
 hexahedron(50, 50, 50)
-hexahedron(200, 100, 200)
-hexahedron(70, 100, 200)
+
+
+##### EXERCISE 2 #####
+# After you have implemented the functions, you can draw hexahedrons
+# of different size. Uncomment the following lines and see what
+# happens.
+
+#hexahedron(200, 100, 200)
+#hexahedron(70, 100, 200)

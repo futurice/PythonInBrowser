@@ -181,17 +181,17 @@ var app = (function() {
 
       Sk.externalLibraries = {
         matter: {
-          path: '../modules/__init__.js',
-          dependencies: ['modules/matter/matter-0.8.0.min.js']
+          path: '../static/modules/__init__.js',
+          dependencies: ['static/modules/matter/matter-0.8.0.min.js']
         },
         codeclub: {
-          path: '../modules/codeclub.py'
+          path: '../static/modules/codeclub.py'
         },
         coordinates: {
-          path: '../modules/basic.py'
+          path: '../static/modules/basic.py'
         },
         winter: {
-          path: '../modules/winter.py'
+          path: '../static/modules/winter.py'
         }
       };
 

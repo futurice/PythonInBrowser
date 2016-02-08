@@ -181,8 +181,8 @@ var app = (function() {
 
       Sk.externalLibraries = {
         matter: {
-          path: '../static/modules/__init__.js',
-          dependencies: ['static/modules/matter/matter-0.8.0.min.js']
+          path: '../static/modules/matter/__init__.js',
+          dependencies: ['../static/modules/matter/matter-0.8.0.min.js']
         },
         codeclub: {
           path: '../static/modules/codeclub.py'

@@ -65,9 +65,10 @@ If you want to add learning material please edit [material.json](https://github.
 * Clone this repo or take a fork
 * Install MongoDB
 * Start MongoDB
-* Create env.js file, copy content from env-default.js and add path to your local mongodb
+* Copy env-local.js to env.js (and possibly edit the Mongo URL in env.js)
 * In root of repo ```npm install```
-* Start application with ```nodemon```
+* Start application with ```nodemon bin/www```
+* Open a browser at http://localhost:3000/
 
 ## License
 Plese see our [license](https://github.com/futurice/PythonInBrowser/blob/master/LICENSE).

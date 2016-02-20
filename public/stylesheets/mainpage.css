@@ -205,6 +205,17 @@ ul li a:hover {
     text-decoration: underline;
 }
 
+.example-code {
+    width: 60%;
+    margin: 0 auto;
+    background: #404040;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
 .main-page footer {
     padding: 40px;
     background-color: #524e47;

@@ -41,7 +41,7 @@
         {"key": "start3", "filename": "start3.py", "description": "Recap of session 2"},
         {"key": "function", "filename": "function.py", "description": "Function"},
         {"key": "polygon", "filename": "perimeter.py", "description": "Polygon"},
-        {"key": "perimeter1", "filename": "perimeter2.py", "description": "Perimeter"},
+        {"key": "perimeter", "filename": "perimeter2.py", "description": "Perimeter"},
         {"key": "perimeter2", "filename": "random.py", "description": "Circumference of a circle"},
         {"key": "random", "filename": "free3.py", "description": "Random"},
         {"key": "free3", "filename": "polygon.py", "description": "Do it yourself!"}

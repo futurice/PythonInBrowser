@@ -96,7 +96,7 @@ def drawArena(t):
     t.pendown()
 
 
-def drawArena2(t, scale=1.0):
+def drawRoundedArena(t, scale=1.0):
     t.speed(0)
     t.penup()
     t.goto(0, scale*250)
@@ -139,7 +139,7 @@ def drawArena2(t, scale=1.0):
     t.pendown()
 
 
-def drawArena3(t, scale=1.0):
+def drawMonacoArena(t, scale=1.0):
     t.speed(0)
     t.penup()
     t.goto(-scale*280, scale*50)

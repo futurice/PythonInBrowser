@@ -22,6 +22,18 @@ router.get('/exercise/:session/:id', function(req, res, next) {
   });
 });
 
+router.get('/module/modules/:id', function(req, res, next) {
+  getCode(req.params.id, 'modules', "../public/")
+  .then(function(data) {
+    var resJson = { key: req.params.id, code: data};
+    res.set({'Cache-Control': 'public, max-age=3600'});
+    res.json(resJson);
+  })
+  .catch(function(err) {
+    res.json({ key: req.params.id, code: defaultCode});
+  });
+});
+
 function getCode(id, session, pathToCode) {
   var pathName = pathToCode + session + "/" + id + ".py";
   var finalPath = path.resolve(__dirname, pathName);

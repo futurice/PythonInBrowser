@@ -5,9 +5,9 @@
       "key": "modules",
       "type": "module",
       "modules": [
-        {"key": "basic", "filename": "basic.py", "description": "Coordinates"},
-        {"key": "codeclub", "filename": "codeclub.py",  "description": "Tracks" },
-        {"key": "winter", "filename": "winter.py",  "description": "Winter" }
+        {"key": "basic", "description": "Coordinates"},
+        {"key": "codeclub",  "description": "Tracks" },
+        {"key": "winter",  "description": "Winter" }
       ]
     }
   ]

@@ -7,7 +7,6 @@ var defaultCode = "There was a problem loading code, please try again.";
 Promise.promisifyAll(fs);
 
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
   next();
 });
 
@@ -26,7 +25,7 @@ router.get('/exercise/:session/:id', function(req, res, next) {
 function getCode(id, session, pathToCode) {
   var pathName = pathToCode + session + "/" + id + ".py";
   var finalPath = path.resolve(__dirname, pathName);
-  console.log("final" + finalPath);
+  console.log("Exercise file: " + finalPath);
   return fs.readFileAsync(path.resolve(__dirname, pathName),"utf-8")
     .then(function(data) {
       return data;

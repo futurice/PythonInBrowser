@@ -1,4 +1,3 @@
-import turtle
 scale = 0.6
 def rt(angle, t, factor):
     t.circle(-scale*factor, angle)

@@ -190,6 +190,9 @@ var app = (function() {
         coordinates: {
           path: '/static/modules/basic.py'
         },
+        turtlehelpers: {
+          path: '/static/modules/turtlehelpers.py'
+        },
         winter: {
           path: '/static/modules/winter.py'
         }

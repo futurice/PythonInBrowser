@@ -1,4 +1,5 @@
 import turtle
+import turtlehelpers
 
 t = turtle.Turtle()
 t.color("#545454")
@@ -82,6 +83,7 @@ def drawDots():
 
 
 def prepareCoordinates():
+  turtlehelpers.pauseDrawing()
   t.speed(0)
   t.penup()
   drawAxis(-600, 0)
@@ -92,4 +94,5 @@ def prepareCoordinates():
   drawTicksY(-600)
   drawXnumbers(-600)
   drawYnumbers(-600)
+  turtlehelpers.unpauseDrawing()
 

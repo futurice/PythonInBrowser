@@ -184,8 +184,8 @@ var app = (function() {
           path: '/static/modules/matter/__init__.js',
           dependencies: ['/static/modules/matter/matter-0.8.0.min.js']
         },
-        codeclub: {
-          path: '/static/modules/codeclub.py'
+        tracks: {
+          path: '/static/modules/tracks.py'
         },
         coordinates: {
           path: '/static/modules/basic.py'

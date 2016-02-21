@@ -22,8 +22,8 @@ def linearlySpaced(a, b, interval):
 # parameters left, right, top and bottom.
 def generateObstacles(n, left, right, top, bottom):
   height = 20
-  minWidth = 0.1*(right - left)
-  maxWidth = 0.8*(right - left)
+  minWidth = round(0.1*(right - left))
+  maxWidth = round(0.8*(right - left))
 
   alternatives = linearlySpaced(bottom, top, 2*height)
   random.shuffle(alternatives)

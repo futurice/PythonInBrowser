@@ -2,6 +2,7 @@
 import turtle
 import turtlehelpers
 import random
+import time
 
 # The following helper functions will be needed later.
 
@@ -112,7 +113,7 @@ def moveOneStep(t, obstacles):
 
   t.forward(10)
 
-# Create and draw obstacles at random locations by calling the helper
+# Generate obstacles at random locations by calling the helper
 # functions defined above.
 left = -250
 right = 250
@@ -121,6 +122,7 @@ bottom = -270
 obstacles = (outerBounds(left, right, top, bottom) +
              generateObstacles(4, left, right, top, bottom + 60))
 
+# Draw the obstacles
 turtlehelpers.pauseDrawing()
 drawRectangles(obstacles)
 drawFinishLine(left, right, top)
@@ -136,10 +138,12 @@ t.pendown()
 
 # This loop moves the turtle one step at a time until it reaches the
 # top.
+startTime = time.time()
 while t.ycor() < top:
   moveOneStep(t, obstacles)
+endTime = time.time()
 
-print "The turtle reached the finish line!"
+print "The turtle reached the finish line in %d seconds!" % round(endTime-startTime)
 
 ##### EXERCISE 1 #####
 
@@ -154,10 +158,6 @@ print "The turtle reached the finish line!"
 #
 # When you press 'Run' again, new obstacles will be generted at random
 # locations.
-#
-# To see how many steps our Turtle has to take let's make a counter for that.
-# So you'll need a variable 'counter', every time MoveOnStep is called add one
-# to the counter and print it's value.
 
 ##### EXERCISE 2 #####
 

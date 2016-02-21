@@ -7,6 +7,7 @@
       "modules": [
         {"key": "basic", "description": "Coordinates"},
         {"key": "codeclub",  "description": "Tracks" },
+        {"key": "turtlehelpers",  "description": "Turtlehelpers" },
         {"key": "winter",  "description": "Winter" }
       ]
     }

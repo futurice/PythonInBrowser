@@ -1,5 +1,6 @@
 ##### INFO #####
 import turtle
+import turtlehelpers
 import random
 
 # The following helper functions will be needed later.
@@ -115,12 +116,15 @@ def moveOneStep(t, obstacles):
 # functions defined above.
 left = -250
 right = 250
-top = 300
-bottom = -300
+top = 270
+bottom = -270
 obstacles = (outerBounds(left, right, top, bottom) +
              generateObstacles(4, left, right, top, bottom + 60))
+
+turtlehelpers.pauseDrawing()
 drawRectangles(obstacles)
 drawFinishLine(left, right, top)
+turtlehelpers.unpauseDrawing()
 
 # Create the turtle
 t = turtle.Turtle()

@@ -23,7 +23,6 @@ function makeApp(db) {
   app.engine('handlebars', hbs.engine);
   app.set('view engine', 'handlebars');
 
-  // uncomment after placing your favicon in /public
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));

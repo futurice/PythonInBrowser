@@ -1,5 +1,3 @@
-##### FILE #####
-# dots.py
 # Conneting dots
 
 import coordinates

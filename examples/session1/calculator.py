@@ -1,5 +1,3 @@
-##### FILE #####
-# calculator.py
 # Let's use code as our calculator
 
 ##### EXERCISE #####

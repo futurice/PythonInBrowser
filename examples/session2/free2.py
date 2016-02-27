@@ -1,6 +1,3 @@
-##### FILE #####
-# free2.py
-
 ##### EXERCISE #####
 # Now you can freely use things you have learned so far.
 # For example, use for loop to draw things with the turtle.

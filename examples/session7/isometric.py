@@ -1,4 +1,3 @@
-# isometric.py
 # Building with blocks
 
 ##### INFO #####

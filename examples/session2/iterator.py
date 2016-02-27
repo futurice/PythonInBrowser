@@ -1,5 +1,3 @@
-##### FILE #####
-# iterator.py
 # For loop as an iterator
 
 ##### INFO #####
@@ -22,7 +20,7 @@ myRange = 10
 # and then end the for loop with a colon ':'
 
 for i in range(myRange):
-	print i
+  print i
 
 # Click 'Run' and see what happens.
 

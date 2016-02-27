@@ -1,5 +1,3 @@
-##### FILE #####
-# variable.py
 # Goal: Let's check if the computer can remember your name.
 # This is achieved by using a variable.
 

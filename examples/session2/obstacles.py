@@ -1,5 +1,3 @@
-##### FILE #####
-# obstacles.py
 # Find a route through obstacles
 
 import turtle

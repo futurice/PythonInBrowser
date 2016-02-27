@@ -1,4 +1,3 @@
-# magic.py
 # What shape?
 
 ##### INFO #####

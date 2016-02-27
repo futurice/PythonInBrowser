@@ -1,5 +1,3 @@
-##### FILE #####
-# perimeter2.py
 # Computing a circumference
 
 ##### INFO #####

@@ -1,5 +1,3 @@
-##### FILE #####
-# turtle.py
 # Meet the turtle!
 
 ##### INFO #####

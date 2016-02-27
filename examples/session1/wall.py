@@ -1,5 +1,3 @@
-##### FILE #####
-# wall.py
 # Goal: fix turtle to find a hole in the wall
 
 # We need to remember to import a turtle every time we want to use it.

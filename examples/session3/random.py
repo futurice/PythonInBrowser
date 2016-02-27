@@ -1,5 +1,3 @@
-##### FILE #####
-# random.py
 # Let's learn how to make the computer give us random values
 
 ##### INFO #####

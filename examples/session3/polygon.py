@@ -1,5 +1,3 @@
-##### FILE #####
-# polygon.py
 # Learning to draw polygons with functions
 
 import turtle

@@ -1,5 +1,3 @@
-##### FILE #####
-# lines.py
 # Drawing lines
 
 import coordinates

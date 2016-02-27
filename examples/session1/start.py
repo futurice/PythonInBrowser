@@ -1,5 +1,3 @@
-##### FILE #####
-# start.py
 # Welcome to learn Python
 
 ##### GET STARTED #####

@@ -1,5 +1,3 @@
-##### FILE #####
-# bracketing.py
 import turtle
 
 ##### INFO #####

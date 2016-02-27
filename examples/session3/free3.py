@@ -1,5 +1,3 @@
-##### FILE #####
-# free3.py
 # Let's draw with random colors
 
 ##### INFO #####

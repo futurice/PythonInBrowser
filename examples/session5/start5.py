@@ -1,4 +1,3 @@
-# start5.py
 # Recap of functions
 import turtle
 t = turtle.Turtle()

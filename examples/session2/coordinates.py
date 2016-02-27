@@ -1,5 +1,3 @@
-##### FILE #####
-# coordinates.py
 # Drawing points to coordinate system
 
 import coordinates

@@ -1,5 +1,3 @@
-##### FILE #####
-# perimeter.py
 # Perimeter of a polygon
 
 import turtle

@@ -1,5 +1,3 @@
-##### FILE #####
-# print.py
 # Now we know how to print. Let's practice a bit more.
 
 print "Welcome to study with Python..."

@@ -1,5 +1,3 @@
-##### FILE #####
-# snow.py
 # Let's draw snowflakes
 
 ##### INFO #####

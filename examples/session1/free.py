@@ -1,6 +1,3 @@
-##### FILE #####
-# free.py
-
 ##### EXERCISE #####
 # Now you can freely use things you have learned so far.
 # For example, use the turtle to draw the first letter of

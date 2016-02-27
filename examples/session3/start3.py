@@ -1,5 +1,3 @@
-##### FILE #####
-# start3.py
 # Let's go through what we learned last week.
 # If something is unclear, don't hesitate to ask for help!
 

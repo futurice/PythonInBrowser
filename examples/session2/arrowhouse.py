@@ -1,5 +1,3 @@
-##### FILE #####
-# arrowhouse.py
 # Let’s practice being architects and draw a house.
 
 ##### INFO #####

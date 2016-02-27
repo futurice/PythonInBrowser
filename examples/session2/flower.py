@@ -1,5 +1,3 @@
-##### FILE #####
-# flower.py
 # Let's draw a flower
 
 import turtle

@@ -1,4 +1,3 @@
-# minigame.py
 # Turtle moving around cubes
 
 ##### INFO #####
@@ -138,5 +137,5 @@ doMove()
 
 # 3. Choose the color of cubes randomly
 
-# 4. Can you also add a finish line like in escape.py in session 6?
+# 4. Can you also add a finish line like in the exercise 1 in the session 6?
 

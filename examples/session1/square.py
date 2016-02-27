@@ -1,5 +1,3 @@
-##### FILE #####
-# square.py
 # Let's draw a square on the canvas
 
 import turtle

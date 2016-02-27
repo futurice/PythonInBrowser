@@ -1,4 +1,3 @@
-# randomwalk.py
 # Turtle moving around obstacles
 
 ##### INFO #####
@@ -24,6 +23,7 @@ def drawRectangle(t, x, y, w, h):
   t.setheading(0)
   t.goto(x, y)
   t.pendown()
+  t.begin_fill()
   t.forward(w)
   t.left(90)
   t.forward(h)
@@ -31,6 +31,7 @@ def drawRectangle(t, x, y, w, h):
   t.forward(w)
   t.left(90)
   t.forward(h)
+  t.end_fill()
   t.penup()
 
 def generateObstacles(n):
@@ -65,21 +66,18 @@ def isInsideAnyRectangle(x, y, rectangleArray):
 def isOutsideScreen(x, y):
   return x < minWidth or y < minHeight or x >= maxWidth or y >= maxHeight
 
-def doMove():
-  rectangles = generateObstacles(10)
-
-  while True:
-    x = t.xcor()
-    y = t.ycor()
+def doMove(rectangles):
+  x = t.xcor()
+  y = t.ycor()
   
-    if isOutsideScreen(x, y):
-      t.right(180)
-    elif isInsideAnyRectangle(x, y, rectangles):
-      t.right(180)
-    else:
-      t.right(random.randint(-30, 30))
+  if isOutsideScreen(x, y):
+    t.right(180)
+  elif isInsideAnyRectangle(x, y, rectangles):
+    t.right(180)
+  else:
+    t.right(random.randint(-30, 30))
     
-    t.forward(10)
+  t.forward(10)
 
 ##### EXERCISE #####
 
@@ -87,8 +85,11 @@ def doMove():
 # Press 'Run' again to get a different set of rectangles.
 # If the turtle gets stuck right at the start, press 'Run' again.
 
+rectangles = generateObstacles(10)
+
 # This will start the animation.
-doMove()
+while True:
+  doMove(rectangles)
 
 # 1. Modify the doMove function so that instead of avoiding the
 # rectangles the turtle can move inside them but only in a straight
@@ -101,7 +102,7 @@ doMove()
 # moves inside a rectangle it keeps moving inside the rectangle
 # forever and never moves out of the rectangle again.
 
-# ADDITIONAL EXERCISE #####
+##### ADDITIONAL EXERCISE #####
 
 # Replace the generateObstacles() function with your own function
 # that draws a labyrinth instead of random rectangles. Can the turtle

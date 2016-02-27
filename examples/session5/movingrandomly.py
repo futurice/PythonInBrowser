@@ -1,4 +1,3 @@
-# movingrandomly.py
 import turtle
 import random
 t = turtle.Turtle()
@@ -6,7 +5,7 @@ colors = ["green", "blue", "red", "yellow", "pink"]
 
 ##### EXERCISES #####
 # Below you can see function called doMove.
-# Currently the function does only two things. It goes forwars 10 steps and after that is calls itself again.
+# Currently the function does only two things. It move the turtle forward 10 steps.
 # Go ahead and try it!
 #
 # After this exercise we'd like the function go to random direction, random pixels and with random color.
@@ -36,10 +35,14 @@ def doMove():
   step = 10
   color = "black"
   t.forward(step)
-  doMove()
 
-# This is the first function call of 'doMove'
-doMove()
+# To see how the doMove() function controls turtle's movement, let's
+# call the function. Each call moves the turtle one step forward. To
+# make the turtle move continue moving, we call the function
+# repeatedly inside a loop. "while True" means that we continue
+# calling the function forever.
+while True:
+  doMove()
 
 ##### EXERCISE 4 #####
 # Did your Turtle dissappear?

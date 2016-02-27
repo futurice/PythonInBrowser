@@ -1,5 +1,3 @@
-##### FILE #####
-# indentation.py
 # Sequences, loops
 
 import turtle
@@ -28,8 +26,8 @@ number = 4
 sequence = [number]
 
 for i in range(20):
-  print 'Appending number', number, 'to the sequence'
   number = number + 3
+  print 'Appending number', number, 'to the sequence'
   sequence.append(number)
 
 # The following commands are not part of the loop anymore because they

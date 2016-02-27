@@ -1,4 +1,3 @@
-# modernart.py
 # Learn to read code, understand functions and randomization
 import turtle
 import random
@@ -21,7 +20,6 @@ boundMax = 180.0
 boundMin = -180.0
 
 # This function draws two squares as a frame to our modern art painting
-# In the end, it calls the function 'doMove' for the first time.
 def initializeModernArt():
   t.speed(0)
   t.penup()
@@ -38,7 +36,6 @@ def initializeModernArt():
   t.pendown()
   t.color("green")
   t.speed(6)
-  doMove()
 
 # This function draws a square
 def square(side):
@@ -68,7 +65,6 @@ def minorCollision():
   t.color("blue")
   t.right(angle)
   t.forward(10)
-  doMove()
 
 # Function that handles majorCollision
 def majorCollision():
@@ -76,7 +72,6 @@ def majorCollision():
   t.color("red")
   t.right(175)
   t.forward(30)
-  doMove()
 
 # Function that does moving of turtle
 def doMove():
@@ -88,10 +83,13 @@ def doMove():
   if xInBounds and yInBounds:
     t.color("green")
     t.forward(10)
-    doMove()
   else:
     # If we are not inside boundaries we'll call 'collision' function
     collision()
 
 # This is the first actual function call in our programm
 initializeModernArt()
+
+# Next we call doMove() repeatedly
+while True:
+  doMove()

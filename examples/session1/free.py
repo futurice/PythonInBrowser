@@ -9,6 +9,8 @@
 # t.forward(50)
 #
 # Other commands you can try:
+# t.color("red")
+# turtle.Screen().bgcolor("lightblue")
 # t.penup()
 # t.pendown()
 # t.goto(100, 50)

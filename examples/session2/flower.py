@@ -6,8 +6,12 @@ t = turtle.Turtle()
 ##### INFO #####
 # Firstly, let's make the drawing a bit faster.
 # It's possible to adjust the speed of the turtle with commad 'speed(0)'
-# In addition, the drawing color can be changed.
 t.speed(0)
+
+# We can set the background color.
+turtle.Screen().bgcolor("lightgreen")
+
+# The line color can be changed, too.
 t.color("red")
 
 ##### EXERCISE #####

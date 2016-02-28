@@ -52,7 +52,8 @@
       "key": "session4",
       "type": "exercise",
       "exercises": [
-        {"key": "arena", "description": "Drive the track!"}
+        {"key": "arena", "description": "Drive the track!"},
+        {"key": "snow", "description": "Snowflakes"}
       ]
     },
     {
@@ -82,15 +83,7 @@
       "exercises": [
         {"key": "hexahedron", "description": "3D drawing"},
         {"key": "isometric", "description": "3D cubes"},
-        {"key": "magic", "description": "Magic drawing"}
-      ]
-    },
-    {
-      "session": "Extra",
-      "key": "extra",
-      "type": "exercise",
-      "exercises": [
-        {"key": "snow", "description": "Snowflakes"},
+        {"key": "magic", "description": "Magic drawing"},
         {"key": "minigame", "description": "Minigame"}
       ]
     },

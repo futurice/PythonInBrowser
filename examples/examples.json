@@ -8,7 +8,7 @@
         {"key": "start", "description": "Start here"},
         {"key": "print", "description": "Learn to print"},
         {"key": "calculator", "description": "Code as calculator"},
-        {"key": "variable", "description": "What is variable?"},
+        {"key": "variable", "description": "What is a variable?"},
         {"key": "turtle", "description": "Meet the Turtle!"},
         {"key": "square", "description": "Let's draw a square"},
         {"key": "wall", "description": "Can you beat the wall?"},
@@ -92,6 +92,24 @@
       "exercises": [
         {"key": "snow", "description": "Snowflakes"},
         {"key": "minigame", "description": "Minigame"}
+      ]
+    },
+    {
+      "session": "Summary",
+      "key": "summary",
+      "type": "exercise",
+      "exercises": [
+        {"key": "start", "description": "Start here"},
+        {"key": "variable", "description": "What is a variable?"},
+        {"key": "turtle", "description": "Meet the Turtle!"},
+        {"key": "wall", "description": "Can you beat the wall?"},
+        {"key": "flower", "description": "Draw a flower"},
+        {"key": "coordinates", "description": "Coordinates"},
+        {"key": "function", "description": "Function"},
+        {"key": "polygon", "description": "Polygon"},
+        {"key": "perimeter2", "description": "Circumference of a circle"},
+        {"key": "escape", "description": "Reach the finish line"},
+        {"key": "arena", "description": "Drive the track!"}
       ]
     }
   ]

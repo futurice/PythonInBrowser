@@ -7,23 +7,17 @@
       <div class="saved">Saved</div>
       <div class="failed">Save failed, try again.</div>
       <div class="button-container">
-        <form>
-          <a href="#modalSave"><button class="button" type="button">Save</button></a>
-        </form>
-        <form>
-          <a href="#modalLoad"><button class="button" type="button">Load</button></a>
-        </form>
-        <form>
-          <a href="#modalExercise"><button class="button" type="button">Exercises</button></a>
-        </form>
-        <a href="/material" target="_blank"><button class="button" type="button">Material</button></a>
+        <a class="button" href="#modalSave">Save</a>
+        <a class="button" href="#modalLoad">Load</a>
+        <a class="button" href="#modalExercise">Exercises</a>
+        <a class="button" href="/material" target="_blank">Material</a>
       </div>
     </header>
     <div class="container">
       <div class="left-container">
-        <form>
-          <button class="run-button" type="button" onclick="run()">Run</button>
-        </form>
+        <div>
+        <a class="button run-button" onclick="run()">Run</a>
+        </div>
         <div id="editor"></div>
       </div>
       <div class="right-container">
@@ -70,7 +64,7 @@
         <div>
           <div class="name">Name:</div>
           <div class="name name-edit name-edit-load" contentEditable="true"></div>
-          <button class="load-button" type="button" onclick="load()">Get Exercises</button>
+          <a class="button load-button" onclick="load()">Get Exercises</a>
         </div>
         <div class="exercise-container">
           <ul class="own-exercises">
@@ -87,7 +81,7 @@
         <div>
           <div class="name">Name:</div>
           <div class="name name-edit name-edit-save" contentEditable="true"></div>
-          <a href="#close"><button class="load-button" type="button" onclick="save()">Save</button></a>
+          <a class="button load-button" onclick="save()" href="#close">Save</a>
         </div>
       </div>
     </div>

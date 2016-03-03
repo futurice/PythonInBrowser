@@ -80,16 +80,6 @@
     height: 100%;
 }
 
-button {
-    border-radius: 0;
-    background-color: #ffffff;
-    border: none;
-}
-
-button:hover {
-    background-color: #fd8f34;
-}
-
 .button {
     color: black;
     text-decoration: none;

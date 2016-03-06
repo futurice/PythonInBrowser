@@ -115,10 +115,13 @@ def moveOneStep(t, obstacles):
 
 # Generate obstacles at random locations by calling the helper
 # functions defined above.
-left = -250
-right = 250
-top = 270
-bottom = -270
+
+screen = turtle.Screen()
+right = min(250, screen.window_width()/2 - 5)
+left = -right
+top = min(270, screen.window_height()/2 - 5)
+bottom = -top
+
 obstacles = (outerBounds(left, right, top, bottom) +
              generateObstacles(4, left, right, top, bottom + 60))
 

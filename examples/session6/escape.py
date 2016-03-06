@@ -123,7 +123,7 @@ top = min(270, screen.window_height()/2 - 5)
 bottom = -top
 
 obstacles = (outerBounds(left, right, top, bottom) +
-             generateObstacles(4, left, right, top, bottom + 60))
+             generateObstacles(4, left, right, top - 20, bottom + 60))
 
 # Draw the obstacles
 turtlehelpers.pauseDrawing()

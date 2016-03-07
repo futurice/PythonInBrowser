@@ -6,7 +6,7 @@
 print "Hello world"
 
 ##### INFO #####
-# What just happened was that the line 8 – 'print "Hello world"' got processed.
+# What just happened was that the line 6 – 'print "Hello world"' got processed.
 
 # There are 3 significant areas in this coding environment: editor, canvas and console.
 # Editor (this window) is where you write all the code.

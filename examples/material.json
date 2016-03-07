@@ -26,11 +26,6 @@
           "id": "id04",
           "text": "The smaller grey box on the bottom of the right side of main view is the console. That's were we see text output. In the very first exercises we learn to use this.",
           "code": ""
-        }, {
-          "subtitle": "Save & Load",
-          "id": "id05",
-          "text": "You can also Save your work and Load it afterwards. It's good idea to save your work after every exercise so you can come back to what you learned already. But please note that we don't have login in the system. That means that others may use the same nick to save the exercises as you are. How ever no one can override your work. There just might be more exercises when you load them. So to avoid this, try to come up with really unique nick.",
-          "code": ""
         }
       ]
     }, {

@@ -36,11 +36,13 @@ for i in range (100):
 # Click 'Run' and see what happens.
 
 # It's possible to change the color of drawing in the middle of code
-# Uncomment the following line
+# Enable the code on the next line by removing the comment character
+# '#' and the space from the beginning of the next line. Removing the
+# comment character is called uncommenting.
 # t.color("green")
 
-# Then uncomment the following lines
-# Which does the same drawing as the first for loop
+# Then uncomment the following lines.
+# These draw a similar pattern as the first loop
 # but this time with different color and turning to direction2.
 
 # for i in range (0, 100):

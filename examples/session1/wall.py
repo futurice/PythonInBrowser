@@ -29,6 +29,7 @@ wall.dot(20, "red")
 
 # here we create new turtle, with name Joe
 joe = turtle.Turtle()
+joe.shape("turtle")
 
 # joe is taking a stroll here
 joe.right(120)

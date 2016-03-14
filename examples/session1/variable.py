@@ -1,32 +1,37 @@
-# Goal: Let's check if the computer can remember your name.
-# This is achieved by using a variable.
+# Goal: draw a triangle and learn to use a variable.
+
+import turtle
+t = turtle.Turtle()
+t.shape("arrow")
 
 ##### INFO #####
-# Write your name like this, but replace "Tuomas" with your own name.
-name = "Tuomas"
+# Let's draw a triangle with 150 pixels long sides.
 
-# What did you just write?
-# Let's divide it into components:
-# 'name' is a variable.
+# We store the length in to a variable. We can retrieve the
+# value of the variable later in the code.
+
+side = 150
+
+# Let's divide the above line into components:
+# 'side' is the name of a variable.
 # '=' is used to assign a value to a variable.
-# As the name says, the value of a variable can vary.
-# "'Tuomas'" is a value that is assigned to the variable.
-# When assigning text to a variable, it needs to be written in quotation marks.
-
-# Your name will be printed in the console if you write down like this
-print "Your name is: " + name
+# '150' is the value we assign to the variable.
 
 ##### EXERCISE #####
-# Click 'Run' on the upper right corner.
-# See, the computer now remembers your name.
-# It's been saved in a variable called 'name'.
+# The next code will draw a triangle. The name 'side' in the
+# following will mean the same as the number 150. Click 'Run'!
 
-# Let's change the contents of 'name'.
-# Write another name on line 7, after 'name' and '=',
-# like this: name = "Tiina". Don't change anything else.
+t.forward(side)
+t.left(120)
+t.forward(side)
+t.left(120)
+t.forward(side)
 
-# Click 'Run' again and check what is printed on the console.
+# Draw a smaller triangle by changing the number to 60 on
+# the line 13. Because a variable was used to draw the
+# triangle, you only need to change the value in one place
+# instead of in each three t.forward commands.  Click 'Run'
+# again.
 
-# Congratulations! You've just saved data in a variable and also changed its value.
-# Variable is a very essential concept in programming.
-# You'll learn a lot more about it during the course.
+# Next, draw a larger triangle by changing the number on
+# line 13 again.

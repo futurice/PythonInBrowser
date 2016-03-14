@@ -1,0 +1,35 @@
+/* Based on Sublime Text's Monokai theme */
+
+.cm-s-monokaihighcontrast.CodeMirror { background: #272822; color: #f8f8f2; }
+.cm-s-monokaihighcontrast div.CodeMirror-selected { background: #49483E; }
+.cm-s-monokaihighcontrast .CodeMirror-line::selection, .cm-s-monokaihighcontrast .CodeMirror-line > span::selection, .cm-s-monokaihighcontrast .CodeMirror-line > span > span::selection { background: rgba(73, 72, 62, .99); }
+.cm-s-monokaihighcontrast .CodeMirror-line::-moz-selection, .cm-s-monokaihighcontrast .CodeMirror-line > span::-moz-selection, .cm-s-monokaihighcontrast .CodeMirror-line > span > span::-moz-selection { background: rgba(73, 72, 62, .99); }
+.cm-s-monokaihighcontrast .CodeMirror-gutters { background: #272822; border-right: 0px; }
+.cm-s-monokaihighcontrast .CodeMirror-guttermarker { color: white; }
+.cm-s-monokaihighcontrast .CodeMirror-guttermarker-subtle { color: #d0d0d0; }
+.cm-s-monokaihighcontrast .CodeMirror-linenumber { color: #d0d0d0; }
+.cm-s-monokaihighcontrast .CodeMirror-cursor { border-left: 1px solid #f8f8f0; }
+
+.cm-s-monokaihighcontrast span.cm-comment { color: #428BDD; }
+.cm-s-monokaihighcontrast span.cm-atom { color: #ae81ff; }
+.cm-s-monokaihighcontrast span.cm-number { color: #ae81ff; }
+
+.cm-s-monokaihighcontrast span.cm-property, .cm-s-monokaihighcontrast span.cm-attribute { color: #a6e22e; }
+.cm-s-monokaihighcontrast span.cm-keyword { color: #f92672; }
+.cm-s-monokaihighcontrast span.cm-string { color: #e6db74; }
+
+.cm-s-monokaihighcontrast span.cm-variable { color: #f8f8f2; }
+.cm-s-monokaihighcontrast span.cm-variable-2 { color: #9effff; }
+.cm-s-monokaihighcontrast span.cm-variable-3 { color: #66d9ef; }
+.cm-s-monokaihighcontrast span.cm-def { color: #fd971f; }
+.cm-s-monokaihighcontrast span.cm-bracket { color: #f8f8f2; }
+.cm-s-monokaihighcontrast span.cm-tag { color: #f92672; }
+.cm-s-monokaihighcontrast span.cm-header { color: #ae81ff; }
+.cm-s-monokaihighcontrast span.cm-link { color: #ae81ff; }
+.cm-s-monokaihighcontrast span.cm-error { background: #f92672; color: #f8f8f0; }
+
+.cm-s-monokaihighcontrast .CodeMirror-activeline-background { background: #373831; }
+.cm-s-monokaihighcontrast .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: white !important;
+}

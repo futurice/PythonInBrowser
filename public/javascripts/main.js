@@ -36,7 +36,7 @@ var app = (function() {
     myCodeMirror = CodeMirror(editor, {
       value: code,
       mode:  "python",
-      theme: "midnight",
+      theme: "monokaihighcontrast",
       lineNumbers: true,
       lineWrapping: true,
       tabSize: 2,

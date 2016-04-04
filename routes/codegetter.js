@@ -11,9 +11,17 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/exercise/:session/:id', function(req, res, next) {
-  getCode(req.params.id, req.params.session, "../examples/")
+  var session = req.params.session;
+  var exercise = req.params.id;
+  getCode(exercise, session, "../examples/")
   .then(function(data) {
-    var resJson = { key: req.params.id, code: data};
+    var prevAndNext = nextAndPrevExercises(session, exercise);
+    var resJson = {
+      key: req.params.id,
+      nextExercise: prevAndNext.next,
+      previousExercise: prevAndNext.prev,
+      code: data
+    };
     res.set({'Cache-Control': 'public, max-age=3600'});
     res.json(resJson);
   })
@@ -42,6 +50,49 @@ function getCode(id, session, pathToCode) {
     .then(function(data) {
       return data;
     });
+}
+
+function nextAndPrevExercises(sessionKey, exerciseKey) {
+  function sessionByKey(example) {
+    return example.key == sessionKey;
+  }
+
+  function findExerciseIndex(session, exerciseKey) {
+    for (var i=0; i < session.length; i++) {
+      if (session[i].key == exerciseKey) {
+	return i;
+      }
+    }
+    
+    return -1;
+  }
+
+  var prevObject, nextObject;
+  var exampleRoot = require('../examples/examples.json');
+  var session = exampleRoot.examples.find(sessionByKey) || {};
+  var exercises = session.exercises || [];
+  var index = findExerciseIndex(exercises, exerciseKey);
+
+  if (index >= 0) {
+    var prev = exercises[index-1] || {};
+    var next = exercises[index+1] || {};
+
+    if (prev.key) {
+      prevObject = {session: sessionKey, exercise: prev.key};
+    } else {
+      prevObject = undefined;
+    }
+
+    if (next.key) {
+      nextObject = {session: sessionKey, exercise: next.key};
+    } else {
+      nextObject = undefined;
+    }
+    
+    return {next: nextObject, prev: prevObject};
+  } else {
+    return {};
+  }
 }
 
 module.exports = router;

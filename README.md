@@ -2,7 +2,7 @@
 
 Chilicorn Code Club is a [Spice program](http://spiceprogram.org/) project aiming to introduce Finnish school kids to coding and to give schools & teachers tools for facilitating the learning. Exercises are currently developed by [Futurice](http://futurice.com/) employees.
 
-Demo version of Python in Browser can be found [here](https://codeclub.herokuapp.com/).
+Try out the application [here](http://codeclub.chilicorn.org/).
 
 ## Adding exercises
 

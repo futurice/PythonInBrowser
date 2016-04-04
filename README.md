@@ -22,7 +22,7 @@ With Python modules you work much in the same way as with exercises. Write your 
 
 After adding the file edit [modules.json](https://github.com/futurice/PythonInBrowser/blob/master/examples/modules.json) IF you want to publish your module so that student can also see it. Otherwise no need to do this.
 
-AFter this edit the run-function in [main.js](https://github.com/futurice/PythonInBrowser/blob/master/public/javascripts/main.js) to add your module to Skulpt.
+After this edit the run-function in [main.js](https://github.com/futurice/PythonInBrowser/blob/master/public/javascripts/main.js) to add your module to Skulpt.
 
 Here is example on how to do it:
 
@@ -46,7 +46,7 @@ Sk.externalLibraries = {
 
 ### JS module
 
-It's also possible to use JS-libraries as modules. How ever you need to write python wrapper for it to use it. For example please see how matter-0.8.0.min.js and __init__.js are added.
+It's also possible to use JS-libraries as modules. How ever you need to write python wrapper for it to use it. For example please see how `matter-0.8.0.min.js` and `__init__.js` are added.
 
 ## Adding learning material
 

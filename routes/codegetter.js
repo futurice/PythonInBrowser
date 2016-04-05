@@ -4,6 +4,7 @@ var path = require('path');
 var Promise = require("bluebird");
 var router = express.Router();
 var defaultCode = "There was a problem loading code, please try again.";
+var examples = require('../examples/examples.json');
 Promise.promisifyAll(fs);
 
 router.use(function timeLog(req, res, next) {
@@ -68,8 +69,7 @@ function nextAndPrevExercises(sessionKey, exerciseKey) {
   }
 
   var prevObject, nextObject;
-  var exampleRoot = require('../examples/examples.json');
-  var session = exampleRoot.examples.find(sessionByKey) || {};
+  var session = examples.examples.find(sessionByKey) || {};
   var exercises = session.exercises || [];
   var index = findExerciseIndex(exercises, exerciseKey);
 

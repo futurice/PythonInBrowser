@@ -16,7 +16,7 @@ var app = (function() {
     initCodeMirror();
     initClickHandlers();
     initLocalSave();
-    hideNextExerciseLink();
+    hideExerciseNavigation();
   }
 
   function initCodeMirror() {
@@ -65,7 +65,7 @@ var app = (function() {
     });
     $(".name-edit").keypress(function(e){ return e.which != 13; }); //enter disabled in contenteditable
 
-    $("#next-exercise").on('click', function(event) {
+    $("#next-exercise,#prev-exercise").on('click', function(event) {
       var session = $(this).data("session");
       var exercise = $(this).data("exercise");
       if (session && exercise) {
@@ -118,31 +118,44 @@ var app = (function() {
     $.get("/exercises/" + type + "/" + session + "/" + id, function(data) {
       if(data && data.code) {
         setCode(data.code);
-
-	if (data.nextExercise) {
-	  setNextExerciseLink(data.nextExercise.session, data.nextExercise.exercise);
-	  showNextExerciseLink();
-	} else {
-	  hideNextExerciseLink();
-	}
+	setupExerciseNavigation(data.nextExercise, data.previousExercise);
       } else {
         console.error("loading code failed for " + session + " ," + id);
       }
     });
   }
 
-  function setNextExerciseLink(session, exercise) {
-    $("#next-exercise")
+  function setupExerciseNavigation(next, prev) {
+    setupExerciseNavigationButton("#next-exercise", next);
+    setupExerciseNavigationButton("#prev-exercise", prev);
+  }
+
+  function setupExerciseNavigationButton(buttonId, target) {
+    if (target) {
+      setExerciseNavigationTarget(buttonId, target.session, target.exercise);
+      showButton(buttonId);
+    } else {
+      hideButton(buttonId);
+    }
+  }
+
+  function setExerciseNavigationTarget(buttonId, session, exercise) {
+    $(buttonId)
       .data("session", session)
       .data("exercise", exercise);
   }
 
-  function showNextExerciseLink() {
-    $("#next-exercise").css("visibility", "visible");
+  function showButton(buttonId) {
+    $(buttonId).css("visibility", "visible");
   }
 
-  function hideNextExerciseLink() {
-    $("#next-exercise").css("visibility", "hidden");
+  function hideButton(buttonId) {
+    $(buttonId).css("visibility", "hidden");
+  }
+  
+  function hideExerciseNavigation() {
+    hideButton("#next-exercise");
+    hideButton("#prev-exercise");
   }
 
   function setErrorHighlight(lineno) {

@@ -16,6 +16,7 @@ var app = (function() {
     initCodeMirror();
     initClickHandlers();
     initLocalSave();
+    hideNextExerciseLink();
   }
 
   function initCodeMirror() {
@@ -63,6 +64,14 @@ var app = (function() {
         $("#" + id).show();
     });
     $(".name-edit").keypress(function(e){ return e.which != 13; }); //enter disabled in contenteditable
+
+    $("#next-exercise").on('click', function(event) {
+      var session = $(this).data("session");
+      var exercise = $(this).data("exercise");
+      if (session && exercise) {
+	loadCode("exercise", session, exercise);
+      }
+    });
   }
 
   function initLocalSave() {
@@ -109,10 +118,31 @@ var app = (function() {
     $.get("/exercises/" + type + "/" + session + "/" + id, function(data) {
       if(data && data.code) {
         setCode(data.code);
+
+	if (data.nextExercise) {
+	  setNextExerciseLink(data.nextExercise.session, data.nextExercise.exercise);
+	  showNextExerciseLink();
+	} else {
+	  hideNextExerciseLink();
+	}
       } else {
         console.error("loading code failed for " + session + " ," + id);
       }
     });
+  }
+
+  function setNextExerciseLink(session, exercise) {
+    $("#next-exercise")
+      .data("session", session)
+      .data("exercise", exercise);
+  }
+
+  function showNextExerciseLink() {
+    $("#next-exercise").css("visibility", "visible");
+  }
+
+  function hideNextExerciseLink() {
+    $("#next-exercise").css("visibility", "hidden");
   }
 
   function setErrorHighlight(lineno) {

@@ -21,7 +21,7 @@
       "type": "exercise",
       "exercises": [
         {"key": "start2", "description": "Recap of session 1"},
-        {"key": "indentation", "description": "Indentation"},
+        {"key": "indentation", "description": "Loops"},
         {"key": "coordinates", "description": "Coordinates"},
         {"key": "dots", "description": "Connect the dots"},
         {"key": "lines", "description": "Draw a line"},
@@ -62,7 +62,7 @@
       "exercises": [
         {"key": "start5", "description": "Recap of functions"},
         {"key": "movingrandomly", "description": "Move randomly"},
-        {"key": "differentdrawing", "description": "Learn to draw within given boundaries"},
+        {"key": "differentdrawing", "description": "Drawing within boundaries"},
         {"key": "modernart", "description": "Modern art"},
         {"key": "randomwalk", "description": "Random walk"}
       ]

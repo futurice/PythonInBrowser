@@ -7,6 +7,7 @@
 # t.forward(50) or t.goto(100, 50)
 # t.penup() or t.pendown()
 # t.color("yellow")
+# turtle.Screen().bgcolor("lightblue")
 #
 # Also remember how the for loop was formed:
 # for i in range (0, 10)

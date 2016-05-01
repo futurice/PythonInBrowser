@@ -17,7 +17,7 @@ t = turtle.Turtle()
 # t.pendown(), put pen back down and start drawing
 #
 # Goto:
-# t.goto(10, 20), moves our turlte from the current position to position (10, 20)
+# t.goto(10, 20), moves our turtle from the current position to position (10, 20)
 #
 # Dot:
 # t.dot(2), draw small dot on the current position

@@ -5,7 +5,7 @@ t = turtle.Turtle()
 
 ##### INFO #####
 # Firstly, let's make the drawing a bit faster.
-# It's possible to adjust the speed of the turtle with commad 'speed(0)'
+# It's possible to adjust the speed of the turtle with command 'speed(0)'
 t.speed(0)
 
 # We can set the background color.

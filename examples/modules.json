@@ -7,7 +7,6 @@
       "modules": [
         {"key": "basic", "description": "Coordinates"},
         {"key": "tracks",  "description": "Tracks" },
-        {"key": "turtlehelpers",  "description": "Turtlehelpers" },
         {"key": "chilicorn", "description": "Chilicorn"},
         {"key": "winter",  "description": "Winter" }
       ]

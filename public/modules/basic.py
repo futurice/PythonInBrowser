@@ -1,5 +1,5 @@
 import turtle
-import turtlehelpers
+import chilicorn
 
 t = turtle.Turtle()
 t.color("#545454")
@@ -83,7 +83,7 @@ def drawDots():
 
 
 def prepareCoordinates():
-  turtlehelpers.pauseDrawing()
+  chilicorn.pauseDrawing()
   t.speed(0)
   t.penup()
   drawAxis(-600, 0)
@@ -94,5 +94,5 @@ def prepareCoordinates():
   drawTicksY(-600)
   drawXnumbers(-600)
   drawYnumbers(-600)
-  turtlehelpers.unpauseDrawing()
+  chilicorn.unpauseDrawing()
 

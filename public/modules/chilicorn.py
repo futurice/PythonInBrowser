@@ -11,3 +11,10 @@ class Turtle(turtle.Turtle):
         self.goto(x, y)
         if was_down:
             self.pendown()
+
+def pauseDrawing():
+  turtle.tracer(10000)
+
+def unpauseDrawing():
+  turtle.update()
+  turtle.tracer(1)

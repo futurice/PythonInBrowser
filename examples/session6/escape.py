@@ -1,6 +1,6 @@
 ##### INFO #####
 import turtle
-import turtlehelpers
+import chilicorn
 import random
 import time
 
@@ -126,10 +126,10 @@ obstacles = (outerBounds(left, right, top, bottom) +
              generateObstacles(4, left, right, top - 20, bottom + 60))
 
 # Draw the obstacles
-turtlehelpers.pauseDrawing()
+chilicorn.pauseDrawing()
 drawRectangles(obstacles)
 drawFinishLine(left, right, top)
-turtlehelpers.unpauseDrawing()
+chilicorn.unpauseDrawing()
 
 # Create the turtle
 t = turtle.Turtle()

@@ -2,7 +2,7 @@
 
 ##### INFO #####
 import turtle
-import turtlehelpers
+import chilicorn
 import random
 
 # Here we define a turtle and its speed
@@ -28,7 +28,7 @@ def blend_colors(color1, color2, weight1=1.0, weight2=1.0):
           u*color1[2] + v*color2[2])
 
 def draw_block(t, x, y, color=(255, 0, 0), size=50):
-  turtlehelpers.pauseDrawing()
+  chilicorn.pauseDrawing()
   t.speed("fastest")
   t.hideturtle()
   t.penup()
@@ -70,7 +70,7 @@ def draw_block(t, x, y, color=(255, 0, 0), size=50):
   t.forward(size)
   t.end_fill()
 
-  turtlehelpers.unpauseDrawing()
+  chilicorn.unpauseDrawing()
 
 def generateObstacles(n):
   t = turtle.Turtle()

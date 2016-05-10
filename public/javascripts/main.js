@@ -236,6 +236,9 @@ var app = (function() {
         turtlehelpers: {
           path: '/static/modules/turtlehelpers.py'
         },
+        chilicorn: {
+          path: '/static/modules/chilicorn.py'
+        },
         winter: {
           path: '/static/modules/winter.py'
         }

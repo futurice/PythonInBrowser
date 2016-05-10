@@ -18,3 +18,6 @@ def pauseDrawing():
 def unpauseDrawing():
   turtle.update()
   turtle.tracer(1)
+
+def bgcolor(color):
+    turtle.Screen().bgcolor(color)

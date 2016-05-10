@@ -5,7 +5,7 @@ class Turtle(turtle.Turtle):
         turtle.Turtle.__init__(self)
         self.shape('turtle')
 
-    def jumpTo(self, x, y=None):
+    def jumpto(self, x, y=None):
         was_down = self.isdown()
         self.penup()
         self.goto(x, y)

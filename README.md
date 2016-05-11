@@ -63,7 +63,8 @@ If you want to add learning material please edit [material.json](https://github.
 
 * Clone this repo or take a fork
 * In root of repo ```npm install```
-* Start application with ```nodemon bin/www```
+* ```sudo npm install -g nodemon```
+* Start the application with ```nodemon bin/www```
 * Open a browser at http://localhost:3000/
 
 ## License

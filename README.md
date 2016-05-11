@@ -68,4 +68,7 @@ If you want to add learning material please edit [material.json](https://github.
 * Open a browser at http://localhost:3000/
 
 ## License
-Plese see our [license](https://github.com/futurice/PythonInBrowser/blob/master/LICENSE).
+
+The MIT License.
+
+Parts of the code are covered by [PSF](https://docs.python.org/2/license.html). See the [license](https://github.com/futurice/PythonInBrowser/blob/master/LICENSE) file for more details.

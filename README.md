@@ -56,16 +56,12 @@ If you want to add learning material please edit [material.json](https://github.
 
 * [Node.js](https://nodejs.org/) with [Express](http://expressjs.com/)
 * [Handlebars](http://handlebarsjs.com/)
-* [MongoDB](https://www.mongodb.org/)
 * [Skulpt](http://www.skulpt.org/)
 * [CodeMirror](https://codemirror.net/)
 
 ## Start developing
 
 * Clone this repo or take a fork
-* Install MongoDB
-* Start MongoDB
-* Copy env-local.js to env.js (and possibly edit the Mongo URL in env.js)
 * In root of repo ```npm install```
 * Start application with ```nodemon bin/www```
 * Open a browser at http://localhost:3000/

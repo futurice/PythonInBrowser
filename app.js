@@ -8,9 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var Promise = require('bluebird');
 var codegetter = require('./routes/codegetter');
-var dbHandler = require('./routes/db-handler');
 
-function makeApp(db) {
+function makeApp() {
   var app = express();
   // view engine setup
   var hbs = exphbs.create({
@@ -35,14 +34,8 @@ function makeApp(db) {
   }));
   app.use('/static', express.static('public'));
 
-  app.use(function(req,res,next) {
-    req.db = db;
-    next();
-  });
-
   app.use('/', routes);
   app.use('/exercises', codegetter);
-  app.use('/api', dbHandler);
 
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {

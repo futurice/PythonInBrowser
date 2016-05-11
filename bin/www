@@ -8,13 +8,9 @@ function main() {
    * Module dependencies.
    */
   var Promise = require('bluebird');
-  var mongodb = require('mongodb');
-  var MongoClient = mongodb.MongoClient;
   var makeApp = require('../app.js');
   var debug = require('debug')('app:server');
   var http = require('http');
-  var ENV = require('../env.js');
-  Promise.promisifyAll(MongoClient);
 
   /**
    * Get port from environment and store in Express.
@@ -22,14 +18,8 @@ function main() {
 
   var port = normalizePort(process.env.PORT || '3000');
 
-  // Asynchronous initialisation
-  var mongoInit = MongoClient.connectAsync(ENV.ENV_MONGO_URL);
-
-  Promise.all([
-    mongoInit
-  ])
-  .spread(function (db) {
-    var app = makeApp(db);
+  try {
+    var app = makeApp();
 
     app.set('port', port);
 
@@ -58,10 +48,9 @@ function main() {
         : 'port ' + addr.port;
       debug('Listening on ' + bind);
     }
-  })
-  .catch(function (err) {
+  } catch (err) {
     console.error("FATAL", err);
-  });
+  }
 }
 
 /**

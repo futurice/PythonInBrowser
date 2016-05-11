@@ -14,7 +14,6 @@
     "express-handlebars": "^2.0.1",
     "hbs": "~3.1.0",
     "kerberos": "0.0.17",
-    "mongodb": "^2.1.4",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0",

@@ -233,8 +233,8 @@ var app = (function() {
         coordinates: {
           path: '/static/modules/basic.py'
         },
-        chilicorn: {
-          path: '/static/modules/chilicorn.py'
+        turtle2: {
+          path: '/static/modules/turtle2.py'
         },
         winter: {
           path: '/static/modules/winter.py'

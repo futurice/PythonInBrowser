@@ -5,9 +5,9 @@
       "key": "modules",
       "type": "module",
       "modules": [
-        {"key": "basic", "description": "Coordinates"},
+        {"key": "turtle2", "description": "turtle2"},
+        {"key": "basic",   "description": "Coordinates"},
         {"key": "tracks",  "description": "Tracks" },
-        {"key": "chilicorn", "description": "Chilicorn"},
         {"key": "winter",  "description": "Winter" }
       ]
     }

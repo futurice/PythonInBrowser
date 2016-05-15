@@ -2,7 +2,7 @@
 
 ##### INFO #####
 import turtle
-import chilicorn
+import turtle2
 
 # Blends two colors and returns their combination.
 # The colors must be given as (red, green, blue).
@@ -25,7 +25,7 @@ def blend_colors(color1, color2, weight1=1.0, weight2=1.0):
 #
 # size is the length of the cube's side.
 def draw_block(x, y, color=(255, 0, 0), size=30):
-    chilicorn.pauseDrawing()
+    turtle2.pauseDrawing()
     t = turtle.Turtle()
     t.speed("fastest")
     t.hideturtle()
@@ -68,7 +68,7 @@ def draw_block(x, y, color=(255, 0, 0), size=30):
     t.forward(size)
     t.end_fill()
 
-    chilicorn.unpauseDrawing()
+    turtle2.unpauseDrawing()
 
 
 ##### EXERCISE 1 #####

@@ -1,5 +1,7 @@
 import turtle
 
+Screen = turtle.Screen
+
 class Turtle(turtle.Turtle):
     def __init__(self, shape='turtle'):
         turtle.Turtle.__init__(self)

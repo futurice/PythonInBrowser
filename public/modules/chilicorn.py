@@ -12,6 +12,10 @@ class Turtle(turtle.Turtle):
         if was_down:
             self.pendown()
 
+    def bgcolor(self, color):
+        bgcolor(color)
+
+
 def pauseDrawing():
     turtle.tracer(10000)
 

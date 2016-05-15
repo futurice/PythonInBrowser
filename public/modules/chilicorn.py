@@ -13,11 +13,11 @@ class Turtle(turtle.Turtle):
             self.pendown()
 
 def pauseDrawing():
-  turtle.tracer(10000)
+    turtle.tracer(10000)
 
 def unpauseDrawing():
-  turtle.update()
-  turtle.tracer(1)
+    turtle.update()
+    turtle.tracer(1)
 
 def bgcolor(color):
     turtle.Screen().bgcolor(color)

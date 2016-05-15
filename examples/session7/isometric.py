@@ -1,7 +1,6 @@
 # Building with blocks
 
 ##### INFO #####
-import turtle
 import turtle2
 
 # Blends two colors and returns their combination.
@@ -26,7 +25,7 @@ def blend_colors(color1, color2, weight1=1.0, weight2=1.0):
 # size is the length of the cube's side.
 def draw_block(x, y, color=(255, 0, 0), size=30):
     turtle2.pauseDrawing()
-    t = turtle.Turtle()
+    t = turtle2.Turtle()
     t.speed("fastest")
     t.hideturtle()
     t.penup()

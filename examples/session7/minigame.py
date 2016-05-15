@@ -1,17 +1,16 @@
 # Turtle moving around cubes
 
 ##### INFO #####
-import turtle
 import turtle2
 import random
 
 # Here we define a turtle and its speed
-t = turtle.Turtle()
+t = turtle2.Turtle()
 t.speed("fastest")
 t.color("black")
 
 # Here we calculate the size of the screen
-screen = turtle.Screen()
+screen = turtle2.Screen()
 screen.bgcolor("blue")
 width = screen.window_width()
 height = screen.window_height()
@@ -73,7 +72,7 @@ def draw_block(t, x, y, color=(255, 0, 0), size=50):
   turtle2.unpauseDrawing()
 
 def generateObstacles(n):
-  t = turtle.Turtle()
+  t = turtle2.Turtle()
   t.speed("fastest")
   t.color("red")
 

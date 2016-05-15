@@ -1,5 +1,4 @@
 ##### INFO #####
-import turtle
 import turtle2
 import random
 import time
@@ -68,7 +67,7 @@ def drawRectangle(t, x, y, w, h):
 # Draw several rectangles.
 # rectangles is a list of (x, y, width, height) variables.
 def drawRectangles(rectangles):
-  t = turtle.Turtle()
+  t = turtle2.Turtle()
   t.speed("fastest")
   t.color("red")
   t.hideturtle()
@@ -76,7 +75,7 @@ def drawRectangles(rectangles):
     drawRectangle(t, rect[0], rect[1], rect[2], rect[3])
 
 def drawFinishLine(x1, x2, y):
-  t = turtle.Turtle()
+  t = turtle2.Turtle()
   t.hideturtle()
   t.speed("fastest")
   t.color("blue")
@@ -116,7 +115,7 @@ def moveOneStep(t, obstacles):
 # Generate obstacles at random locations by calling the helper
 # functions defined above.
 
-screen = turtle.Screen()
+screen = turtle2.Screen()
 right = min(250, screen.window_width()/2 - 5)
 left = -right
 top = min(270, screen.window_height()/2 - 5)
@@ -132,7 +131,7 @@ drawFinishLine(left, right, top)
 turtle2.unpauseDrawing()
 
 # Create the turtle
-t = turtle.Turtle()
+t = turtle2.Turtle()
 t.speed("fastest")
 t.penup()
 t.goto((left + right)/2, bottom + 20)

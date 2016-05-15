@@ -1,7 +1,6 @@
-import turtle
 import turtle2
 
-t = turtle.Turtle()
+t = turtle2.Turtle()
 t.color("#545454")
 
 def drawAxis(minW, minH):
@@ -54,7 +53,7 @@ def drawYnumbers(minValue):
 
 
 def drawDots():
-  joe = turtle.Turtle()
+  joe = turtle2.Turtle()
   size = 4
   joe.penup()
   joe.color("blue")

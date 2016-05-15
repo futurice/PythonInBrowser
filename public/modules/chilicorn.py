@@ -1,9 +1,9 @@
 import turtle
 
 class Turtle(turtle.Turtle):
-    def __init__(self):
+    def __init__(self, shape='turtle'):
         turtle.Turtle.__init__(self)
-        self.shape('turtle')
+        self.shape(shape)
 
     def jumpto(self, x, y=None):
         was_down = self.isdown()

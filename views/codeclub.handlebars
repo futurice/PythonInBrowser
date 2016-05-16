@@ -7,8 +7,6 @@
       <div class="saved">Saved</div>
       <div class="failed">Save failed, try again.</div>
       <div class="button-container">
-        <!-- <a class="button" href="#modalSave">Save</a> -->
-        <!-- <a class="button" href="#modalLoad">Load</a> -->
         <a class="button" href="#modalExercise">Exercises</a>
         <a class="button" id="prev-exercise">«</a>
         <a class="button" id="next-exercise">»</a>
@@ -59,33 +57,5 @@
       </div>
     </div>
 
-    <div id="modalLoad" class="modal">
-      <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>Your saved exercises</h2>
-        <div>
-          <div class="name">Name:</div>
-          <div class="name name-edit name-edit-load" contentEditable="true"></div>
-          <a class="button load-button" onclick="load()">Get Exercises</a>
-        </div>
-        <div class="exercise-container">
-          <ul class="own-exercises">
-          </ul>
-        </div>
-        <div class="empty-exercises">No exercises.</div>
-      </div>
-    </div>
-
-    <div id="modalSave" class="modal">
-      <div>
-        <a href="#close" title="Close" class="close">X</a>
-        <h2>Save your exercises:</h2>
-        <div>
-          <div class="name">Name:</div>
-          <div class="name name-edit name-edit-save" contentEditable="true"></div>
-          <a class="button load-button" onclick="save()" href="#close">Save</a>
-        </div>
-      </div>
-    </div>
     <script src="/static/javascripts/main.js" type="text/javascript"></script>
   </body>

@@ -10,7 +10,7 @@
         <a class="button" href="#modalExercise">Exercises</a>
         <a class="button" id="prev-exercise">«</a>
         <a class="button" id="next-exercise">»</a>
-        <a class="button" href="/material" target="_blank">Help</a>
+        <a class="button" href="#modalHelp">Help</a>
       </div>
     </header>
     <div class="container">
@@ -27,8 +27,6 @@
         </div>
       </div>
     </div>
-    <footer class="footer">See <a href="https://docs.python.org/2/library/turtle.html#turtle-methods">Turtle methods</a> for more commands. Fork us on <a href="https://github.com/futurice/PythonInBrowser">Github</a>. This project is based on <a href="https://codemirror.net">CodeMirror</a> and <a href="http://www.skulpt.org/">Skulpt</a> and it's developed under <a href="http://spiceprogram.org/">Spice program</a> at <a href="http://futurice.com/">Futurice</a>. What is this <a href="/">about</a>?
-    </footer>
     <div id="modalExercise" class="modal">
       <div>
         <a href="#close" title="Close" class="close">X</a>
@@ -54,6 +52,21 @@
           </ul>
           {{/each}}
         </div>
+      </div>
+    </div>
+
+    <div id="modalHelp" class="modal">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Help</h2>
+        <div class="exercise-container">
+	  <ul>
+	    <li><a href="/material" target="_blank">Guidance for exercises</a></li>
+	    <li><a href="https://docs.python.org/2/library/turtle.html#turtle-methods" target="_blank">Turtle commands</a></li>
+	    <li><a href="/">About</a></li>
+	    <li>Fork us on <a href="https://github.com/futurice/PythonInBrowser">Github</a></li>
+	  </ul>
+	</div>
       </div>
     </div>
 

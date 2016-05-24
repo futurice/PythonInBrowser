@@ -1,16 +1,13 @@
 import turtle2
 
-t = turtle2.Turtle()
-t.color("#545454")
-
-def drawAxis(minW, minH):
+def drawAxis(t, minW, minH):
   t.goto(minW, minH)
   t.pendown()
   t.forward(1200)
   t.penup()
 
 
-def drawTicksX(min):
+def drawTicksX(t, min):
   for x in range(0, 30):
     t.goto(min + 50 * x, 0)
     t.pendown()
@@ -18,7 +15,7 @@ def drawTicksX(min):
     t.penup()
 
 
-def drawTicksY(min):
+def drawTicksY(t, min):
   for x in range(0, 30):
     t.goto(0, min + 50 * x)
     t.pendown()
@@ -26,7 +23,7 @@ def drawTicksY(min):
     t.penup()
 
 
-def drawXnumbers(minValue):
+def drawXnumbers(t, minValue):
   t.penup()
   t.goto(minValue, 0)
 
@@ -38,7 +35,7 @@ def drawXnumbers(minValue):
     t.write(minValue + 50 * x)
 
 
-def drawYnumbers(minValue):
+def drawYnumbers(t, minValue):
   t.penup()
   t.goto(0, minValue)
 
@@ -83,15 +80,18 @@ def drawDots():
 
 def prepareCoordinates():
   turtle2.pauseDrawing()
+  t = turtle2.Turtle()
+  t.color("#545454")
+  t.hideturtle()
   t.speed(0)
   t.penup()
-  drawAxis(-600, 0)
+  drawAxis(t, -600, 0)
   t.right(270)
-  drawAxis(0, -600)
-  drawTicksX(-600)
+  drawAxis(t, 0, -600)
+  drawTicksX(t, -600)
   t.right(270)
-  drawTicksY(-600)
-  drawXnumbers(-600)
-  drawYnumbers(-600)
+  drawTicksY(t, -600)
+  drawXnumbers(t, -600)
+  drawYnumbers(t, -600)
   turtle2.unpauseDrawing()
 

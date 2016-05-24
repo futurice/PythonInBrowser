@@ -17,6 +17,7 @@ var app = (function() {
     initClickHandlers();
     initLocalSave();
     hideExerciseNavigation();
+    disableBackspaceNavigation();
   }
 
   function initCodeMirror() {
@@ -188,6 +189,29 @@ var app = (function() {
   function saveNameLocally(name) {
     localStorage.setItem("pythonInBrowserUser", name);
     $(".name-edit").empty().text(name);
+  }
+
+  /*
+   * Disable the navigation to the previous page on backspace.
+   *
+   * Adapted from https://stackoverflow.com/questions/1495219/how-can-i-prevent-the-backspace-key-from-navigating-back
+   */
+  function disableBackspaceNavigation() {
+    $(document).on('keydown', function (event) {
+      var doPrevent = false;
+      if (event.keyCode === 8) {
+        var d = event.srcElement || event.target;
+        if ($(d).is(':input')) {
+          doPrevent = d.readOnly || d.disabled;
+        } else {
+          doPrevent = true;
+        }
+      }
+
+      if (doPrevent) {
+        event.preventDefault();
+      }
+    });
   }
 
   /*

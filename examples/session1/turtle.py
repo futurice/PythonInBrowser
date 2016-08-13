@@ -1,11 +1,13 @@
 # Meet the turtle!
 
 ##### INFO #####
-# We define a turtle here. In order to use it, we
-# have to import it. We learn more about this later.
+# The following three commands invite a turtle called
+# 'taylor' on the screen. We learn more about the meaning
+# of the commands later.
+
 import turtle
-t = turtle.Turtle()
-t.shape("turtle")
+taylor = turtle.Turtle()
+taylor.shape("turtle")
 
 ##### EXERCISE #####
 
@@ -13,9 +15,10 @@ t.shape("turtle")
 # Below we are moving the Turtle to forward 100 pixels,
 # turning it to left 90 degrees and
 # moving it forward 50 pixels
-t.forward(100)
-t.left(90)
-t.forward(50)
+
+taylor.forward(100)
+taylor.left(90)
+taylor.forward(50)
 
 # Click 'run' and see what happens.
 # After that move the turtle around. Do at least three

@@ -3,8 +3,8 @@
 import turtle
 
 ##### INFO #####
-# Your goal is to make the turtle to walk a square to the screen
-# Let's go through again turtle commands
+# Your goal is to make the turtle to walk a square on the
+# screen. Let's go through again turtle commands.
 
 # this line creates a turtle to screen
 t = turtle.Turtle()

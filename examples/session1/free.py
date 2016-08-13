@@ -11,6 +11,7 @@
 # Other commands you can try:
 # t.color("red")
 # turtle.Screen().bgcolor("lightblue")
+# t.width(5)
 # t.penup()
 # t.pendown()
 # t.goto(100, 50)

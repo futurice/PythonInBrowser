@@ -1,9 +1,12 @@
 ##### INFO #####
+
+# There is a lot of code here needed for setting up the
+# playing area. You can scroll down past these to the
+# Exercises section.
+
 import turtle2
 import random
 import time
-
-# The following helper functions will be needed later.
 
 # Generate a list of numbers from a to b at regularly spaced intervals.
 def linearlySpaced(a, b, interval):

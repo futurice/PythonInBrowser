@@ -5,7 +5,6 @@ t = turtle.Turtle()
 
 ##### INFO #####
 # Firstly, let's make the drawing a bit faster.
-# It's possible to adjust the speed of the turtle with command 'speed(0)'
 t.speed(0)
 
 # We can set the background color.
@@ -16,13 +15,14 @@ t.color("red")
 
 ##### EXERCISE #####
 # Let's draw something that perhaps resembles a flower
-# It's handy to use a for loop for that.
 
 petalwidth = 50 # add / change here any number between 10 and 200
 direction1 = 181 # you can modify these later, but now leave them with values 181
 direction2 = 178 # and 178
 
-for i in range (100):
+# The flower consists of several tilted lines. A for loop is
+# handy for drawing a bunch of lines at various angles.
+for i in range(100):
   # Let's start with going forward the amount of petalwidth
   # and add the value of the iterator.
   # That will give us nice shape for the petals

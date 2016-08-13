@@ -1,12 +1,16 @@
-# Goal: fix turtle to find a hole in the wall
+# Goal: help the turtle to find a hole in the wall
 
-# We need to remember to import a turtle every time we want to use it.
+# We need to remember to import a turtle every time we want
+# to use it.
 import turtle
 
 ##### INFO #####
+
+# The following code draws the wall and the target. You can
+# look at the code but to get to the actual exercise, scroll
+# down.
+
 # Here we create a wall to the middle of the screen
-# You can look at the code
-# but don't worry if it looks too complicated at this point.
 wall = turtle.Turtle()
 wall.hideturtle()
 wall.speed("fastest")

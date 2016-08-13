@@ -87,21 +87,17 @@
       ]
     },
     {
-      "session": "Summary",
+      "session": "Nuorisoasiainkeskus",
       "key": "summary",
       "type": "exercise",
       "exercises": [
-        {"key": "start", "description": "Start here"},
-        {"key": "variable", "description": "What is a variable?"},
         {"key": "turtle", "description": "Meet the Turtle!"},
+        {"key": "square", "description": "Let's draw a square"},
         {"key": "wall", "description": "Can you beat the wall?"},
         {"key": "flower", "description": "Draw a flower"},
-        {"key": "coordinates", "description": "Coordinates"},
-        {"key": "function", "description": "Function"},
-        {"key": "polygon", "description": "Polygon"},
-        {"key": "perimeter2", "description": "Circumference of a circle"},
+        {"key": "arena", "description": "Drive the track!"},
         {"key": "escape", "description": "Reach the finish line"},
-        {"key": "arena", "description": "Drive the track!"}
+        {"key": "free", "description": "Do it yourself!"}
       ]
     }
   ]

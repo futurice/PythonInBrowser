@@ -85,20 +85,6 @@
         {"key": "magic", "description": "Magic drawing"},
         {"key": "minigame", "description": "Minigame"}
       ]
-    },
-    {
-      "session": "Nuorisoasiainkeskus",
-      "key": "summary",
-      "type": "exercise",
-      "exercises": [
-        {"key": "turtle", "description": "Meet the Turtle!"},
-        {"key": "square", "description": "Let's draw a square"},
-        {"key": "wall", "description": "Can you beat the wall?"},
-        {"key": "flower", "description": "Draw a flower"},
-        {"key": "arena", "description": "Drive the track!"},
-        {"key": "escape", "description": "Reach the finish line"},
-        {"key": "free", "description": "Do it yourself!"}
-      ]
     }
   ]
 }

@@ -6,7 +6,7 @@ Try out the application [here](http://codeclub.chilicorn.org/).
 
 ## Adding exercises
 
-Write your exercise in python and save it in one of the session folders in [examples](https://github.com/futurice/PythonInBrowser/blob/master/examples/). If you are creating a new session please add new folder for it.
+Write your exercise in Python and save it in one of the session folders in [examples](https://github.com/futurice/PythonInBrowser/blob/master/examples/). If you are creating a new session please add new folder for it.
 
 After adding the file edit [examples.json](https://github.com/futurice/PythonInBrowser/blob/master/examples/examples.json) and add the details of your exercise.
 
@@ -18,7 +18,7 @@ If you want to add a module or hide some of your custom made code so that you ca
 
 ### Python module
 
-With Python modules you work much in the same way as with exercises. Write your module in python and save it this time under [modules](https://github.com/futurice/PythonInBrowser/blob/master/public/modules/).
+With Python modules you work much in the same way as with exercises. Write your module in Python and save it this time under [modules](https://github.com/futurice/PythonInBrowser/blob/master/public/modules/).
 
 After adding the file edit [modules.json](https://github.com/futurice/PythonInBrowser/blob/master/examples/modules.json) IF you want to publish your module so that student can also see it. Otherwise no need to do this.
 
@@ -46,7 +46,7 @@ Sk.externalLibraries = {
 
 ### JS module
 
-It's also possible to use JS-libraries as modules. How ever you need to write python wrapper for it to use it. For example please see how `matter-0.8.0.min.js` and `__init__.js` are added.
+It's also possible to use JS-libraries as modules. How ever you need to write Python wrapper for it to use it. For example please see how `matter-0.8.0.min.js` and `__init__.js` are added.
 
 ## Adding learning material
 

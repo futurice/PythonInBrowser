@@ -13,14 +13,14 @@ t = turtle.Turtle()
 # We'll do it with a function called line
 
 def line(k, b):
-    # We take penup
+  # We take penup
   t.penup()
 
   # for x ranging from -550 to 550 we'll do the following
   for x in range(-550, 550):
-        # we go to point (x, k*x + b)
+    # we go to point (x, k*x + b)
     t.goto(x, k * x + b)
-        # We put pendown to start drawing
+    # We put pendown to start drawing
     t.pendown()
 
 # Let see, how this works: Let's draw line y = 2x

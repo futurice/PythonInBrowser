@@ -1,18 +1,10 @@
-# Sequences, loops
+# Sequences
 
 import turtle
 
 ##### INFO #####
 #
-# A loop can be used to repeat a block of commands several times.
-#
-# Below is an example of a loop syntax. range(10) tells how many times
-# the command is repeated. The commands that are repeated are written
-# after the for line. The repeated commands must be indented with two
-# spaces.
-#
-# for i in range(10):
-#   print i
+# A loop can be use to compute the values in number sequences.
 
 ##### EXERCISE #####
 
@@ -20,6 +12,9 @@ import turtle
 # sequence? Write down the next 4 values.
 [4, 7, 10]
 
+# Computing the values by hand is boring. Let's get the computer to do
+# this for us.
+#
 # The next loop computes the first 20 values of the same sequence.
 
 number = 4

@@ -21,13 +21,13 @@
       "type": "exercise",
       "exercises": [
         {"key": "start2", "description": "Recap of session 1"},
-        {"key": "indentation", "description": "Loops"},
+        {"key": "loops", "description": "Loops"},
+        {"key": "indentation", "description": "Number sequences"},
         {"key": "coordinates", "description": "Coordinates"},
         {"key": "dots", "description": "Connect the dots"},
         {"key": "lines", "description": "Draw a line"},
         {"key": "obstacles", "description": "Find a route"},
         {"key": "arrowhouse", "description": "Draw a house"},
-        {"key": "iterator", "description": "Iteration"},
         {"key": "flower", "description": "Draw a flower"},
         {"key": "free2", "description": "Do it yourself!"}
       ]

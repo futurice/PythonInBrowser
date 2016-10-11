@@ -38,7 +38,8 @@
       "type": "exercise",
       "exercises": [
         {"key": "start3", "description": "Recap of session 2"},
-        {"key": "function", "description": "Function"},
+        {"key": "stars", "description": "Functions"},
+        {"key": "function", "description": "Computing value in a function"},
         {"key": "polygon", "description": "Polygon"},
         {"key": "perimeter", "description": "Perimeter"},
         {"key": "perimeter2", "description": "Circumference of a circle"},

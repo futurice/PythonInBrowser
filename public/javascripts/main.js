@@ -86,7 +86,7 @@ var app = (function() {
    */
   function outputfunction(text) {
     var mypre = document.getElementById("output");
-    mypre.innerHTML = mypre.innerHTML + text;
+    mypre.appendChild(document.createTextNode(text));
     $("#output").scrollTop($("#output").prop('scrollHeight'));
   }
 

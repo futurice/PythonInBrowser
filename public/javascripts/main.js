@@ -273,9 +273,17 @@ var app = (function() {
        },
        function(err) {
          setErrorMessage(err.toString());
-         var tb = err.traceback[0];
-         if (tb) {
-           setErrorHighlight(tb.lineno);
+
+         if (err.traceback.length >= 1) {
+           setErrorHighlight(err.traceback[err.traceback.length - 1].lineno);
+         }
+
+         if (err.traceback.length > 1) {
+           var tracebacks = err.traceback.map(function(tb) {
+             return tb.filename + " line " + tb.lineno;
+           });
+
+           setErrorMessage("Traceback:\n" + tracebacks.join("\n"));
          }
        });
     },

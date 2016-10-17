@@ -25,7 +25,7 @@ print "Welcome to study with Python..."
 
 # print 1 + 2 or print 1 * 2
 
-# a) calculate your age + your friends age
+# a) calculate your age + your friend's age
 
 
 # b) choose number, multiply it with 10 and then multiply it with 3
@@ -36,14 +36,14 @@ print "Welcome to study with Python..."
 
 # d) Try printing the result of 1/2. What do you notice? We'll fix this in next exercise.
 
-# 5. One more exception in printing
-# Try to print a combination of string and number. It's
-# a) First try this:
+# 5. Printing two values.
+# Try to print a string and a number one after the other.
+# a) First try this (it will fail):
 
-# print  "You are number " 1
+# print "You are number " 1
 
 # b) Then try this:
 
-# print  "You are number " + str(1)
+# print "You are number " + str(1)
 
-# What did you notice?
+# To concenate two values, you need to convert everything to strings with str() and then merge the strings with the + operator.

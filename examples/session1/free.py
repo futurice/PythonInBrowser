@@ -16,8 +16,8 @@
 # t.pendown()
 # t.goto(100, 50)
 #
-# Open the Turtle methods at the bottom of this page for even
-# more commands.
+# Even more commands are available from the Help > Turtle commands
+# menu on the top bar.
 
 import turtle
 t = turtle.Turtle()

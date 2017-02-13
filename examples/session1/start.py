@@ -24,7 +24,7 @@ print "Hello world"
 
 ##### EXERCISE #####
 # Just to make you feel more comfortable with the environment,
-# write something else instead "Hello world" on the line 8 and press 'Run' once again.
+# write something else instead "Hello world" on the line 6 and press 'Run' once again.
 # Check that correct output is shown in the Console.
 
 # Now you can move on the next exercise.

@@ -7,10 +7,10 @@
 print "Terve maailma"
 
 # Rivillä 7 oleva print-komento käskee tietokonetta
-# kirjoittaa tekstiä harmalle alueelle vasemmassa
+# kirjoittaa tekstiä harmalle alueelle oikeassa
 # alakulmassa.
 
-##### SELITYS #####
+##### INFO #####
 #
 # Tutustutaan seuraavaksi tämän ohjelmointiympäristön
 # kolmeen tärkeään osaan:
@@ -22,22 +22,21 @@ print "Terve maailma"
 #    tehtävissä tietokone ohjelmoidaan piirtämään kuvioita
 #    piirtoalueelle.
 #
-# 3) Tekstituotusalue (harmaa alue oikeassa alakulmassa):
+# 3) Tekstituotosalue (harmaa alue oikeassa alakulmassa):
 #    Joissain tehtävissä vastaukseksi saadaan tekstiä tai
 #    numeroita. Ne ilmestyvät tänne.
 #
 # Komentojen lisäksi tähän editori-ikkunaan voi kirjoittaa
-# ihmiselle tarkoitettuja ohjeita tai selityksiä. Kaikki
-# #-merkillä alkavat rivit (kuten tämä rivi!) ovat ihmisille
-# tarkoitettuja selityksiä, ei siis käskyja tietokoneelle.
+# ihmiselle tarkoitettuja ohjeita tai selityksiä. #-merkillä
+# alkavat rivit (kuten tämä rivi!) ovat ihmisille
+# tarkoitettuja selityksiä, eivät siis käskyja tietokoneelle.
 # Näitä rivejä kutsutaan kommenteiksi.
 #
 # Tietokone tulkitsee siis käskyiksi kaikki rivit, jotka
 # eivät ala #-merkillä. Seuraavissa tehtävissä näet
-# esimerkkejä komennoista, joita komentoja tietokone
-# ymmärtää.
+# esimerkkejä komennoista, joita tietokone ymmärtää.
 #
-# Aina kun olet kirjoittanut joukon komentoja ja haluat
+# Aina kun olet kirjoittanut joitain komentoja ja haluat
 # nähdä niiden vaikutuksen, paina editorin yläkulmassa
 # olevaa Run-nappia.
 

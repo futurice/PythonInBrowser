@@ -41,6 +41,6 @@ joe.forward(50)
 ##### TEHTÄVÄ #####
 #
 # Paina Run-nappia nähdäksesi minne Joe on menossa. Ohjaa
-# Joe punaisen pisteen luokse. Älä koske seinää!
+# Joe punaisen pisteen luokse. Älä koske seinään!
 #
 # Kirjoita käskyt tänne:

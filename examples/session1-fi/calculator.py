@@ -52,9 +52,9 @@ print 1/2
 
 # print math.sqrt(9)
 
-# Kirjastosta löytyy myös pi, sini, kosini ja paljon muita
-# funktioita. Katso lista kaikista saatavilla olevista
-# funktioista: https://docs.python.org/3/library/math.html
+# Kirjastosta löytyy myös pii, sini, kosini ja paljon muita
+# funktioita. Katso lista kaikista funktioista:
+# https://docs.python.org/3/library/math.html
 
 # print math.pi
 # print math.sin(0.0)

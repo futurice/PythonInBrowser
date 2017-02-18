@@ -6,21 +6,20 @@ t.shape("turtle")
 
 ##### INFO #####
 #
-# Piirretään kolmio jonka sivun pituus on 150 pikseliä.
+# Piirretään kolmio jonka sivunpituus on 150 pikseliä.
 #
-# Määritellään muuttuja, joka kertoo kolmion sivun pituuden:
+# Määritellään muuttuja, joka kertoo kolmion sivunpituuden:
 
 sivu = 150
 
-# Jatkossa voit käyttää koodissa sanaa sivu ja komentoa
-# suorittaessaan tietokone käyttäytyy ikäänkuin sen tilalla
-# olisi luku 150.
+# Jatkossa voit käyttää koodissa sanaa sivu ja tietokone
+# ymmärtää sen tarkoittavan lukua 150.
 #
 # Tarkastellaan muuttujan määrittelyä tarkemmin:
 #
 # sivu on muuttujalle annettava nimi. Se voi olla mikä
 # tahansa sana kunhan se ei sisällä ääkkösiä. Myöskään pari
-# ohjelmoitikielen käyttöön varattua sanaa kuten 'import'
+# ohjelmoitikielen käyttöön varattua sanaa kuten "import"
 # eivät ole mahdollisia nimiä.
 #
 # = tarkoittaa että jatkossa yhtäsuuruusmerkin vasemmalla
@@ -31,7 +30,7 @@ sivu = 150
 
 ##### TEHTÄVÄ #####
 #
-# Tämä koodi pirtää kolmion. t.forward(sivu) siirtää
+# Tämä koodi piirtää kolmion. t.forward(sivu) siirtää
 # kilpikonnaa eteenpäin 150 pikseliä, koska määrittelimme
 # aikaisemmin että sivu tarkoittaa lukua 150.
 #
@@ -46,8 +45,8 @@ t.forward(sivu)
 # Piirrä pienempi kolmio vaihtamalla rivillä 13 luvun 150
 # paikalle luku 60. Paina taas Run-nappia.
 #
-# Muuttujaa käyttäen kolmion uusi sivun pituus tarvitsee
-# kirjoittaa vain yhteen paikkaan eikä erikseen jokaiseen
+# Muuttujaa käyttäen kolmion uusi sivunpituus tarvitsee
+# vaihtaa vain yhteen paikkaan eikä erikseen jokaiseen
 # t.forward-komentoon.
 #
 # Kokeile vielä piirtää erikokoisia kolmioita vaihtamalla

@@ -14,6 +14,7 @@
 #
 # t.circle(30)
 # t.circle(30, 180)
+# t.backward(100)
 # t.color("red")
 # turtle.Screen().bgcolor("lightblue")
 # t.width(5)

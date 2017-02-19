@@ -52,7 +52,8 @@ var app = (function() {
       var type = $(this).data("type");
       var id = $(this).attr("id");
       var session = $(this).data("session");
-      loadCode(type, session, id);
+      var language = $(this).data("language");
+      loadCode(type, session, id, language);
     });
 
     $(".own-exercises").on("click", "a>li>pre", function(event) {
@@ -69,8 +70,9 @@ var app = (function() {
     $("#next-exercise,#prev-exercise").on('click', function(event) {
       var session = $(this).data("session");
       var exercise = $(this).data("exercise");
+      var language = $(this).data("language");
       if (session && exercise) {
-	loadCode("exercise", session, exercise);
+	loadCode("exercise", session, exercise, language);
       }
     });
   }
@@ -115,8 +117,15 @@ var app = (function() {
     });
   }
 
-  function loadCode(type, session, id) {
-    $.get("/exercises/" + type + "/" + session + "/" + id, function(data) {
+  function loadCode(type, session, id, language) {
+    var url;
+    if (language) {
+      url = "/exercises/" + type + "/" + language + "/" + session + "/" + id;
+    } else {
+      url = "/exercises/" + type + "/" + session + "/" + id;
+    }
+
+    $.get(url, function(data) {
       if(data && data.code) {
         setCode(data.code);
 	setupExerciseNavigation(data.nextExercise, data.previousExercise);
@@ -133,15 +142,16 @@ var app = (function() {
 
   function setupExerciseNavigationButton(buttonId, target) {
     if (target) {
-      setExerciseNavigationTarget(buttonId, target.session, target.exercise);
+      setExerciseNavigationTarget(buttonId, target.language, target.session, target.exercise);
       showButton(buttonId);
     } else {
       hideButton(buttonId);
     }
   }
 
-  function setExerciseNavigationTarget(buttonId, session, exercise) {
+  function setExerciseNavigationTarget(buttonId, language, session, exercise) {
     $(buttonId)
+      .data("language", language)
       .data("session", session)
       .data("exercise", exercise);
   }

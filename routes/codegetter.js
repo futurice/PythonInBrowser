@@ -4,19 +4,21 @@ var path = require('path');
 var Promise = require("bluebird");
 var router = express.Router();
 var defaultCode = "There was a problem loading code, please try again.";
-var examples = require('../examples/examples.json');
+var examplesByLanguage = require('../examples/examples.json').examples;
 Promise.promisifyAll(fs);
 
 router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get('/exercise/:session/:id', function(req, res, next) {
+router.get('/exercise/:language/:session/:id', function(req, res, next) {
+  var language = req.params.language;
   var session = req.params.session;
   var exercise = req.params.id;
+  var examples = examplesByLanguage[language] || examplesByLanguage['en'];
   getCode(exercise, session, "../examples/")
   .then(function(data) {
-    var prevAndNext = nextAndPrevExercises(session, exercise);
+    var prevAndNext = nextAndPrevExercises(examples, language, session, exercise);
     var resJson = {
       key: req.params.id,
       nextExercise: prevAndNext.next,
@@ -53,7 +55,7 @@ function getCode(id, session, pathToCode) {
     });
 }
 
-function nextAndPrevExercises(sessionKey, exerciseKey) {
+function nextAndPrevExercises(examples, language, sessionKey, exerciseKey) {
   function sessionByKey(example) {
     return example.key == sessionKey;
   }
@@ -69,7 +71,7 @@ function nextAndPrevExercises(sessionKey, exerciseKey) {
   }
 
   var prevObject, nextObject;
-  var session = examples.examples.find(sessionByKey) || {};
+  var session = examples.find(sessionByKey) || {};
   var exercises = session.exercises || [];
   var index = findExerciseIndex(exercises, exerciseKey);
 
@@ -78,13 +80,13 @@ function nextAndPrevExercises(sessionKey, exerciseKey) {
     var next = exercises[index+1] || {};
 
     if (prev.key) {
-      prevObject = {session: sessionKey, exercise: prev.key};
+      prevObject = {language: language, session: sessionKey, exercise: prev.key};
     } else {
       prevObject = undefined;
     }
 
     if (next.key) {
-      nextObject = {session: sessionKey, exercise: next.key};
+      nextObject = {language: language, session: sessionKey, exercise: next.key};
     } else {
       nextObject = undefined;
     }

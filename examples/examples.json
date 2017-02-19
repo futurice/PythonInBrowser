@@ -1,91 +1,182 @@
 {
-  "examples": [
-    {
-      "session": "Session 1",
-      "key": "session1",
-      "type": "exercise",
-      "exercises": [
-        {"key": "start", "description": "Start here"},
-        {"key": "turtle", "description": "Meet the Turtle!"},
-        {"key": "square", "description": "Let's draw a square"},
-        {"key": "variable", "description": "What is a variable?"},
-        {"key": "wall", "description": "Can you beat the wall?"},
-        {"key": "print", "description": "Learn to print"},
-        {"key": "calculator", "description": "Code as calculator"},
-        {"key": "free", "description": "Do it yourself!"}
-      ]
-    },
-    {
-      "session": "Session 2",
-      "key": "session2",
-      "type": "exercise",
-      "exercises": [
-        {"key": "start2", "description": "Recap of session 1"},
-        {"key": "loops", "description": "Loops"},
-        {"key": "indentation", "description": "Number sequences"},
-        {"key": "coordinates", "description": "Coordinates"},
-        {"key": "dots", "description": "Connect the dots"},
-        {"key": "lines", "description": "Draw a line"},
-        {"key": "obstacles", "description": "Find a route"},
-        {"key": "arrowhouse", "description": "Draw a house"},
-        {"key": "flower", "description": "Draw a flower"},
-        {"key": "free2", "description": "Do it yourself!"}
-      ]
-    },
-    {
-      "session": "Session 3",
-      "key": "session3",
-      "type": "exercise",
-      "exercises": [
-        {"key": "start3", "description": "Recap of session 2"},
-        {"key": "stars", "description": "Functions"},
-        {"key": "function", "description": "Computing value in a function"},
-        {"key": "polygon", "description": "Polygon"},
-        {"key": "perimeter", "description": "Perimeter"},
-        {"key": "perimeter2", "description": "Circumference of a circle"},
-        {"key": "random", "description": "Random"},
-        {"key": "free3", "description": "Do it yourself!"}
-      ]
-    },
-    {
-      "session": "Session 4",
-      "key": "session4",
-      "type": "exercise",
-      "exercises": [
-        {"key": "arena", "description": "Drive the track!"},
-        {"key": "snow", "description": "Snowflakes"}
-      ]
-    },
-    {
-      "session": "Session 5",
-      "key": "session5",
-      "type": "exercise",
-      "exercises": [
-        {"key": "start5", "description": "Recap of functions"},
-        {"key": "movingrandomly", "description": "Move randomly"},
-        {"key": "differentdrawing", "description": "Drawing within boundaries"},
-        {"key": "modernart", "description": "Modern art"},
-        {"key": "randomwalk", "description": "Random walk"}
-      ]
-    },
-    {
-      "session": "Session 6",
-      "key": "session6",
-      "type": "exercise",
-      "exercises": [
-        {"key": "escape", "description": "Reach the finish line"}
-      ]
-    },
-    {
-      "session": "Session 7",
-      "key": "session7",
-      "type": "exercise",
-      "exercises": [
-        {"key": "hexahedron", "description": "3D drawing"},
-        {"key": "isometric", "description": "3D cubes"},
-        {"key": "magic", "description": "Magic drawing"},
-        {"key": "minigame", "description": "Minigame"}
-      ]
-    }
-  ]
+  "examples": {
+    "en": [
+      {
+        "session": "Session 1",
+        "key": "session1",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start", "description": "Start here"},
+          {"key": "turtle", "description": "Meet the Turtle!"},
+          {"key": "square", "description": "Let's draw a square"},
+          {"key": "variable", "description": "What is a variable?"},
+          {"key": "wall", "description": "Can you beat the wall?"},
+          {"key": "print", "description": "Learn to print"},
+          {"key": "calculator", "description": "Code as calculator"},
+          {"key": "free", "description": "Do it yourself!"}
+        ]
+      },
+      {
+        "session": "Session 2",
+        "key": "session2",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start2", "description": "Recap of session 1"},
+          {"key": "loops", "description": "Loops"},
+          {"key": "indentation", "description": "Number sequences"},
+          {"key": "coordinates", "description": "Coordinates"},
+          {"key": "dots", "description": "Connect the dots"},
+          {"key": "lines", "description": "Draw a line"},
+          {"key": "obstacles", "description": "Find a route"},
+          {"key": "arrowhouse", "description": "Draw a house"},
+          {"key": "flower", "description": "Draw a flower"},
+          {"key": "free2", "description": "Do it yourself!"}
+        ]
+      },
+      {
+        "session": "Session 3",
+        "key": "session3",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start3", "description": "Recap of session 2"},
+          {"key": "stars", "description": "Functions"},
+          {"key": "function", "description": "Computing value in a function"},
+          {"key": "polygon", "description": "Polygon"},
+          {"key": "perimeter", "description": "Perimeter"},
+          {"key": "perimeter2", "description": "Circumference of a circle"},
+          {"key": "random", "description": "Random"},
+          {"key": "free3", "description": "Do it yourself!"}
+        ]
+      },
+      {
+        "session": "Session 4",
+        "key": "session4",
+        "type": "exercise",
+        "exercises": [
+          {"key": "arena", "description": "Drive the track!"},
+          {"key": "snow", "description": "Snowflakes"}
+        ]
+      },
+      {
+        "session": "Session 5",
+        "key": "session5",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start5", "description": "Recap of functions"},
+          {"key": "movingrandomly", "description": "Move randomly"},
+          {"key": "differentdrawing", "description": "Drawing within boundaries"},
+          {"key": "modernart", "description": "Modern art"},
+          {"key": "randomwalk", "description": "Random walk"}
+        ]
+      },
+      {
+        "session": "Session 6",
+        "key": "session6",
+        "type": "exercise",
+        "exercises": [
+          {"key": "escape", "description": "Reach the finish line"}
+        ]
+      },
+      {
+        "session": "Session 7",
+        "key": "session7",
+        "type": "exercise",
+        "exercises": [
+          {"key": "hexahedron", "description": "3D drawing"},
+          {"key": "isometric", "description": "3D cubes"},
+          {"key": "magic", "description": "Magic drawing"},
+          {"key": "minigame", "description": "Minigame"}
+        ]
+      }
+    ],
+    "fi": [
+      {
+        "session": "Tunti 1",
+        "key": "session1-fi",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start", "description": "Aloita tästä"},
+          {"key": "turtle", "description": "Tutustutaan kilpikonnaan"},
+          {"key": "square", "description": "Piirretään neliö"},
+          {"key": "variable", "description": "Mikä on muuttuja?"},
+          {"key": "wall", "description": "Ohjaa kilppari maaliin"},
+          {"key": "print", "description": "Tekstiä ja numeroita"},
+          {"key": "calculator", "description": "Lisää laskutoimituksia"},
+          {"key": "free", "description": "Kokeile vapaasti!"}
+        ]
+      },
+      {
+        "session": "Tunti 2 (englanniksi)",
+        "key": "session2",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start2", "description": "Recap of session 1"},
+          {"key": "loops", "description": "Loops"},
+          {"key": "indentation", "description": "Number sequences"},
+          {"key": "coordinates", "description": "Coordinates"},
+          {"key": "dots", "description": "Connect the dots"},
+          {"key": "lines", "description": "Draw a line"},
+          {"key": "obstacles", "description": "Find a route"},
+          {"key": "arrowhouse", "description": "Draw a house"},
+          {"key": "flower", "description": "Draw a flower"},
+          {"key": "free2", "description": "Do it yourself!"}
+        ]
+      },
+      {
+        "session": "Tunti 3 (englanniksi)",
+        "key": "session3",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start3", "description": "Recap of session 2"},
+          {"key": "stars", "description": "Functions"},
+          {"key": "function", "description": "Computing value in a function"},
+          {"key": "polygon", "description": "Polygon"},
+          {"key": "perimeter", "description": "Perimeter"},
+          {"key": "perimeter2", "description": "Circumference of a circle"},
+          {"key": "random", "description": "Random"},
+          {"key": "free3", "description": "Do it yourself!"}
+        ]
+      },
+      {
+        "session": "Tunti 4 (englanniksi)",
+        "key": "session4",
+        "type": "exercise",
+        "exercises": [
+          {"key": "arena", "description": "Drive the track!"},
+          {"key": "snow", "description": "Snowflakes"}
+        ]
+      },
+      {
+        "session": "Tunti 5 (englanniksi)",
+        "key": "session5",
+        "type": "exercise",
+        "exercises": [
+          {"key": "start5", "description": "Recap of functions"},
+          {"key": "movingrandomly", "description": "Move randomly"},
+          {"key": "differentdrawing", "description": "Drawing within boundaries"},
+          {"key": "modernart", "description": "Modern art"},
+          {"key": "randomwalk", "description": "Random walk"}
+        ]
+      },
+      {
+        "session": "Tunti 6 (englanniksi)",
+        "key": "session6",
+        "type": "exercise",
+        "exercises": [
+          {"key": "escape", "description": "Reach the finish line"}
+        ]
+      },
+      {
+        "session": "Tunti 7 (englanniksi)",
+        "key": "session7",
+        "type": "exercise",
+        "exercises": [
+          {"key": "hexahedron", "description": "3D drawing"},
+          {"key": "isometric", "description": "3D cubes"},
+          {"key": "magic", "description": "Magic drawing"},
+          {"key": "minigame", "description": "Minigame"}
+        ]
+      }
+    ]
+  }
 }

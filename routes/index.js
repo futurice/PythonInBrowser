@@ -7,16 +7,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/codeclub', function(req, res, next) {
-  var exercisesByLanguage = {
-    'en': '../examples/examples.json',
-    'fi': '../examples/examples-fi.json'
-  };
-  var exerciseFile = exercisesByLanguage[req.query.lang || 'en'];
-  var exercises = require(exerciseFile);
+  var exercises = require('../examples/examples.json');
   var modules = require('../examples/modules.json');
+  var lang = req.query.lang || "en";
   res.render('codeclub', {
     title: 'Chilicorn Code Club',
-    exercises: exercises,
+    language: lang,
+    examples: exercises.examples[lang] || exercises.examples['en'],
     modules: modules
   });
 });

@@ -32,11 +32,11 @@
         <a href="#close" title="Close" class="close">X</a>
         <h2>Exercises</h2>
         <div class="exercise-container">
-          {{#each exercises.examples}}
+          {{#each examples}}
           <div class="session-header" data-key="{{key}}">{{session}}</div>
           <ul id="{{key}}" class="session-exercises">
             {{#each exercises}}
-            <a href="#close"><li id="{{this.key}}" data-type="{{../type}}" data-session="{{../key}}">Exercise {{math @index}}: {{description}}</li></a>
+            <a href="#close"><li id="{{this.key}}" data-type="{{../type}}" data-session="{{../key}}" data-language="{{../../language}}">Exercise {{math @index}}: {{description}}</li></a>
             {{/each}}
           </ul>
           {{/each}}

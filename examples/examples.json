@@ -176,6 +176,25 @@
           {"key": "magic", "description": "Magic drawing"},
           {"key": "minigame", "description": "Minigame"}
         ]
+      },
+      {
+        "session": "Session A (tiivis)",
+        "key": "sessiona",
+        "type": "exercise",
+        "exercises": [
+          {"key": "000_start", "description": "Aloita tästä"},
+          {"key": "010_print", "description": "Printtailua ja laskentoa"},
+          {"key": "020_turtle", "description": "Kilpparin komentelua ja piirtämistä"},
+          {"key": "030_sequences_and_for", "description": "Sekvenssi datastruktuurit ja for-looppi"},
+          {"key": "031_dict", "description": "Dictionary datastruktuuri"},
+          {"key": "032_random", "description": "Satunnaisuus: random-kirjasto"},
+          {"key": "050_kalevala", "description": "Ilmiö: Kalevalaista tekstinkäsittelyä"},
+          {"key": "090_free_drawing", "description": "Ilmiö: Maantieto graafi (TODO)"},
+          {"key": "090_free_drawing", "description": "Extra: Tyhjä kanvaasi turtletaiteilijoille"},
+          {"key": "turtlekuva01", "description": "Extra: Turtle art 1"},
+          {"key": "turtlekuva02", "description": "Extra: Turtle art 2"},
+          {"key": "turtlekuva03", "description": "Extra: Turtle art 3"}
+        ]
       }
     ]
   }

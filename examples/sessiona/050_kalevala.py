@@ -10,21 +10,9 @@
 
 ## Ladataan Kalevalan teksti
 
-# TODO: make it VIA IMPORTS - DOESN't WORK??
-
-# from datasets import kalevala as kale_txt
-
+#from datasets import kalevala
 
 ## Ladattu teksti on "lista" (list) stringejä.
-
-# TODO: remove this after import kalevala works
-sekvenssi = [
-    u'Tämä on lista stringejä.',
-    u'Eli lista aloitetaan hakasuluilla []',
-    u'ja sen sisältämät elementit erotellaan pilkuilla.',
-    u'kuten varmaan huomaat!!',
-    u'No mutta miten tätä käytetään?'
-]
 
 
 ##################################################
@@ -35,19 +23,20 @@ sekvenssi = [
 ###############
 ## 01: Miltä teksti näyttää
 
-kale_txt = sekvenssi
+#print u"Näin monta riviä Kalevalassa:"
+#print len(kalevala)
 
-#print kale_txt[0]
-#print kale_txt[100]
-#print kale_txt[0:5]
-#print '\n'.join(kale_txt[0:5])
+#print kalevala[0]
+#print kalevala[100]
+#print kalevala[0:5]
+#print '\n'.join(kalevala[0:5])
 
 
 ###############
 ## 02: Lasketaan juttuja meidän Kalevala tekstistä
 
-#print u"Näin monta riviä:", len(kale_txt)
-#print u"Ekalla rivillä näin monta merkkiä:", len(kale_txt[0])
+#print u"Näin monta riviä:", len(kalevala)
+#print u"Ekalla rivillä näin monta merkkiä:", len(kalevala[0])
 
 #print u"Miten laskisit kuinka monta merkkiä koko Kalevalassa on?"
 
@@ -58,14 +47,14 @@ kale_txt = sekvenssi
 ## Vastausesimerkki; käydään jokaisen rivin jokainen merkki yksitellen läpi:
 #haluttu_merkki = '?'
 #summa = 0
-#for rivi in kale_txt:
+#for rivi in kalevala:
 #    for merkki in rivi:
 #        if merkki == haluttu_merkki:
 #            summa += 1
 #print u"Näin monta ", haluttu_merkki, u"-merkkiä: ", summa
 
 ## Esim2; käytetään Pythonin kieltä "Pythonmaisemmin"
-#print sum([x.count(haluttu_merkki) for x in kale_txt])
+#print sum([x.count(haluttu_merkki) for x in kalevala])
 
 
 ###############
@@ -75,7 +64,7 @@ kale_txt = sekvenssi
 ## TODO: tutustuminen set -tyyppiin
 
 #kaikki_sanat = set()
-#for rivi in kale_txt:
+#for rivi in kalevala:
 #    for sana in rivi.split():
 #        kaikki_sanat.add(sana)
 #print(kaikki_sanat)
@@ -107,12 +96,12 @@ def clean_text_line(line):
     )
 
 
-def clean_up(kale_txt):
+def clean_up(text):
     u"""Siivotan Kalevala"""
     fixed_kale = list()
     words = list()
     # fiksaillaan ja uudelleen muotoillaan tekstiä
-    for line in kale_txt:
+    for line in text:
         clean_line = (clean_text_line(line))
         # laitetaan kaikki sanat yhteen pötköön
         for word in clean_line.split():
@@ -206,9 +195,11 @@ def luo_runo(text_stats, plength=20):
 
 
 
+## Siivotaan tekstiä (selitä miksi?)
+kale_clean = clean_up(kalevala)
+
 ## Kutsutaan metodia, joka laskee sanojen statistiikkaa
 ## ja luo "Markov Chain" statistiikan.
-kale_clean = clean_up(kale_txt)
 text_stats = do_stats(kale_clean)
 
 ## text_stats on dictionary-tyyppinen otus.
@@ -218,6 +209,10 @@ text_stats = do_stats(kale_clean)
 ## Koska KOKO Kalevala!
 #print text_stats
 ## Osaatko tutkia dict-datastruktuuria?
+
+
+######################################
+## Käsketään koneen luoda RUNO!
 
 import random
 

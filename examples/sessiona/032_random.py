@@ -5,18 +5,32 @@
 
 import random
 
-## Tässä alustetaan pseudo random number generator. Mikäs se on?
-#random.seed(333)
+## Tässä alustetaan pseudo random number generator.
+## Osaatko selittää mikä se on?
+
+
 ## Tämä pakottaa randomin aina samoihin lukuihin.
-## Onko se silloin enään random??
+
+#random.seed(333)
+
+## Kun tuuli lakkaa, onko se enää tuuli?
+## Kun random on aina sama, onko se enää random?
 
 
+## Luodaan dataa. Mikä datastruktuurityyppi on kyseessä?
 dataa = ["kissa", "koira", "makkara"]
 
-## Satunnainen valinta jostain Sekvenssi-tyypin datastruktuurista.
+
+## Satunnainen valinta datastruktuurista:
 
 #print random.choice(dataa)
+
 
 ## Satunnainen kokonaisluku
 
 #print random.randint(1, 100)
+
+
+## Mitä kivaa näillä voisi tehdä?
+## Millä koululuokilla satunnaisluvut ovat relevantteja?
+## 6-tahoinen noppa, kruuna vai klaava?

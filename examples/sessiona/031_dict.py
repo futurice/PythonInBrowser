@@ -1,9 +1,10 @@
 ################################################
-## DICTIONARY, eli "hakemisto" (?)
+## DICTIONARY, eli "hakemisto"(?)
 
 
 ################################################
 ## DICT (aka dict())
+##
 ## on yksi Pythonin datastruktuureista.
 ## Se on niin yleinen, että silläkin on oma dedikoitu luontitapa:
 
@@ -18,15 +19,22 @@ hakemisto = {
 
 ## Näin homma toimii:
 
-#print hakemisto["avain1"], u" <- tuossa on keyn takana oleva value."
-#print hakemisto.keys(), u"<- Näin saat kaikki dict:in avaimet."
+#print hakemisto["avain1"], u" <- tuossa on 'keyn' takana oleva 'value'."
+#print u"Näin saat kaikki dict:in avaimet:"
+#print hakemisto.keys()
 #print ""
 #print "Tässä printattuna koko dict:"
 #print hakemisto
 
-## Uuden key:valuen lisääminen
+## Uuden key:valuen lisääminen:
+
 #hakemisto["uusiavain"] = u"jotain dataa, vaikkapa tälläinen stringi"
 #print hakemisto["uusiavain"]
+
+## key:valuen poistaminen:
+
+#hakemisto.pop("uusiavain", None)
+#print hakemisto["uusiavain"]  # tästä tulee virhe
 
 
 
@@ -34,10 +42,12 @@ hakemisto = {
 ## FOR-LOOPPI DICTIN KANSSA
 ##
 ## Pelkkä for käy läpi vain avaimet:
+
 #for asia in hakemisto:
 #    print asia
 
 ## Tämä on tapa käydä läpi avaimet ja arvot:
+
 #for key, value in hakemisto.items():
 #    print key, " : ", value
 

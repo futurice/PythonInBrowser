@@ -189,7 +189,6 @@
           {"key": "031_dict", "description": "Dictionary datastruktuuri"},
           {"key": "032_random", "description": "Satunnaisuus: random-kirjasto"},
           {"key": "050_kalevala", "description": "Ilmiö: Kalevalaista tekstinkäsittelyä"},
-          {"key": "090_free_drawing", "description": "Ilmiö: Maantieto graafi (TODO)"},
           {"key": "090_free_drawing", "description": "Extra: Tyhjä kanvaasi turtletaiteilijoille"},
           {"key": "turtlekuva01", "description": "Extra: Turtle art 1"},
           {"key": "turtlekuva02", "description": "Extra: Turtle art 2"},

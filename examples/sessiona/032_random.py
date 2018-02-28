@@ -5,16 +5,7 @@
 
 import random
 
-## Tässä alustetaan pseudo random number generator.
-## Osaatko selittää mikä se on?
-
-
-## Tämä pakottaa randomin aina samoihin lukuihin.
-
-#random.seed(333)
-
-## Kun tuuli lakkaa, onko se enää tuuli?
-## Kun random on aina sama, onko se enää random?
+## Tässä alustetaan näennäissatunnaislukugeneraattori.
 
 
 ## Luodaan dataa. Mikä datastruktuurityyppi on kyseessä?
@@ -31,6 +22,16 @@ dataa = ["kissa", "koira", "makkara"]
 #print random.randint(1, 100)
 
 
-## Mitä kivaa näillä voisi tehdä?
-## Millä koululuokilla satunnaisluvut ovat relevantteja?
-## 6-tahoinen noppa, kruuna vai klaava?
+## 6-tahoinen noppa
+
+# Tämä arpoo kolme lukua väliltä 1-6 joka kerta, kun painat run-nappia.
+
+heittotulokset = []
+for _ in range(3):
+    heittotulokset.append(random.randint(1, 6))
+
+print u'Heitetään noppaa:'
+print heittotulokset
+
+
+## Tehtävä: Laske silmälukujen keskiarvo, kun noppaa heitetään 1000 kertaa.

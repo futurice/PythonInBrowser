@@ -26,12 +26,12 @@ dataa = ["kissa", "koira", "makkara"]
 
 # Tämä arpoo kolme lukua väliltä 1-6 joka kerta, kun painat run-nappia.
 
-heittotulokset = []
-for _ in range(3):
-    heittotulokset.append(random.randint(1, 6))
+# heittotulokset = []
+# for _ in range(3):
+#     heittotulokset.append(random.randint(1, 6))
 
-print u'Heitetään noppaa:'
-print heittotulokset
+# print u'Heitetään noppaa:'
+# print heittotulokset
 
 
 ## Tehtävä: Laske silmälukujen keskiarvo, kun noppaa heitetään 1000 kertaa.

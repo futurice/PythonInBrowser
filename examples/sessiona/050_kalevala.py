@@ -1,16 +1,17 @@
 ## Ilmiö: Kalevala
 ##
-## Ideana tutkia luonnollisen tekstin käsittelyä (LTK, aka NLP).
-## Tutkitaan Kalevalan tekstiä Pythonilla.
+## Ideana tutkia luonnollisen kielen käsittelyä (LKK, natural
+## langugage processiong, NLP). Tutkitaan Kalevalan tekstiä
+## Pythonilla.
 ##
-## Kalevala tiedostoina (latin-1):
+## Kalevala tiedostoina:
 ## http://www.sci.fi/~alboin/trokeemankeli/kalevalamitta-aineistoja.htm
 
 
 
 ## Ladataan Kalevalan teksti
 
-#from datasets import kalevala
+from datasets import kalevala
 
 ## Ladattu teksti on "lista" (list) stringejä.
 
@@ -26,10 +27,12 @@
 #print u"Näin monta riviä Kalevalassa:"
 #print len(kalevala)
 
+#print u'eka rivi:'
 #print kalevala[0]
-#print kalevala[100]
+#print u'viisi ekaa riviä listana:'
 #print kalevala[0:5]
-#print '\n'.join(kalevala[0:5])
+#print u'viisi ekaa riviä:'
+#print ''.join(kalevala[0:5])
 
 
 ###############
@@ -45,6 +48,7 @@
 ## 03: Kuinka monta ?-merkkiä löytyy?
 
 ## Vastausesimerkki; käydään jokaisen rivin jokainen merkki yksitellen läpi:
+
 #haluttu_merkki = '?'
 #summa = 0
 #for rivi in kalevala:
@@ -54,27 +58,26 @@
 #print u"Näin monta ", haluttu_merkki, u"-merkkiä: ", summa
 
 ## Esim2; käytetään Pythonin kieltä "Pythonmaisemmin"
+
 #print sum([x.count(haluttu_merkki) for x in kalevala])
 
 
 ###############
 ## 04: Kuinka monta sanaa löytyy? Tai mitä sanoja löytyy?
 
-## Otetaan käyttöön "joukko", eli set() (toinen Sekvenssi-tyyppinen muuttuja).
-## TODO: tutustuminen set -tyyppiin
+## Kerätään joukkoon (set()) kaikki eri sanat.
 
 #kaikki_sanat = set()
 #for rivi in kalevala:
 #    for sana in rivi.split():
 #        kaikki_sanat.add(sana)
-#print(kaikki_sanat)
+#print 'Kaikki sanat:'
+#print kaikki_sanat
 
 
 
 
-## "def" -avainsanalla luodaan kutsuttavia metodeja.
-## TODO: tutustuminen metodeihin
-
+## "def" -avainsanalla luodaan kutsuttavia funktioita.
 
 def clean_text_line(line):
     u"""Siivotaan rivi tekstiä
@@ -87,7 +90,7 @@ def clean_text_line(line):
         .replace('--', '')
         .replace('"', '')
         .replace(';', '')
-# välilyönnin lisääminen tekee merkeistä erillisiä
+        # välilyönnin lisääminen tekee merkeistä erillisiä
         .replace('\n', ' \n')
         .replace(',', ' ,')
         .replace('.', ' .')
@@ -97,7 +100,7 @@ def clean_text_line(line):
 
 
 def clean_up(text):
-    u"""Siivotan Kalevala"""
+    u"""Siivotaan Kalevalan sanoja"""
     fixed_kale = list()
     words = list()
     # fiksaillaan ja uudelleen muotoillaan tekstiä
@@ -106,7 +109,7 @@ def clean_up(text):
         # laitetaan kaikki sanat yhteen pötköön
         for word in clean_line.split():
             words.append(word)
-    print(len(words), 'words after splitting.')
+    #print len(words), 'words after splitting.'
     return words
 
 
@@ -122,22 +125,12 @@ def do_stats(words):
     #    B on seurannut A:ta koko tekstissä
     for n in range(0, len(words)-1):
         current_word = words[n]
-        next_word =words[n+1]
+        next_word = words[n+1]
         current_words_data = stats.get(current_word, dict())
         # tallennetaan tieto, että mikä oli seuraava sana
         old_count = current_words_data.get(next_word, 0)
         current_words_data[next_word] = old_count + 1
         stats[current_word] = current_words_data
-    #
-    # lasketaan seuraavien sanojen esiintymistodennäköisyys
-    # jokaiselle sanalle erikseen
-    if False:  # skipataan, koska Skulptissa ei ole random.choices()
-        for word, next_words in stats.items():
-            N = len(next_words)
-            word_probs = dict()
-            for next_word in next_words:
-                word_probs[next_word] = 1.0 * next_words[next_word] / N
-            stats[word] = word_probs
     return stats
 
 
@@ -177,7 +170,6 @@ def luo_runo(text_stats, plength=20):
     poem.append(curword)  # Lisätään ensimmäinen sana
     for i in range(0, plength):
         ## Loput sanat arvotaan statistiikan perusteella
-        #print(curword)
         try:
             nwords = text_stats[curword]
         except KeyError:
@@ -186,8 +178,6 @@ def luo_runo(text_stats, plength=20):
           break
         words = [x for x in nwords.keys()]
         weights = [x for x in nwords.values()]
-        ## random.choiches puuttuu Skulptista :(
-        # curword = random.choices(words, weights=weights, k=1)[0]
         curword = random.choice(
             [k for k in nwords for _ in range(nwords[k])])
         poem.append(curword)
@@ -195,19 +185,23 @@ def luo_runo(text_stats, plength=20):
 
 
 
-## Siivotaan tekstiä (selitä miksi?)
-kale_clean = clean_up(kalevala)
+## Siivotaan tekstiä
+
+#kale_clean = clean_up(kalevala)
 
 ## Kutsutaan metodia, joka laskee sanojen statistiikkaa
 ## ja luo "Markov Chain" statistiikan.
-text_stats = do_stats(kale_clean)
+
+#text_stats = do_stats(kale_clean)
 
 ## text_stats on dictionary-tyyppinen otus.
 ## Sen rakennetta voisi tutkia:
 ##
 ## Tästä voi tulla aika iso tulostus
 ## Koska KOKO Kalevala!
+
 #print text_stats
+
 ## Osaatko tutkia dict-datastruktuuria?
 
 

@@ -9,7 +9,7 @@
 ## LISTA (aka list()) ja STRING
 ##
 ## Lista on yksi sekvenssi-datastruktuureista.
-## Stringi taas on kasa kirjainmerkkejä.
+## String, eli merkkijono, taas on tekstipätkä.
 
 muuttuja = u"tämä on string -tyyppinen muuttuja. tämä teksti on siis string!"
 
@@ -22,6 +22,7 @@ sekvenssi = [
 ]
 
 ## Voimme printata yllä luodun listan
+
 #print sekvenssi
 
 ## Osaatko printata yllä luodun muuttujan,
@@ -73,7 +74,7 @@ sekvenssi = [
 ##
 ## Vähän niinkuin lista, mutta jokainen elementti on uniikki:
 
-#setti = set(1, 3, 4, 78)
+#setti = set([1, 3, 4, 78])
 #print setti
 #setti.add(5)
 #print u"Joukko lisäyksen jälkeen:", setti
@@ -84,7 +85,7 @@ sekvenssi = [
 ############
 ## Joukon elementit voivat olla myös stringejä
 
-#sanat = set("makkara", "peruna", "porkkana")
+#sanat = set(["makkara", "peruna", "porkkana"])
 #print sanat
 
 
@@ -107,14 +108,16 @@ sekvenssi = [
 #print u"Näet varmaan eron listan ja setin välillä?"
 
 ## Entä joukosta lista?
+
 # print list(joukkonen)
 
 
 ## HUOM: Menetkö sekaisin mistä nimet:
 ##  "setti", "sanat" ja "set" tulevat?
 ##
-## Ohjelmoinnissa osa nimistä on varattu kielen perusteisiin,
-## osa kirjastoille, ja loput ohjelmoijat saavat keksiä itse.
+## Ohjelmoinnissa osa nimistä on varattu kielen perusteisiin, osa
+## kirjastoille, ja omille muuttujille ohjelmoija saa keksiä nimet
+## itse.
 
 
 ################################################
@@ -124,23 +127,18 @@ sekvenssi = [
 ## koska se on kätevä tapa pitää esimerkiksi
 ## lauseita tietokoneen muistissa.
 ##
-## Kätevän siitä tekee se, miten sekvenssin
-## sisältämiä elementtejä voi iteroida.
+## Kätevän siitä tekee se, miten jokaiselle sekvenssin sisältämälle
+## elementille voi helposti suorittaa saman operaation.
 ##
 ## Sekvenssejä käydään läpi for-loopilla:
 
-#sekvenssi = list(2, 3, 4, 5, 6)
-
-## tai
-
-#sekvenssi = [2, 3, 4, 5, 6]  # kaksi ekvivalenttia tapaa luoda lista Pythonissa
-
+#sekvenssi = [2, 3, 4, 5, 6]
 #for elementti in sekvenssi:
-#    print 'Jee:', elementti
+#    print 'Elementti:', elementti
 
 
 ## HUOM: for-loopin jälkeinen sisennys!
-## Sisennys on tärkeä Python kielen ominaisuus.
+## Sisennys kertoo mitkä rivit suoritetaan jokaisella elementillä.
 ##
 ## Loopin sisällä sekvenssin elementeille voi
 ## "tehdä jotain" yksi toisensa jälkeen.
@@ -148,7 +146,7 @@ sekvenssi = [
 
 
 ################################################
-## Tehtäviä??
+## Tehtäviä:
 ## Luo joukko, ja käytä for-looppia siihen. Toimiiko samoin kuin lista?
 
 

@@ -22,7 +22,7 @@ dataa = ["kissa", "koira", "makkara"]
 #print random.randint(1, 100)
 
 
-## 6-tahoinen noppa
+## kuusitahoinen noppa
 
 # Tämä arpoo kolme lukua väliltä 1-6 joka kerta, kun painat run-nappia.
 

@@ -1,12 +1,12 @@
 ################################################
-## DICTIONARY, eli "hakemisto"(?)
+## DICTIONARY, eli "hakemisto"
 
 
 ################################################
 ## DICT (aka dict())
 ##
 ## on yksi Pythonin datastruktuureista.
-## Se on niin yleinen, että silläkin on oma dedikoitu luontitapa:
+## Se on niin yleinen, että silläkin on oma luontitapa:
 
 hakemisto = {
     'avain1': 'arvo1',
@@ -23,7 +23,7 @@ hakemisto = {
 #print u"Näin saat kaikki dict:in avaimet:"
 #print hakemisto.keys()
 #print ""
-#print "Tässä printattuna koko dict:"
+#print u"Tässä printattuna koko dict:"
 #print hakemisto
 
 ## Uuden key:valuen lisääminen:

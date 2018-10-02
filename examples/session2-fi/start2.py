@@ -10,7 +10,7 @@
 # Ohelmointi vaatii usein tiedon etsimistä muista lähteistä
 # ja uuden tiedon soveltamista omaan ohjelmaasi.
 # Käytännössä tietoa ohjelmoinnista löytää hyvin Internetistä.
-# Käytä viime viikon tehtäviä lähteenä tehdessäsi seuraavat tehtävät
+# Käytä viime viikon tehtäviä lähteenä tehdessäsi seuraavia tehtäviä
 
 ##### TEHTÄVÄT #####
 
@@ -27,12 +27,12 @@
 
 ##### TEHTÄVÄ 2 #####
 # Yhtenä päivänä lempivärisi saattaa olla vihreä ja toisena oranssi.
-# Luo muuttuja nimeltä favoriteColor ja anna sille arvoksi lempivärisi
+# Luo muuttuja nimeltä lempivari ja anna sille arvoksi lempivärisi
 
 # <------  kirjoita muuttuja tähän ------->
 
 # Kirjoita sitten koodi joka printtaa tekstin "Lempivärini in 'lempivärisi'"
-# Käytä tällä kertaa muuttujaa favoriteColor ilmaisemaan lempivärisi
+# Käytä tällä kertaa muuttujaa lempivari ilmaisemaan lempivärisi
 
 # <------ kirjoita koodisi tähän (ja klikkaa 'Run' printataksesi)------->
 
@@ -62,10 +62,10 @@
 # jane.color("pink")
 
 # Voit myös käyttää muuttujaa määrittääksesi piirroksen värin.
-# Muuta muuttujan favoriteColor arvo englanniksi esim. "green" (vihreä), "blue" (sininen) tai "yellow" (keltainen)
+# Muuta muuttujan lempivari arvo englanniksi esim. "green" (vihreä), "blue" (sininen) tai "yellow" (keltainen)
 # ja korvaa väriä vaihtava koodi seuraavalla rivillä
 #
-# jane.color(favoriteColor)
+# jane.color(lempivari)
 #
 # Muista että käyttäessäsi muuttujia et tarvitse lainausmerkkejä
 
@@ -75,5 +75,5 @@
 ##### LISÄTEHTÄVÄT #####
 
 # Mikä olisi helpoin tapa piirtää kolmio loppuun?
-# Muuta muuttujan favoriteColor arvoa ja kokeile että se toimii.
+# Muuta muuttujan lempivari arvoa ja kokeile että se toimii.
 # Miten voisit piirtää toisen kolmion eri suuntaan ja eri värillä

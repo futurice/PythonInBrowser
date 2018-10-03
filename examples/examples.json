@@ -106,20 +106,20 @@
         ]
       },
       {
-        "session": "Tunti 2 (englanniksi)",
-        "key": "session2",
+        "session": "Tunti 2",
+        "key": "session2-fi",
         "type": "exercise",
         "exercises": [
-          {"key": "start2", "description": "Recap of session 1"},
-          {"key": "loops", "description": "Loops"},
-          {"key": "indentation", "description": "Number sequences"},
-          {"key": "coordinates", "description": "Coordinates"},
-          {"key": "dots", "description": "Connect the dots"},
-          {"key": "lines", "description": "Draw a line"},
-          {"key": "obstacles", "description": "Find a route"},
-          {"key": "arrowhouse", "description": "Draw a house"},
-          {"key": "flower", "description": "Draw a flower"},
-          {"key": "free2", "description": "Do it yourself!"}
+          {"key": "start2", "description": "Kertaus"},
+          {"key": "loops", "description": "Loop-silmukka"},
+          {"key": "indentation", "description": "Lukujonot"},
+          {"key": "coordinates", "description": "Koordinaatit"},
+          {"key": "dots", "description": "Yhdistä pisteet"},
+          {"key": "lines", "description": "Piirrä viiva"},
+          {"key": "obstacles", "description": "Etsi reitti"},
+          {"key": "arrowhouse", "description": "Piirrä talo"},
+          {"key": "flower", "description": "Piirrä kukka"},
+          {"key": "free2", "description": "Kokeile vapaasti!"}
         ]
       },
       {

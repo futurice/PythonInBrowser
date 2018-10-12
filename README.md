@@ -67,6 +67,28 @@ If you want to add learning material please edit [material.json](https://github.
 * Start the application with ```nodemon bin/www```
 * Open a browser at http://localhost:3000/
 
+## Deploying
+
+The application is [hosted](http://codeclub.chilicorn.org/) on Heroku. Instructions for deploying a new version:
+
+### Preparations
+
+1. Ask an existing developer to make you a collaborator on the Heroku [codeclub app](https://dashboard.heroku.com/apps/codeclub)
+2. Install the Heroku [CLI toolkit](https://devcenter.heroku.com/articles/heroku-command-line)
+3. Login to your Heroku account: ```heroku login```
+4. Add a new git remote: ```git remote add heroku https://git.heroku.com/codeclub.git```
+
+note: if you are working in a fork, make sure you have pulled the changes from the main project master to local
+```
+git remote add futuorigin https://github.com/futurice/PythonInBrowser.git
+git pull futuorigin master
+```
+
+### Deploy
+
+1. ```git push heroku master```
+2. Check that the [app](http://codeclub.chilicorn.org/) is running correctly
+
 ## License
 
 The MIT License.

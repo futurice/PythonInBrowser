@@ -78,6 +78,12 @@ The application is [hosted](http://codeclub.chilicorn.org/) on Heroku. Instructi
 3. Login to your Heroku account: ```heroku login```
 4. Add a new git remote: ```git remote add heroku https://git.heroku.com/codeclub.git```
 
+note: if you are working in a fork, make sure you have pulled the changes from the main project master to local
+```
+git remote add futuorigin https://github.com/futurice/PythonInBrowser.git
+git pull futuorigin master
+```
+
 ### Deploy
 
 1. ```git push heroku master```

@@ -7,17 +7,16 @@
 # Here is a starting point for drawing,
 # using random, for loop and a function.
 
-import turtle # remember, we need turtle everytime we want to draw
-import random # random needs to be imported, too
+import turtle  # remember, we need turtle everytime we want to draw
+
+import random  # random needs to be imported, too
 
 t = turtle.Turtle()
 t.speed("fastest")
 
 # Let's modify the background color of the canvas
-# First we need to to store the screen in a variable, like this:
-screen = t.getscreen()
-# Then we can set the color like this:
-screen.bgcolor("black")
+# We can set the color like this:
+turtle.Screen().bgcolor("black")
 
 # Let's draw with multiple colors.
 # It's possible to define our color palette in an array
@@ -34,10 +33,10 @@ lastColor = len(colors) - 1
 # Random color can be chosen like this. It can be stored in a variable.
 randomColor = colors[random.randint(0, lastColor)]
 
-##### EXERCISE #####
+##### TEHTÄVÄ #####
 # Comment line 23: screen.bgcolor("black")
 # and uncomment the following line
-screen.bgcolor(randomColor)
+# turtle.Screen().bgcolor(randomColor)
 
 # Let's define a function, that draws squares, but with changing angle
 # – so that it actually draws a circle. Let's also change the drawing color
@@ -47,7 +46,7 @@ screen.bgcolor(randomColor)
 def colorfulOlympicCircle():
   t.forward(80);
   t.left(92);
-  newColor = colors[random.randint(0, len(colors)-1)]
+  newColor = colors[random.randint(0, len(colors) - 1)]
   t.color(newColor)
 ##### UNTIL HERE #####
 
@@ -75,7 +74,7 @@ for i in range(5):
   t.pendown()
 
 # Try adding the following line as the last line of the function.
-# screen.bgcolor(newColor)
+# turtle.Screen().bgcolor(newColor)
 # Remember to check that the indentation is correct.
 
 # Then go on and modify the code as you wish, adding more circles, changing its

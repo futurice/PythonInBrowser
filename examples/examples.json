@@ -123,18 +123,18 @@
         ]
       },
       {
-        "session": "Tunti 3 (englanniksi)",
-        "key": "session3",
+        "session": "Tunti 3",
+        "key": "session3-fi",
         "type": "exercise",
         "exercises": [
-          {"key": "start3", "description": "Recap of session 2"},
-          {"key": "stars", "description": "Functions"},
-          {"key": "function", "description": "Computing value in a function"},
-          {"key": "polygon", "description": "Polygon"},
-          {"key": "perimeter", "description": "Perimeter"},
-          {"key": "perimeter2", "description": "Circumference of a circle"},
-          {"key": "random", "description": "Random"},
-          {"key": "free3", "description": "Do it yourself!"}
+          {"key": "start3", "description": "2. tunnin kertaus"},
+          {"key": "stars", "description": "Funktiot"},
+          {"key": "function", "description": "Funktioilla laskeminen"},
+          {"key": "polygon", "description": "Monikulmiot"},
+          {"key": "perimeter", "description": "Monikulmion piiri"},
+          {"key": "perimeter2", "description": "Ympyrän kehä"},
+          {"key": "random", "description": "Satunnaisuus"},
+          {"key": "free3", "description": "Tee se itse!"}
         ]
       },
       {

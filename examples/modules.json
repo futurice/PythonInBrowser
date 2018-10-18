@@ -8,7 +8,8 @@
         {"key": "turtle2", "description": "turtle2"},
         {"key": "basic",   "description": "Coordinates"},
         {"key": "tracks",  "description": "Tracks"},
-        {"key": "winter",  "description": "Winter"}
+        {"key": "winter",  "description": "Winter"},
+        {"key": "talvi",  "description": "Talvi"}
       ]
     }
   ]

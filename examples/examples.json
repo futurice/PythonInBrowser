@@ -138,12 +138,12 @@
         ]
       },
       {
-        "session": "Tunti 4 (englanniksi)",
-        "key": "session4",
+        "session": "Tunti 4",
+        "key": "session4-fi",
         "type": "exercise",
         "exercises": [
-          {"key": "arena", "description": "Drive the track!"},
-          {"key": "snow", "description": "Snowflakes"}
+          {"key": "arena", "description": "Selvitä esterata!"},
+          {"key": "snow", "description": "Lumihiutaleet"}
         ]
       },
       {

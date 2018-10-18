@@ -273,6 +273,9 @@ var app = (function() {
         winter: {
           path: '/static/modules/winter.py'
         },
+        talvi: {
+          path: '/static/modules/talvi.py'
+        },
         datasets: {
           path: '/static/modules/datasets.py'
         }

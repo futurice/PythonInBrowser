@@ -147,15 +147,15 @@
         ]
       },
       {
-        "session": "Tunti 5 (englanniksi)",
+        "session": "Tunti 5",
         "key": "session5",
         "type": "exercise",
         "exercises": [
-          {"key": "start5", "description": "Recap of functions"},
-          {"key": "movingrandomly", "description": "Move randomly"},
-          {"key": "differentdrawing", "description": "Drawing within boundaries"},
-          {"key": "modernart", "description": "Modern art"},
-          {"key": "randomwalk", "description": "Random walk"}
+          {"key": "start5", "description": "Funktioiden kertaus"},
+          {"key": "movingrandomly", "description": "Liiku satunnaisesti"},
+          {"key": "differentdrawing", "description": "Piirrä rajojen sisällä"},
+          {"key": "modernart", "description": "Moderni taide"},
+          {"key": "randomwalk", "description": "Satunnaiskulku"}
         ]
       },
       {

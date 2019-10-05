@@ -148,7 +148,7 @@
       },
       {
         "session": "Tunti 5",
-        "key": "session5",
+        "key": "session5-fi",
         "type": "exercise",
         "exercises": [
           {"key": "start5", "description": "Funktioiden kertaus"},
@@ -159,11 +159,11 @@
         ]
       },
       {
-        "session": "Tunti 6 (englanniksi)",
-        "key": "session6",
+        "session": "Tunti 6",
+        "key": "session6-fi",
         "type": "exercise",
         "exercises": [
-          {"key": "escape", "description": "Reach the finish line"}
+          {"key": "escape", "description": "Saavuta maaliviiva"}
         ]
       },
       {

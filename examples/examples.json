@@ -167,14 +167,14 @@
         ]
       },
       {
-        "session": "Tunti 7 (englanniksi)",
-        "key": "session7",
+        "session": "Tunti 7",
+        "key": "session7-fi",
         "type": "exercise",
         "exercises": [
-          {"key": "hexahedron", "description": "3D drawing"},
-          {"key": "isometric", "description": "3D cubes"},
-          {"key": "magic", "description": "Magic drawing"},
-          {"key": "minigame", "description": "Minigame"}
+          {"key": "hexahedron", "description": "3D piirros"},
+          {"key": "isometric", "description": "3D kuutiot"},
+          {"key": "magic", "description": "Taikapiirros"},
+          {"key": "minigame", "description": "Minipeli"}
         ]
       },
       {

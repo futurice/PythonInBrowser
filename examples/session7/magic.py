@@ -9,18 +9,16 @@ import turtle
 # Only after this draw it with a turtle.
 
 # Step 1
-# Draw to X -letter so that they form a diamond shape between them like this: XX
-# In the X the lenght of lines is equal and the angle is 45 degrees
+# Draw two X -letters so that they form a diamond shape between them like this: XX
+# In the X the length of lines is equal and the angle is 45 degrees
 
 # Step 2
-# From the upper and bottom vertexes of the diamond draw straigt line up and down
-# The lenght of the line is half of the side of the X.
-# Your drawing should look something like this:
-#
+# From the upper and bottom vertexes of the diamond draw straight line up and down
+# The length of the line is half of the side of the X.
 
 # Step 3
 # After this join all the points with a line so that you have continuous perimeter
-#
+
 
 # Scroll down to get hints.
 

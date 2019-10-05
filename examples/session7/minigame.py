@@ -118,6 +118,10 @@ def doMove():
 
     t.forward(10)
 
+# This will start the animation.
+t.penup()
+doMove()
+
 ##### EXERCISE #####
 
 # Remember the obstacles exercise? This is modification of it.
@@ -125,10 +129,6 @@ def doMove():
 # How ever the exercise hasn't been modified enough.
 # Note that the boundaries of cubes are different that boundaries of rectancles.
 # See below things you can fix in this exercise.
-
-# This will start the animation.
-t.penup()
-doMove()
 
 # 1. Fix the boundaries so that turtle can't go inside cubes.
 

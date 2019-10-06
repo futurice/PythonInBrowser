@@ -8,6 +8,7 @@ import turtle2
 import random
 import time
 
+
 # Generate a list of numbers from a to b at regularly spaced intervals.
 def linearlySpaced(a, b, interval):
   xs = []
@@ -17,6 +18,7 @@ def linearlySpaced(a, b, interval):
     x = x + interval
   return xs
 
+
 # Generate random obstacles for the turtle.
 # The obstacles are horizontal rectangles.
 # n is the number of obstacles to generate.
@@ -24,10 +26,10 @@ def linearlySpaced(a, b, interval):
 # parameters left, right, top and bottom.
 def generateObstacles(n, left, right, top, bottom):
   height = 20
-  minWidth = round(0.1*(right - left))
-  maxWidth = round(0.8*(right - left))
+  minWidth = round(0.1 * (right - left))
+  maxWidth = round(0.8 * (right - left))
 
-  alternatives = linearlySpaced(bottom, top, 2*height)
+  alternatives = linearlySpaced(bottom, top, 2 * height)
   random.shuffle(alternatives)
   alternatives = sorted(alternatives[:n])
 
@@ -42,7 +44,8 @@ def generateObstacles(n, left, right, top, bottom):
 
   return obstacles
 
-# Generate rectangles on the left, right and bottom sides of the area.
+
+# Create rectangle parameters for the left, right and bottom sides of the area.
 def outerBounds(left, right, top, bottom):
   w = 20
   return [
@@ -50,6 +53,7 @@ def outerBounds(left, right, top, bottom):
     (left, bottom - w, right - left, w),
     (right, bottom - w, w, top - bottom + w)
   ]
+
 
 # Draw a rectangle at the location (x, y). The rectangle will be w
 # pixels wide and h pixels high. It will be drawn using the turtle t.
@@ -67,6 +71,7 @@ def drawRectangle(t, x, y, w, h):
   t.end_fill()
   t.penup()
 
+
 # Draw several rectangles.
 # rectangles is a list of (x, y, width, height) variables.
 def drawRectangles(rectangles):
@@ -76,6 +81,7 @@ def drawRectangles(rectangles):
   t.hideturtle()
   for rect in rectangles:
     drawRectangle(t, rect[0], rect[1], rect[2], rect[3])
+
 
 def drawFinishLine(x1, x2, y):
   t = turtle2.Turtle()
@@ -88,10 +94,12 @@ def drawFinishLine(x1, x2, y):
   t.pendown()
   t.goto(x2, y)
 
+
 # Returns True if the coordinate (x, y) is inside a rectangle.
 def isInsideRectangle(x, y, rectangle):
   return (x >= rectangle[0] and x < rectangle[0] + rectangle[2] and
       y >= rectangle[1] and y < rectangle[1] + rectangle[3])
+
 
 # Returns True if (x, y) is inside any of the rectangles in the
 # provided list.
@@ -101,8 +109,9 @@ def isInsideAnyRectangle(x, y, rectangleList):
       return True
   return False
 
+
 # The function below will control how the turtle moves. This function
-# is called continuosly in a loop. It selects a new direction for the
+# is called continuously in a loop. It selects a new direction for the
 # turtle and moves it a short distance forward.
 def moveOneStep(t, obstacles):
   x = t.xcor()
@@ -115,17 +124,18 @@ def moveOneStep(t, obstacles):
 
   t.forward(10)
 
+
 # Generate obstacles at random locations by calling the helper
 # functions defined above.
 
 screen = turtle2.Screen()
-right = min(250, screen.window_width()/2 - 5)
+right = min(250, screen.window_width() / 2 - 5)
 left = -right
-top = min(270, screen.window_height()/2 - 5)
+top = min(270, screen.window_height() / 2 - 5)
 bottom = -top
 
 obstacles = (outerBounds(left, right, top, bottom) +
-             generateObstacles(4, left, right, top - 20, bottom + 60))
+       generateObstacles(4, left, right, top - 20, bottom + 60))
 
 # Draw the obstacles
 turtle2.pauseDrawing()
@@ -137,7 +147,7 @@ turtle2.unpauseDrawing()
 t = turtle2.Turtle()
 t.speed("fastest")
 t.penup()
-t.goto((left + right)/2, bottom + 20)
+t.goto((left + right) / 2, bottom + 20)
 t.setheading(90)
 t.pendown()
 
@@ -148,7 +158,8 @@ while t.ycor() < top:
   moveOneStep(t, obstacles)
 endTime = time.time()
 
-print "The turtle reached the finish line in %d seconds!" % round(endTime-startTime)
+print "The turtle reached the finish line in %d seconds!" % round(endTime - startTime)
+
 
 ##### EXERCISE 1 #####
 

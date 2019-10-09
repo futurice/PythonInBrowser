@@ -5,7 +5,7 @@
   "main": "sphero.js",
   "dependencies": {
     "cylon": "^1.2.0",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.15",
     "cylon-sphero": "^0.23.0"
   },
   "devDependencies": {},

@@ -74,8 +74,8 @@ def draw_block(x, y, color=(255, 0, 0), size=30):
 #
 # Let's draw two cubes.
 
-draw_block(x = 50, y = -100, color = (255, 128, 64))
-draw_block(x = 0, y = -200, color = (128, 16, 192))
+draw_block(x=50, y=-100, color=(255, 128, 64))
+draw_block(x=0, y=-200, color=(128, 16, 192))
 
 # Move one of the cubes to directly on top of the other by changing
 # the coordinates in the above function calls. The x and y define
